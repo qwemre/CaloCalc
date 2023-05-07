@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaloCalc", "CaloCalc\CaloCalc.csproj", "{4AC30DAA-BD13-45EE-8661-5DCCE6F8CA3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{2156904F-1FA2-4AF8-A6C9-6A22752BB6F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{A930D2FB-1C07-45F7-B63C-7C373A22BB07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{576ADD85-3893-4682-BC35-5E23B6C390DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4AC30DAA-BD13-45EE-8661-5DCCE6F8CA3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AC30DAA-BD13-45EE-8661-5DCCE6F8CA3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AC30DAA-BD13-45EE-8661-5DCCE6F8CA3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AC30DAA-BD13-45EE-8661-5DCCE6F8CA3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2156904F-1FA2-4AF8-A6C9-6A22752BB6F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2156904F-1FA2-4AF8-A6C9-6A22752BB6F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2156904F-1FA2-4AF8-A6C9-6A22752BB6F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2156904F-1FA2-4AF8-A6C9-6A22752BB6F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A930D2FB-1C07-45F7-B63C-7C373A22BB07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A930D2FB-1C07-45F7-B63C-7C373A22BB07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A930D2FB-1C07-45F7-B63C-7C373A22BB07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A930D2FB-1C07-45F7-B63C-7C373A22BB07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{576ADD85-3893-4682-BC35-5E23B6C390DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{576ADD85-3893-4682-BC35-5E23B6C390DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{576ADD85-3893-4682-BC35-5E23B6C390DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{576ADD85-3893-4682-BC35-5E23B6C390DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70ACF9B4-7774-4CD1-9C2B-1BBFC5B980D9}
+	EndGlobalSection
+EndGlobal

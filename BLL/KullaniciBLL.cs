@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    internal class KullaniciBLL
+    public class KullaniciBLL
     {
     }
 }

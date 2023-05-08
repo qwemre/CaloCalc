@@ -23,8 +23,9 @@ namespace Entities
 
         //Bunlar yapılacak
 
-        //public byte[]? Photo { get; set; }
-        //public string? PhotoPath { get; set; }
+        public byte[]? Photo { get; set; }
+        public string? PhotoPath { get; set; }
+
         //entity.Property(e => e.Photo).HasColumnType("image");
         //entity.Property(e => e.PhotoPath).HasMaxLength(255);
 

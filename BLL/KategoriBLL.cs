@@ -17,27 +17,42 @@ namespace BLL
         }
         public Kategori Ara(int id)
         {
-            throw new NotImplementedException();
+
+            var kategori=Db.Kategoriler.Find(id);
+            return kategori;
+
+
         }
 
         public void Ekle(Kategori entity)
         {
-            throw new NotImplementedException();
+
+            Db.Kategoriler.Add(entity);
+
         }
 
         public void Guncelle(Kategori entity)
         {
-            throw new NotImplementedException();
+
+            Db.Kategoriler.Update(entity);
+
+
         }
 
         public List<Kategori> Liste()
         {
-            throw new NotImplementedException();
+
+            var liste = Db.Kategoriler.ToList();
+            return liste;
+
         }
 
         public void Sil(int id)
         {
-            throw new NotImplementedException();
+
+            var kategori= Db.Kategoriler.Find(id);
+            Db.Kategoriler.Remove(kategori);
+
         }
     }
 }

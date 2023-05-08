@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using DAL.Context;
+using Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,11 @@ namespace BLL
 {
     public class OgunBLL : ICRUD<Ogun>
     {
+        CaloCalcDbContext Db;
+        public OgunBLL()
+        {
+            Db = new CaloCalcDbContext();
+        }
         public Ogun Ara(int id)
         {
             throw new NotImplementedException();

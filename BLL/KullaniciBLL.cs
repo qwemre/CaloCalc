@@ -15,6 +15,7 @@ namespace BLL
         {
             Db = new CaloCalcDbContext();
         }
+
         public List<Kullanici> Liste()
         {
             List<Kullanici> kullanicilar=Db.Kullanicilar.ToList();
@@ -24,15 +25,18 @@ namespace BLL
         {
             var kullanici=Db.Kullanicilar.Find(id);
             return kullanici;
-        }
+        }      
 
         public void Ekle(Kullanici entity)
         {
+
             Db.Kullanicilar.Add(entity);
+
         }
 
         public void Guncelle(Kullanici entity)
         {
+
             Db.Kullanicilar.Update(entity);
             Db.SaveChanges();
         }
@@ -42,6 +46,7 @@ namespace BLL
         {
             var kullanici=Db.Kullanicilar.Find(id);
             Db.Kullanicilar.Remove(kullanici);
+
         }
     }
 }

@@ -17,11 +17,7 @@ namespace DAL.Configurations
 
         public void Configure(EntityTypeBuilder<Yiyecek> builder)
         {
-            //entity.Property(e => e.Photo).HasColumnType("image");
-            //entity.Property(e => e.PhotoPath).HasMaxLength(255);
-
-            builder.Property(e => e.Photo).HasColumnType("image");
-            builder.Property(e => e.PhotoPath).HasMaxLength(255);
+           
 
             builder.HasData(
 

@@ -15,29 +15,33 @@ namespace BLL
         {
             Db = new CaloCalcDbContext();
         }
+        public List<Kullanici> Liste()
+        {
+            List<Kullanici> kullanicilar=Db.Kullanicilar.ToList();
+            return kullanicilar;
+        }
         public Kullanici Ara(int id)
         {
-            throw new NotImplementedException();
+            var kullanici=Db.Kullanicilar.Find(id);
+            return kullanici;
         }
 
         public void Ekle(Kullanici entity)
         {
-            throw new NotImplementedException();
+            Db.Kullanicilar.Add(entity);
         }
 
         public void Guncelle(Kullanici entity)
         {
-            throw new NotImplementedException();
+            Db.Kullanicilar.Update(entity);
+            Db.SaveChanges();
         }
 
-        public List<Kullanici> Liste()
-        {
-            throw new NotImplementedException();
-        }
 
         public void Sil(int id)
         {
-            throw new NotImplementedException();
+            var kullanici=Db.Kullanicilar.Find(id);
+            Db.Kullanicilar.Remove(kullanici);
         }
     }
 }

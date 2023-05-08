@@ -23,12 +23,18 @@ namespace CaloCalc
         }
         private void linklblGiris_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            this.Hide();
+            Giris frm= new Giris();
+            frm.ShowDialog();
+            this.Visible = true;
         }
 
         private void btnKaydol_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Kaydol frm = new Kaydol();
+            frm.ShowDialog();
+            this.Visible = true;
         }
 
     }

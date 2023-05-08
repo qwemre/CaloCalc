@@ -14,7 +14,11 @@ namespace DAL.Context
         public DbSet<Kullanici> Kullanicilar { get; set; }
         public DbSet<Ogun> Ogunler { get; set; }
         public DbSet<Yiyecek> Yiyecekler { get; set; }
+
+        
+
         public DbSet<Kategori> Kategoriler { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

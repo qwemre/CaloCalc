@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using DAL.Context;
+using Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,11 @@ namespace BLL
 {
     public class KategoriBLL : ICRUD<Kategori>
     {
+        CaloCalcDbContext Db;
+        public KategoriBLL()
+        {
+            Db=new CaloCalcDbContext();
+        }
         public Kategori Ara(int id)
         {
             throw new NotImplementedException();

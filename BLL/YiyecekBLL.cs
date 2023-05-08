@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using DAL.Context;
+using Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,11 @@ namespace BLL
 {
     public class YiyecekBLL : ICRUD<Yiyecek>
     {
+        CaloCalcDbContext Db;
+        public YiyecekBLL()
+        {
+            Db = new CaloCalcDbContext();
+        }
         public Yiyecek Ara(int id)
         {
             throw new NotImplementedException();

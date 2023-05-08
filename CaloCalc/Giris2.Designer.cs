@@ -33,9 +33,9 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            button1 = new Button();
+            txtSifre = new TextBox();
+            txtEMail = new TextBox();
+            btnGiris = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -43,9 +43,9 @@
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(btnGiris);
+            panel1.Controls.Add(txtEMail);
+            panel1.Controls.Add(txtSifre);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
@@ -88,36 +88,36 @@
             label3.TabIndex = 1;
             label3.Text = "Şifre:";
             // 
-            // textBox1
+            // txtSifre
             // 
-            textBox1.Location = new Point(124, 194);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Şifreniz";
-            textBox1.Size = new Size(203, 26);
-            textBox1.TabIndex = 2;
+            txtSifre.Location = new Point(124, 194);
+            txtSifre.Multiline = true;
+            txtSifre.Name = "txtSifre";
+            txtSifre.PlaceholderText = "Şifreniz";
+            txtSifre.Size = new Size(203, 26);
+            txtSifre.TabIndex = 2;
             // 
-            // textBox2
+            // txtEMail
             // 
-            textBox2.Location = new Point(124, 161);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "E-Mail Adresiniz";
-            textBox2.Size = new Size(203, 26);
-            textBox2.TabIndex = 2;
+            txtEMail.Location = new Point(124, 161);
+            txtEMail.Multiline = true;
+            txtEMail.Name = "txtEMail";
+            txtEMail.PlaceholderText = "E-Mail Adresiniz";
+            txtEMail.Size = new Size(203, 26);
+            txtEMail.TabIndex = 2;
             // 
-            // button1
+            // btnGiris
             // 
-            button1.BackColor = Color.ForestGreen;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(140, 236);
-            button1.Name = "button1";
-            button1.Size = new Size(160, 42);
-            button1.TabIndex = 3;
-            button1.Text = "Giriş";
-            button1.UseVisualStyleBackColor = false;
+            btnGiris.BackColor = Color.ForestGreen;
+            btnGiris.FlatStyle = FlatStyle.Flat;
+            btnGiris.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGiris.ForeColor = SystemColors.ButtonHighlight;
+            btnGiris.Location = new Point(140, 236);
+            btnGiris.Name = "btnGiris";
+            btnGiris.Size = new Size(160, 42);
+            btnGiris.TabIndex = 3;
+            btnGiris.Text = "Giriş";
+            btnGiris.UseVisualStyleBackColor = false;
             // 
             // Giris2
             // 
@@ -135,9 +135,9 @@
         #endregion
 
         private Panel panel1;
-        private Button button1;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private Button btnGiris;
+        private TextBox txtEMail;
+        private TextBox txtSifre;
         private Label label3;
         private Label label2;
         private Label label1;

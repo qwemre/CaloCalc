@@ -17,27 +17,30 @@ namespace BLL
         }
         public Ogun Ara(int id)
         {
-            throw new NotImplementedException();
+            return Db.Ogunler.Find(id);
         }
 
         public void Ekle(Ogun entity)
         {
-            throw new NotImplementedException();
+            Db.Ogunler.Add(entity);
+            Db.SaveChanges();
         }
 
         public void Guncelle(Ogun entity)
         {
-            throw new NotImplementedException();
+            Db.Ogunler.Update(entity);
+            Db.SaveChanges();
         }
 
         public List<Ogun> Liste()
         {
-            throw new NotImplementedException();
+            return Db.Ogunler.ToList();
         }
 
         public void Sil(int id)
         {
-            throw new NotImplementedException();
+            Db.Ogunler.Remove(Ara(id));
+            Db.SaveChanges();
         }
     }
 }

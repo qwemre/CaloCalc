@@ -17,27 +17,27 @@ namespace BLL
         }
         public Yiyecek Ara(int id)
         {
-            throw new NotImplementedException();
+            return Db.Yiyecekler.Find(id);
         }
 
         public void Ekle(Yiyecek entity)
         {
-            throw new NotImplementedException();
+            Db.Yiyecekler.Add(entity);
         }
 
         public void Guncelle(Yiyecek entity)
         {
-            throw new NotImplementedException();
+           Db.Yiyecekler.Update(entity);
         }
 
         public List<Yiyecek> Liste()
         {
-            throw new NotImplementedException();
+            return Db.Yiyecekler.ToList();
         }
 
         public void Sil(int id)
         {
-            throw new NotImplementedException();
+            Db.Yiyecekler.Remove(Ara(id));
         }
     }
 }

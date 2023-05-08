@@ -13,9 +13,16 @@ namespace DAL.Configurations
     internal class YiyecekCFG:IEntityTypeConfiguration<Yiyecek>
     {
        
+        
 
         public void Configure(EntityTypeBuilder<Yiyecek> builder)
         {
+            //entity.Property(e => e.Photo).HasColumnType("image");
+            //entity.Property(e => e.PhotoPath).HasMaxLength(255);
+
+            builder.Property(e => e.Photo).HasColumnType("image");
+            builder.Property(e => e.PhotoPath).HasMaxLength(255);
+
             builder.HasData(
                     new Yiyecek { YiyecekID = 1, YiyecekAdi = "Kuru Fasulye", Kalori = 300, Porsiyon = Porsiyonlar.gram, KategoriID = 1 },
                     new Yiyecek { YiyecekID = 2, YiyecekAdi = "Pilav", Kalori = 200, Porsiyon = Porsiyonlar.gram, KategoriID = 1 },
@@ -93,9 +100,9 @@ namespace DAL.Configurations
                     new Yiyecek { YiyecekID = 74, YiyecekAdi = "Salatalık", Kalori = 300, Porsiyon = Porsiyonlar.adet, KategoriID = 9 },
                     new Yiyecek { YiyecekID = 75, YiyecekAdi = "Roka", Kalori = 300, Porsiyon = Porsiyonlar.gram, KategoriID = 9 },
                     new Yiyecek { YiyecekID = 76, YiyecekAdi = "Maydanoz", Kalori = 300, Porsiyon = Porsiyonlar.gram, KategoriID = 9 },
-                new Yiyecek { YiyecekID = 77, YiyecekAdi = "Tere", Kalori = 300, Porsiyon = Porsiyonlar.gram, KategoriID = 9 },
-                new Yiyecek { YiyecekID = 78, YiyecekAdi = "Marul", Kalori = 300, Porsiyon = Porsiyonlar.gram, KategoriID = 9 },
-                new Yiyecek { YiyecekID = 79, YiyecekAdi = "Turp", Kalori = 300, Porsiyon = Porsiyonlar.gram, KategoriID = 9 }
+                    new Yiyecek { YiyecekID = 77, YiyecekAdi = "Tere", Kalori = 300, Porsiyon = Porsiyonlar.gram, KategoriID = 9 },
+                    new Yiyecek { YiyecekID = 78, YiyecekAdi = "Marul", Kalori = 300, Porsiyon = Porsiyonlar.gram, KategoriID = 9 },
+                    new Yiyecek { YiyecekID = 79, YiyecekAdi = "Turp", Kalori = 300, Porsiyon = Porsiyonlar.gram, KategoriID = 9 }
 
             );
         }

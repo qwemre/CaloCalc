@@ -16,5 +16,13 @@ namespace CaloCalc
         {
             InitializeComponent();
         }
+
+        private void btnBesinEkle_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BesinOlusturma frm = new BesinOlusturma();
+            frm.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

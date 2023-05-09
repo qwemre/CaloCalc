@@ -661,7 +661,7 @@
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(690, 537);
+            tabPage1.Size = new Size(560, 549);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Ana Sayfa";
             // 
@@ -789,6 +789,7 @@
             btnBesinEkle.TabIndex = 1;
             btnBesinEkle.Text = "Besin Ekle";
             btnBesinEkle.UseVisualStyleBackColor = true;
+            btnBesinEkle.Click += btnBesinEkle_Click;
             // 
             // tabControl2
             // 
@@ -1006,7 +1007,7 @@
             tabPage6.Location = new Point(4, 24);
             tabPage6.Name = "tabPage6";
             tabPage6.Padding = new Padding(3);
-            tabPage6.Size = new Size(565, 540);
+            tabPage6.Size = new Size(560, 549);
             tabPage6.TabIndex = 8;
             tabPage6.Text = "En Çok Yenenler";
             tabPage6.UseVisualStyleBackColor = true;
@@ -1034,7 +1035,7 @@
             tabPage7.Location = new Point(4, 24);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(565, 540);
+            tabPage7.Size = new Size(560, 549);
             tabPage7.TabIndex = 9;
             tabPage7.Text = "En Çok Yediklerim";
             tabPage7.UseVisualStyleBackColor = true;
@@ -1064,7 +1065,7 @@
             tabPage11.Location = new Point(4, 24);
             tabPage11.Name = "tabPage11";
             tabPage11.Padding = new Padding(3);
-            tabPage11.Size = new Size(565, 540);
+            tabPage11.Size = new Size(560, 549);
             tabPage11.TabIndex = 10;
             tabPage11.Text = "Diğerleri ne Yemiş";
             tabPage11.UseVisualStyleBackColor = true;

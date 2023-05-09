@@ -39,5 +39,6 @@ namespace BLL
         {
             Db.Yiyecekler.Remove(Ara(id));
         }
+
     }
 }

@@ -19,29 +19,32 @@ namespace CaloCalc
             InitializeComponent();
         }
         CaloCalcBussinessLogic bussinessLogic;
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnGiris_Click(object sender, EventArgs e)
         {
             bussinessLogic = new CaloCalcBussinessLogic();
-
-            if (string.IsNullOrWhiteSpace(txtEMail.Text) || string.IsNullOrWhiteSpace(txtSifre.Text))
+            if (string.IsNullOrEmpty(txtMail.Text) || string.IsNullOrWhiteSpace(txtMail.Text))
             {
-                MessageBox.Show("Lütfen E-mail adresinizi ve şifrenizi giriniz!", "Uyarı");
+                MessageBox.Show("Lütfen geçerli bir E-mail adresi girin!", "Uyarı");
+
+            }
+            else if (string.IsNullOrEmpty(txtSifre.Text) || string.IsNullOrWhiteSpace(txtSifre.Text))
+            {
+                MessageBox.Show("Lütfen şifrenizi girin!", "Uyarı");
             }
             else
             {
-                if (bussinessLogic.Kullanicilar.KullaniciGiris(txtEMail.Text, txtSifre.Text) > 0)
+                if (bussinessLogic.Kullanicilar.KullaniciGiris(txtMail.Text, txtSifre.Text) > 0)
                 {
                     this.Hide();
                     AnaEkran anaEkran = new AnaEkran();
                     anaEkran.ShowDialog();
-                    this.Visible=true;
+                    this.Visible = true;
                 }
-
                 else
                 {
                     MessageBox.Show("E-mail adresiniz ya da şifreniz yanlış!");
                 }
-
             }
         }
     }

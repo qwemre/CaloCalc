@@ -26,8 +26,7 @@ namespace BLL
         }
         public Kullanici Ara(int id)
         {
-            var kullanici = Db.Kullanicilar.Find(id);
-            return kullanici;
+            return Db.Kullanicilar.Find(id);
         }
         public bool MailAra(string mail)
         {

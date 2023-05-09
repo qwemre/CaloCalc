@@ -1092,6 +1092,7 @@
             Controls.Add(tabControl1);
             Name = "AnaEkran";
             Text = "AnaEkran";
+            Load += AnaEkran_Load;
             ((System.ComponentModel.ISupportInitialize)nudAksamAtistirmasiPorsiyon).EndInit();
             tabPage5.ResumeLayout(false);
             tabPage5.PerformLayout();

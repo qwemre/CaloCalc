@@ -30,25 +30,27 @@ namespace BLL
             return kullanici;
         }
 
-        public void Ekle(Kullanici entity)
+        public bool Ekle(Kullanici entity)
         {
 
             Db.Kullanicilar.Add(entity);
+            return Db.SaveChanges()>0;
 
         }
 
-        public void Guncelle(Kullanici entity)
+        public bool Guncelle(Kullanici entity)
         {
 
             Db.Kullanicilar.Update(entity);
-            Db.SaveChanges();
+            return Db.SaveChanges() > 0;
         }
 
 
-        public void Sil(int id)
+        public bool Sil(int id)
         {
             var kullanici = Db.Kullanicilar.Find(id);
             Db.Kullanicilar.Remove(kullanici);
+            return Db.SaveChanges() > 0;
 
         }
 

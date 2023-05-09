@@ -24,17 +24,19 @@ namespace BLL
 
         }
 
-        public void Ekle(Kategori entity)
+        public bool Ekle(Kategori entity)
         {
 
             Db.Kategoriler.Add(entity);
+            return Db.SaveChanges() > 0;
 
         }
 
-        public void Guncelle(Kategori entity)
+        public bool Guncelle(Kategori entity)
         {
 
             Db.Kategoriler.Update(entity);
+            return Db.SaveChanges() > 0;
 
 
         }
@@ -47,11 +49,11 @@ namespace BLL
 
         }
 
-        public void Sil(int id)
+        public bool Sil(int id)
         {
 
             var kategori= Db.Kategoriler.Find(id);
-            Db.Kategoriler.Remove(kategori);
+            return Db.SaveChanges() > 0;
 
         }
     }

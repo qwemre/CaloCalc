@@ -20,16 +20,16 @@ namespace BLL
             return Db.Ogunler.Find(id);
         }
 
-        public void Ekle(Ogun entity)
+        public bool Ekle(Ogun entity)
         {
             Db.Ogunler.Add(entity);
-            Db.SaveChanges();
+            return Db.SaveChanges() > 0;
         }
 
-        public void Guncelle(Ogun entity)
+        public bool Guncelle(Ogun entity)
         {
             Db.Ogunler.Update(entity);
-            Db.SaveChanges();
+            return Db.SaveChanges() > 0;
         }
 
         public List<Ogun> Liste()
@@ -37,10 +37,10 @@ namespace BLL
             return Db.Ogunler.ToList();
         }
 
-        public void Sil(int id)
+        public bool Sil(int id)
         {
             Db.Ogunler.Remove(Ara(id));
-            Db.SaveChanges();
+            return Db.SaveChanges() > 0;
         }
     }
 }

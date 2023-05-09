@@ -76,9 +76,8 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(456, 546);
+            panel1.Size = new Size(459, 546);
             panel1.TabIndex = 1;
-            panel1.Paint += panel1_Paint;
             // 
             // label9
             // 
@@ -115,7 +114,6 @@
             mtxtYas.Name = "mtxtYas";
             mtxtYas.Size = new Size(209, 23);
             mtxtYas.TabIndex = 17;
-            mtxtYas.ValidatingType = typeof(int);
             // 
             // txtSoyad
             // 
@@ -168,6 +166,7 @@
             btnKaydol.TabIndex = 8;
             btnKaydol.Text = "KAYDOL";
             btnKaydol.UseVisualStyleBackColor = false;
+            btnKaydol.Click += btnKaydol_Click;
             // 
             // label8
             // 
@@ -258,6 +257,7 @@
             Controls.Add(panel1);
             Name = "Kaydol";
             Text = "Kaydol";
+            Load += Kaydol_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

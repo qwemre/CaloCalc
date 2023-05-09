@@ -21,14 +21,17 @@ namespace BLL
             return Db.Yiyecekler.Find(id);
         }
 
-        public void Ekle(Yiyecek entity)
+        public bool Ekle(Yiyecek entity)
         {
             Db.Yiyecekler.Add(entity);
+            return Db.SaveChanges() > 0;
         }
 
-        public void Guncelle(Yiyecek entity)
+        public bool Guncelle(Yiyecek entity)
         {
             Db.Yiyecekler.Update(entity);
+            return Db.SaveChanges() > 0;
+
         }
 
         public List<Yiyecek> Liste()
@@ -36,9 +39,10 @@ namespace BLL
             return Db.Yiyecekler.ToList();
         }
 
-        public void Sil(int id)
+        public bool Sil(int id)
         {
             Db.Yiyecekler.Remove(Ara(id));
+            return Db.SaveChanges() > 0;
         }
 
         public void EnCokYenenYemekOguneGore(int kullaniciId)

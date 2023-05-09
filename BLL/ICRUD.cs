@@ -2,10 +2,10 @@
 {
     public interface ICRUD<T> where T : class
     {
-        public void Ekle(T entity);
+        public bool Ekle(T entity);
 
-        public void Guncelle(T entity);
-        public void Sil(int id);
+        public bool Guncelle(T entity);
+        public bool Sil(int id);
         public List<T> Liste();
 
         public T Ara(int id);

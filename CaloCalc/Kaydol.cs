@@ -65,6 +65,7 @@ namespace CaloCalc
                     if (eklendiMi)
                     {
                         MessageBox.Show("Başarılı bir şekilde ekleme yaptınız.","Başarılı",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        this.Close();
                     }
                     else
                     {

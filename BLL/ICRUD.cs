@@ -2,7 +2,7 @@
 {
     public interface ICRUD<T> where T : class
     {
-        public bool Ekle(T entity);
+        public bool Ekle(T entity); 
 
         public bool Guncelle(T entity);
         public bool Sil(int id);

@@ -29,6 +29,19 @@ namespace BLL
             var kullanici = Db.Kullanicilar.Find(id);
             return kullanici;
         }
+        public bool MailAra(string mail)
+        {
+            var kullanici = Db.Kullanicilar.FirstOrDefault(x => x.KullaniciMail == mail);
+            if (kullanici==null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
 
         public bool Ekle(Kullanici entity)
         {

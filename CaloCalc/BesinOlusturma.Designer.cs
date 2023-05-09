@@ -33,39 +33,39 @@
             mtxtKalori = new MaskedTextBox();
             pbxYiyecek = new PictureBox();
             txtYemekAdi = new TextBox();
-            nudPorsiyon = new NumericUpDown();
             cbxKategori = new ComboBox();
             btnResimEkle = new Button();
             label4 = new Label();
-            label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            openFileDialog1 = new OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)pbxYiyecek).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudPorsiyon).BeginInit();
             SuspendLayout();
             // 
             // llblKaloriInternet
             // 
             llblKaloriInternet.AutoSize = true;
-            llblKaloriInternet.Location = new Point(343, 249);
+            llblKaloriInternet.Location = new Point(343, 216);
             llblKaloriInternet.Name = "llblKaloriInternet";
             llblKaloriInternet.Size = new Size(162, 15);
             llblKaloriInternet.TabIndex = 47;
             llblKaloriInternet.TabStop = true;
             llblKaloriInternet.Text = "Kalorisini Bilmiyor Musunuz ?";
+            llblKaloriInternet.LinkClicked += llblKaloriInternet_LinkClicked;
             // 
             // btnKaydet
             // 
-            btnKaydet.Location = new Point(395, 355);
+            btnKaydet.Location = new Point(405, 309);
             btnKaydet.Name = "btnKaydet";
             btnKaydet.Size = new Size(75, 23);
             btnKaydet.TabIndex = 46;
             btnKaydet.Text = "Kaydet";
             btnKaydet.UseVisualStyleBackColor = true;
+            btnKaydet.Click += btnKaydet_Click;
             // 
             // mtxtKalori
             // 
-            mtxtKalori.Location = new Point(395, 219);
+            mtxtKalori.Location = new Point(395, 174);
             mtxtKalori.Mask = "0000";
             mtxtKalori.Name = "mtxtKalori";
             mtxtKalori.Size = new Size(100, 23);
@@ -73,7 +73,7 @@
             // 
             // pbxYiyecek
             // 
-            pbxYiyecek.Location = new Point(395, 267);
+            pbxYiyecek.Location = new Point(395, 234);
             pbxYiyecek.Name = "pbxYiyecek";
             pbxYiyecek.Size = new Size(100, 50);
             pbxYiyecek.TabIndex = 44;
@@ -86,18 +86,6 @@
             txtYemekAdi.Size = new Size(100, 23);
             txtYemekAdi.TabIndex = 43;
             // 
-            // nudPorsiyon
-            // 
-            nudPorsiyon.DecimalPlaces = 1;
-            nudPorsiyon.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
-            nudPorsiyon.Location = new Point(395, 167);
-            nudPorsiyon.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
-            nudPorsiyon.Minimum = new decimal(new int[] { 5, 0, 0, 65536 });
-            nudPorsiyon.Name = "nudPorsiyon";
-            nudPorsiyon.Size = new Size(100, 23);
-            nudPorsiyon.TabIndex = 42;
-            nudPorsiyon.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            // 
             // cbxKategori
             // 
             cbxKategori.FormattingEnabled = true;
@@ -108,30 +96,22 @@
             // 
             // btnResimEkle
             // 
-            btnResimEkle.Location = new Point(297, 294);
+            btnResimEkle.Location = new Point(297, 261);
             btnResimEkle.Name = "btnResimEkle";
             btnResimEkle.Size = new Size(75, 23);
             btnResimEkle.TabIndex = 40;
             btnResimEkle.Text = "Resim Ekle";
             btnResimEkle.UseVisualStyleBackColor = true;
+            btnResimEkle.Click += btnResimEkle_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(296, 227);
+            label4.Location = new Point(306, 182);
             label4.Name = "label4";
             label4.Size = new Size(37, 15);
             label4.TabIndex = 36;
             label4.Text = "Kalori";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(296, 174);
-            label3.Name = "label3";
-            label3.Size = new Size(93, 15);
-            label3.TabIndex = 37;
-            label3.Text = "Porsiyon Miktarı";
             // 
             // label2
             // 
@@ -151,6 +131,10 @@
             label1.TabIndex = 39;
             label1.Text = "Yemek Adı";
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
             // BesinOlusturma
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -161,17 +145,15 @@
             Controls.Add(mtxtKalori);
             Controls.Add(pbxYiyecek);
             Controls.Add(txtYemekAdi);
-            Controls.Add(nudPorsiyon);
             Controls.Add(cbxKategori);
             Controls.Add(btnResimEkle);
             Controls.Add(label4);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "BesinOlusturma";
             Text = "BesinOlusturma";
+            Load += BesinOlusturma_Load;
             ((System.ComponentModel.ISupportInitialize)pbxYiyecek).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudPorsiyon).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -183,12 +165,11 @@
         private MaskedTextBox mtxtKalori;
         private PictureBox pbxYiyecek;
         private TextBox txtYemekAdi;
-        private NumericUpDown nudPorsiyon;
         private ComboBox cbxKategori;
         private Button btnResimEkle;
         private Label label4;
-        private Label label3;
         private Label label2;
         private Label label1;
+        private OpenFileDialog openFileDialog1;
     }
 }

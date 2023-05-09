@@ -29,16 +29,10 @@ namespace CaloCalc
         private void btnKaydol_Click(object sender, EventArgs e)
         {
             db = new CaloCalcBussinessLogic();
-            bool kontrol = false;
+           
 
-            foreach (var item in db.Kullanicilar.Liste())
-            {
-                if (kullanici.KullaniciMail == txtMail.Text)
-                {
-                    kontrol = true;
-                }
-
-            }
+            bool kontrol = db.Kullanicilar.MailAra(txtMail.Text);
+           
 
 
             if (kontrol)
@@ -59,12 +53,12 @@ namespace CaloCalc
                     kullanici.Adi = txtAd.Text;
                     kullanici.Soyad = txtSoyad.Text;
                     kullanici.Yasi = int.Parse(mtxtYas.Text);
-                    kullanici.Boy=int.Parse(mtxtBoy.Text);
-                    kullanici.Kilo=int.Parse(mtxtKilo.Text);
-                    bool eklendiMi=db.Kullanicilar.Ekle(kullanici);
+                    kullanici.Boy = int.Parse(mtxtBoy.Text);
+                    kullanici.Kilo = int.Parse(mtxtKilo.Text);
+                    bool eklendiMi = db.Kullanicilar.Ekle(kullanici);
                     if (eklendiMi)
                     {
-                        MessageBox.Show("Başarılı bir şekilde ekleme yaptınız.","Başarılı",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        MessageBox.Show("Başarılı bir şekilde kayıt oldunuz ", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                     else
@@ -81,5 +75,6 @@ namespace CaloCalc
 
         }
 
+      
     }
 }

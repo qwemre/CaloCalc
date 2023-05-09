@@ -44,8 +44,8 @@ namespace BLL
         public List<Kategori> Liste()
         {
 
-            var liste = Db.Kategoriler.ToList();
-            return liste;
+            return Db.Kategoriler.ToList();
+            
 
         }
 

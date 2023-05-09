@@ -1,6 +1,6 @@
 ﻿namespace CaloCalc
 {
-    partial class AnaEkran
+    partial class BesinOlusturma
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "AnaEkran";
+            this.Text = "BesinOlusturma";
         }
 
         #endregion

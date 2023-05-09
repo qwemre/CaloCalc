@@ -58,6 +58,16 @@ namespace CaloCalc
             yiyecek.Kategori = (Kategori)cbxKategori.SelectedItem;
             yiyecek.FotografYolu = yol;
             yiyecek.Fotograf = File.ReadAllBytes(yol);
+            bool eklendiMi= bll.Yiyecekler.Ekle(yiyecek);
+            if (eklendiMi)
+            {
+                MessageBox.Show("Başarılı bir şekilde ekleme yaptınız.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Yiyecek eklerken bir hata meydana geldi", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         
     }

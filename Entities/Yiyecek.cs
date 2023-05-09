@@ -18,11 +18,8 @@ namespace Entities
         public int YiyecekID { get; set; }
         public string YiyecekAdi { get; set; }
         public double Kalori { get; set; }
-        public Porsiyonlar Porsiyon { get; set; }
+        public int Porsiyon { get; set; }
         public int KategoriID { get; set; }
-
-        //Bunlar yapılacak
-
 
         public byte[]? Fotograf { get; set; }
         public string? FotografYolu { get; set; }

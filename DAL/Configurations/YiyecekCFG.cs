@@ -26,7 +26,7 @@ namespace DAL.Configurations
                         YiyecekID = 1,
                         YiyecekAdi = "Kuru Fasulye",
                         Kalori = 300,
-                        Porsiyon = Porsiyonlar.gram,
+                        
                         KategoriID = 1,
                         FotografYolu = "C:\\Users\\EmreK\\Desktop\\fasülye.jpg",
                         Fotograf = File.ReadAllBytes("C:\\Users\\EmreK\\Desktop\\fasülye.jpg")

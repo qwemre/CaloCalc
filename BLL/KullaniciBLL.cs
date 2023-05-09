@@ -118,8 +118,20 @@ namespace BLL
             var toplamKalori = ogunler.Sum(o => o.ToplamKalori);
             return toplamKalori;
         }
+   
+        public int KullaniciGiris(string kullaniciMail, string sifre)
+        {
+            Kullanici kullanici = Db.Kullanicilar.Where(x => x.KullaniciMail == kullaniciMail && x.Sifre == sifre).SingleOrDefault();
 
-
+            if (kullanici.KullaniciID == 0)
+            {
+                return -1;
+            }
+            else
+            {
+                return kullanici.KullaniciID;
+            }
+        }
 
     }
 }

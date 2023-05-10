@@ -1,5 +1,6 @@
 ﻿using DAL.Context;
 using Entities;
+using Entities.Enums;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -86,6 +87,7 @@ namespace BLL
         {
             return Db.Yiyecekler.Find(yiyecekAdi);
         }
+       
 
 
     }

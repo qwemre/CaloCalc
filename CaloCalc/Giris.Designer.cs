@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Giris));
             panel1 = new Panel();
+            txtSifre = new TextBox();
+            txtMail = new TextBox();
             btnGiris = new Button();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            txtMail = new TextBox();
-            txtSifre = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -55,6 +55,22 @@
             panel1.Size = new Size(449, 414);
             panel1.TabIndex = 10;
             // 
+            // txtSifre
+            // 
+            txtSifre.Location = new Point(139, 189);
+            txtSifre.Name = "txtSifre";
+            txtSifre.PlaceholderText = "Şifre Giriniz";
+            txtSifre.Size = new Size(179, 23);
+            txtSifre.TabIndex = 4;
+            // 
+            // txtMail
+            // 
+            txtMail.Location = new Point(140, 157);
+            txtMail.Name = "txtMail";
+            txtMail.PlaceholderText = "E-Mail Giriniz";
+            txtMail.Size = new Size(178, 23);
+            txtMail.TabIndex = 4;
+            // 
             // btnGiris
             // 
             btnGiris.BackColor = Color.ForestGreen;
@@ -63,7 +79,7 @@
             btnGiris.ForeColor = SystemColors.ButtonHighlight;
             btnGiris.Location = new Point(140, 236);
             btnGiris.Name = "btnGiris";
-            btnGiris.Size = new Size(160, 42);
+            btnGiris.Size = new Size(178, 42);
             btnGiris.TabIndex = 3;
             btnGiris.Text = "Giriş";
             btnGiris.UseVisualStyleBackColor = false;
@@ -101,22 +117,6 @@
             label6.Size = new Size(179, 37);
             label6.TabIndex = 0;
             label6.Text = "Giriş Yap";
-            // 
-            // txtMail
-            // 
-            txtMail.Location = new Point(140, 157);
-            txtMail.Name = "txtMail";
-            txtMail.PlaceholderText = "E-Mail Giriniz";
-            txtMail.Size = new Size(160, 23);
-            txtMail.TabIndex = 4;
-            // 
-            // txtSifre
-            // 
-            txtSifre.Location = new Point(139, 189);
-            txtSifre.Name = "txtSifre";
-            txtSifre.PlaceholderText = "Şifre Giriniz";
-            txtSifre.Size = new Size(160, 23);
-            txtSifre.TabIndex = 4;
             // 
             // Giris
             // 

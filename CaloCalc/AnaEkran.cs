@@ -15,7 +15,7 @@ namespace CaloCalc
 {
     public partial class AnaEkran : Form
     {
-        
+
         public AnaEkran()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace CaloCalc
         CaloCalcBussinessLogic bll;
         private void AnaEkran_Load(object sender, EventArgs e)
         {
-            lblSabah.Text = bll.Kullanicilar.OguneGoreKaloriRaporu(1,Ogunler.Kahvaltı).ToString();
+            lblSabah.Text = bll.Kullanicilar.OguneGoreKaloriRaporu(1, Ogunler.Kahvaltı).ToString();
             lblSabahAtistirma.Text = bll.Kullanicilar.OguneGoreKaloriRaporu(1, Ogunler.SabahAtistirmasi).ToString();
             lblOglen.Text = bll.Kullanicilar.OguneGoreKaloriRaporu(1, Ogunler.OglenYemegi).ToString();
             lblOglenAtistirma.Text = bll.Kullanicilar.OguneGoreKaloriRaporu(1, Ogunler.OglenAtistirmasi).ToString();

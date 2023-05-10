@@ -146,6 +146,10 @@ namespace BLL
                 return kullanici.KullaniciID;
             }
         }
+        public Kullanici MaileGoreAra(string Mail)
+        {
+            return Db.Kullanicilar.Find(Mail);
+        }
 
     }
 }

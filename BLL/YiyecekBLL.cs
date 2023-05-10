@@ -82,7 +82,10 @@ namespace BLL
                 .ToList();
             
         }
-
+        public Yiyecek AdaGoreAra(string yiyecekAdi)
+        {
+            return Db.Yiyecekler.Find(yiyecekAdi);
+        }
 
 
     }

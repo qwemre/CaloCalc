@@ -41,15 +41,20 @@ namespace CaloCalc
                     string hashSifre = HelperBLL.sha256_hash(sifre);
                     if (kullanici.Sifre == hashSifre)
                     {
+                        int ıd = kullanici.KullaniciID;
                         this.Hide();
-                        AnaEkran anaEkran = new AnaEkran();
+                        AnaEkran anaEkran = new AnaEkran(ıd);
                         anaEkran.ShowDialog();
                         this.Visible = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("E-mail adresiniz ya da şifreniz yanlış!");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("E-mail adresiniz ya da şifreniz yanlış!");
+                    MessageBox.Show("Kullanıcı Bulunumadı");
                 }
             }
         }

@@ -174,7 +174,6 @@
             cbxAksamAtistirmasi.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbxAksamAtistirmasi.DropDownStyle = ComboBoxStyle.Simple;
             cbxAksamAtistirmasi.FormattingEnabled = true;
-            cbxAksamAtistirmasi.Items.AddRange(new object[] { "asdasd" });
             cbxAksamAtistirmasi.Location = new Point(111, 23);
             cbxAksamAtistirmasi.Name = "cbxAksamAtistirmasi";
             cbxAksamAtistirmasi.Size = new Size(314, 25);
@@ -280,7 +279,6 @@
             cbxAksamYemegi.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbxAksamYemegi.DropDownStyle = ComboBoxStyle.Simple;
             cbxAksamYemegi.FormattingEnabled = true;
-            cbxAksamYemegi.Items.AddRange(new object[] { "asdasd" });
             cbxAksamYemegi.Location = new Point(111, 23);
             cbxAksamYemegi.Name = "cbxAksamYemegi";
             cbxAksamYemegi.Size = new Size(314, 25);
@@ -396,7 +394,6 @@
             cbxOglenAtistirmasi.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbxOglenAtistirmasi.DropDownStyle = ComboBoxStyle.Simple;
             cbxOglenAtistirmasi.FormattingEnabled = true;
-            cbxOglenAtistirmasi.Items.AddRange(new object[] { "asdasd" });
             cbxOglenAtistirmasi.Location = new Point(111, 23);
             cbxOglenAtistirmasi.Name = "cbxOglenAtistirmasi";
             cbxOglenAtistirmasi.Size = new Size(314, 25);
@@ -693,7 +690,6 @@
             cbxSabahKahvaltısı.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbxSabahKahvaltısı.DropDownStyle = ComboBoxStyle.Simple;
             cbxSabahKahvaltısı.FormattingEnabled = true;
-            cbxSabahKahvaltısı.Items.AddRange(new object[] { "asdasd" });
             cbxSabahKahvaltısı.Location = new Point(93, 22);
             cbxSabahKahvaltısı.Name = "cbxSabahKahvaltısı";
             cbxSabahKahvaltısı.Size = new Size(314, 25);
@@ -716,6 +712,7 @@
             btnKahvaltiOgunSil.TabIndex = 22;
             btnKahvaltiOgunSil.Text = "Ögünü Sil";
             btnKahvaltiOgunSil.UseVisualStyleBackColor = true;
+            btnKahvaltiOgunSil.Click += btnKahvaltiOgunSil_Click;
             // 
             // lblKahvaltiKalori
             // 
@@ -780,6 +777,7 @@
             btnKahvaltıEkle.TabIndex = 18;
             btnKahvaltıEkle.Text = "Ekle";
             btnKahvaltıEkle.UseVisualStyleBackColor = true;
+            btnKahvaltıEkle.Click += btnKahvaltıEkle_Click;
             // 
             // btnBesinEkle
             // 
@@ -843,7 +841,6 @@
             cbxSabahAtistirmasi.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbxSabahAtistirmasi.DropDownStyle = ComboBoxStyle.Simple;
             cbxSabahAtistirmasi.FormattingEnabled = true;
-            cbxSabahAtistirmasi.Items.AddRange(new object[] { "asdasd" });
             cbxSabahAtistirmasi.Location = new Point(93, 14);
             cbxSabahAtistirmasi.Name = "cbxSabahAtistirmasi";
             cbxSabahAtistirmasi.Size = new Size(314, 25);
@@ -949,7 +946,6 @@
             cbxOglenYemegi.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbxOglenYemegi.DropDownStyle = ComboBoxStyle.Simple;
             cbxOglenYemegi.FormattingEnabled = true;
-            cbxOglenYemegi.Items.AddRange(new object[] { "asdasd" });
             cbxOglenYemegi.Location = new Point(111, 23);
             cbxOglenYemegi.Name = "cbxOglenYemegi";
             cbxOglenYemegi.Size = new Size(314, 25);

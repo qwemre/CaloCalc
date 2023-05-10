@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,11 +15,9 @@ namespace DAL.Context
         public DbSet<Kullanici> Kullanicilar { get; set; }
         public DbSet<Ogun> Ogunler { get; set; }
         public DbSet<Yiyecek> Yiyecekler { get; set; }
-
-        
-
         public DbSet<Kategori> Kategoriler { get; set; }
 
+       
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -28,7 +27,9 @@ namespace DAL.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Data source=DESKTOP-HNK2G88\\MSSQLSERVER01;initial catalog=Prj_KD15_CaloCalc;integrated security=true");
+            optionsBuilder.UseLazyLoadingProxies()
+                .UseSqlServer("Data source=DESKTOP-HNK2G88\\MSSQLSERVER01;initial catalog=Prj_KD15_CaloCalc;integrated security=true");
+            
         }
     }
 

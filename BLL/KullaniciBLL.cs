@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,7 +32,7 @@ namespace BLL
         public bool MailAra(string mail)
         {
             var kullanici = Db.Kullanicilar.FirstOrDefault(x => x.KullaniciMail == mail);
-            if (kullanici==null)
+            if (kullanici == null)
             {
                 return false;
             }
@@ -46,7 +47,7 @@ namespace BLL
         {
 
             Db.Kullanicilar.Add(entity);
-            return Db.SaveChanges()>0;
+            return Db.SaveChanges() > 0;
 
         }
 
@@ -115,14 +116,14 @@ namespace BLL
         {
             var tarih = DateTime.Now.Date;
             var ogunler = Db.Ogunler
-                .Where(o => o.KullaniciID == kullaniciId && o.YemekYemeZamani.Date == tarih )
+                .Where(o => o.KullaniciID == kullaniciId && o.YemekYemeZamani.Date == tarih)
                 .Include(o => o.Yiyecekler)
                 .ToList();
             var toplamKalori = ogunler.Sum(o => o.ToplamKalori);
             return toplamKalori;
         }
 
-        public double OguneGoreKaloriRaporu(int kullaniciId,Ogunler ogunAdi)
+        public double OguneGoreKaloriRaporu(int kullaniciId, Ogunler ogunAdi)
         {
             var tarih = DateTime.Now.Date;
             var ogunler = Db.Ogunler
@@ -132,7 +133,7 @@ namespace BLL
             var toplamKalori = ogunler.Sum(o => o.ToplamKalori);
             return toplamKalori;
         }
-   
+
         public int KullaniciGiris(string kullaniciMail, string sifre)
         {
             Kullanici kullanici = Db.Kullanicilar.Where(x => x.KullaniciMail == kullaniciMail && x.Sifre == sifre).SingleOrDefault();
@@ -148,8 +149,20 @@ namespace BLL
         }
         public Kullanici MaileGoreAra(string Mail)
         {
-            return Db.Kullanicilar.Find(Mail);
+            return Db.Kullanicilar.FirstOrDefault(x => x.KullaniciMail == Mail);
+        }
+
+        public List<Ogun> OguneGoreYenenYemekRaporu(int kullaniciId, Ogunler ogunAdi)
+        {
+            var tarih = DateTime.Now.Date;
+            var ogunler = Db.Ogunler
+                .Where(o => o.KullaniciID == kullaniciId && o.YemekYemeZamani.Date == tarih && o.OgunAdi == ogunAdi)
+                .Include(o => o.Yiyecekler)
+                .ToList();
+            return ogunler;
+
         }
 
     }
 }
+

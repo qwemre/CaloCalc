@@ -23,6 +23,7 @@ namespace Entities
 
         public int KullaniciID { get; set; }
         public virtual Kullanici Kullanici { get; set; }
+        public int YiyecekID { get; set; }
         public virtual ICollection<Yiyecek> Yiyecekler { get; set; }
     }
 }

@@ -32,7 +32,6 @@ namespace CaloCalc
         private void btnResimEkle_Click(object sender, EventArgs e)
         {
             yol = null;
-            
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image Files(*.jpg; *.jpeg; *.png; *.gif)|*.jpg; *.jpeg; *.png; *.gif";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -41,8 +40,6 @@ namespace CaloCalc
                 pbxYiyecek.SizeMode = PictureBoxSizeMode.StretchImage;
                 yol = openFileDialog.FileName;
             }
-
-
         }
         private void llblKaloriInternet_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -51,22 +48,34 @@ namespace CaloCalc
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            Yiyecek yiyecek = new Yiyecek();
-            yiyecek.YiyecekAdi = txtYemekAdi.Text;
-            yiyecek.Kalori = double.Parse(mtxtKalori.Text);
-            yiyecek.Porsiyon = 1;
-            yiyecek.Kategori = (Kategori)cbxKategori.SelectedItem;
-            yiyecek.FotografYolu = yol;
-            yiyecek.Fotograf = File.ReadAllBytes(yol);
-            bool eklendiMi= bll.Yiyecekler.Ekle(yiyecek);
-            if (eklendiMi)
+            var yiyecekKontrol = bll.Yiyecekler.AdaGoreAra(txtYemekAdi.Text);
+            if (string.IsNullOrEmpty(txtYemekAdi.Text) || string.IsNullOrWhiteSpace(cbxKategori.Text) || string.IsNullOrWhiteSpace(mtxtKalori.Text))
             {
-                MessageBox.Show("Başarılı bir şekilde ekleme yaptınız.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                MessageBox.Show("Lütfen tüm alanları doldurunuz!", "Uyarı");
+            }
+            else if (yiyecekKontrol is not null)
+            {
+                MessageBox.Show("Eklemeye çalıştığınız yiyecek zaten mevcut","Uyarı");
             }
             else
             {
-                MessageBox.Show("Yiyecek eklerken bir hata meydana geldi", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Yiyecek yiyecek = new Yiyecek();
+                yiyecek.YiyecekAdi = txtYemekAdi.Text;
+                yiyecek.Kalori = double.Parse(mtxtKalori.Text);
+                yiyecek.Porsiyon = 1;
+                yiyecek.Kategori = (Kategori)cbxKategori.SelectedItem;
+                yiyecek.FotografYolu = yol;
+                yiyecek.Fotograf = File.ReadAllBytes(yol);
+                bool eklendiMi = bll.Yiyecekler.Ekle(yiyecek);
+                if (eklendiMi)
+                {
+                    MessageBox.Show("Başarılı bir şekilde ekleme yaptınız.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Yiyecek eklerken bir hata meydana geldi", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
         

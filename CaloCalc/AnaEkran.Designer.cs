@@ -664,6 +664,7 @@
             tabPage1.Size = new Size(560, 549);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Ana Sayfa";
+            tabPage1.Click += tabPage1_Click;
             // 
             // label8
             // 

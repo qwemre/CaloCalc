@@ -22,11 +22,11 @@ namespace CaloCalc
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
+
             bussinessLogic = new CaloCalcBussinessLogic();
             if (string.IsNullOrEmpty(txtMail.Text) || string.IsNullOrWhiteSpace(txtMail.Text))
             {
                 MessageBox.Show("Lütfen geçerli bir E-mail adresi girin!", "Uyarı");
-
             }
             else if (string.IsNullOrEmpty(txtSifre.Text) || string.IsNullOrWhiteSpace(txtSifre.Text))
             {
@@ -34,12 +34,18 @@ namespace CaloCalc
             }
             else
             {
-                if (bussinessLogic.Kullanicilar.KullaniciGiris(txtMail.Text, txtSifre.Text) > 0)
+                Kullanici kullanici = bussinessLogic.Kullanicilar.MaileGoreAra(txtMail.Text);
+                if (kullanici is not null)
                 {
-                    this.Hide();
-                    AnaEkran anaEkran = new AnaEkran();
-                    anaEkran.ShowDialog();
-                    this.Visible = true;
+                    string sifre = txtSifre.Text;
+                    string hashSifre = HelperBLL.sha256_hash(sifre);
+                    if (kullanici.Sifre == hashSifre)
+                    {
+                        this.Hide();
+                        AnaEkran anaEkran = new AnaEkran();
+                        anaEkran.ShowDialog();
+                        this.Visible = true;
+                    }
                 }
                 else
                 {

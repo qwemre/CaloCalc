@@ -26,6 +26,6 @@ namespace Entities
        
         public int OgunID { get; set; }
         public virtual ICollection<Ogun> Ogunler { get; set; }
-        public Kategori Kategori { get; set; }
+        public virtual Kategori Kategori { get; set; }
     }
 }

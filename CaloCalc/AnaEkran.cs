@@ -40,5 +40,10 @@ namespace CaloCalc
             frm.ShowDialog();
             this.Visible = true;
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

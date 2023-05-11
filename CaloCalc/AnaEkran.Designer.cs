@@ -119,6 +119,11 @@
             dataGridView17 = new DataGridView();
             tabPage11 = new TabPage();
             tabControl1 = new TabControl();
+            listView1 = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
             ((System.ComponentModel.ISupportInitialize)nudAksamAtistirmasiPorsiyon).BeginInit();
             tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAksamAtistirmasiListe).BeginInit();
@@ -1102,6 +1107,34 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(568, 577);
             tabControl1.TabIndex = 1;
+            // 
+            // listView1
+            // 
+            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
+            listView1.FullRowSelect = true;
+            listView1.GridLines = true;
+            listView1.Location = new Point(93, 254);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(314, 211);
+            listView1.TabIndex = 30;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Yiyecek";
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Kalori";
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Adet";
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Toplam Kalori";
             // 
             // AnaEkran
             // 

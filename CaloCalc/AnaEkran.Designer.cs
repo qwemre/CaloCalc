@@ -85,6 +85,11 @@
             btnKahvaltiGuncelle = new Button();
             btnKahvaltiSil = new Button();
             tabPage9 = new TabPage();
+            lvSabahKahvaltiListe = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
             btnKahvaltıEkle = new Button();
             btnBesinEkle = new Button();
             tabControl2 = new TabControl();
@@ -114,11 +119,6 @@
             dataGridView17 = new DataGridView();
             tabPage11 = new TabPage();
             tabControl1 = new TabControl();
-            listView1 = new ListView();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
-            columnHeader4 = new ColumnHeader();
             ((System.ComponentModel.ISupportInitialize)nudAksamAtistirmasiPorsiyon).BeginInit();
             tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAksamAtistirmasiListe).BeginInit();
@@ -746,7 +746,7 @@
             // 
             // tabPage9
             // 
-            tabPage9.Controls.Add(listView1);
+            tabPage9.Controls.Add(lvSabahKahvaltiListe);
             tabPage9.Controls.Add(nudKahvaltiPorsiyon);
             tabPage9.Controls.Add(cbxSabahKahvaltısı);
             tabPage9.Controls.Add(btnKahvaltiOgunSil);
@@ -762,6 +762,34 @@
             tabPage9.TabIndex = 0;
             tabPage9.Text = "Kahvaltı ";
             tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // lvSabahKahvaltiListe
+            // 
+            lvSabahKahvaltiListe.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
+            lvSabahKahvaltiListe.FullRowSelect = true;
+            lvSabahKahvaltiListe.GridLines = true;
+            lvSabahKahvaltiListe.Location = new Point(93, 254);
+            lvSabahKahvaltiListe.Name = "lvSabahKahvaltiListe";
+            lvSabahKahvaltiListe.Size = new Size(314, 211);
+            lvSabahKahvaltiListe.TabIndex = 31;
+            lvSabahKahvaltiListe.UseCompatibleStateImageBehavior = false;
+            lvSabahKahvaltiListe.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Yiyecek";
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Kalori";
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Adet";
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Toplam Kalori";
             // 
             // btnKahvaltıEkle
             // 
@@ -1075,34 +1103,6 @@
             tabControl1.Size = new Size(568, 577);
             tabControl1.TabIndex = 1;
             // 
-            // listView1
-            // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
-            listView1.FullRowSelect = true;
-            listView1.GridLines = true;
-            listView1.Location = new Point(93, 254);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(314, 211);
-            listView1.TabIndex = 31;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "Yiyecek";
-            // 
-            // columnHeader2
-            // 
-            columnHeader2.Text = "Kalori";
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.Text = "Adet";
-            // 
-            // columnHeader4
-            // 
-            columnHeader4.Text = "Toplam Kalori";
-            // 
             // AnaEkran
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1239,7 +1239,7 @@
         private DataGridView dataGridView17;
         private TabPage tabPage11;
         private TabControl tabControl1;
-        private ListView listView1;
+        private ListView lvSabahKahvaltiListe;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;

@@ -23,13 +23,16 @@ namespace DAL.Context
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CaloCalcDbContext).Assembly);
-         
-    }
+            
+
+
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseLazyLoadingProxies()
                 .UseSqlServer("Data Source=DESKTOP-JSFRVR1\\MSSQLKD15;initial catalog=Prj_KD15_CaloCalc;integrated security=true");
+            
             
         }
     }

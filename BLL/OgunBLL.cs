@@ -25,7 +25,12 @@ namespace BLL
         public bool Ekle(Ogun entity)
         {
             Db.Ogunler.Add(entity);
-            return Db.SaveChanges() > 0;
+            if (Db.SaveChanges() > 0)
+            { 
+                return true;
+            }
+            else { return false; }
+            
         }
 
         public bool Guncelle(Ogun entity)

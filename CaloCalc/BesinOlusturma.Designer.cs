@@ -152,6 +152,7 @@
             Controls.Add(label1);
             Name = "BesinOlusturma";
             Text = "BesinOlusturma";
+            FormClosed += BesinOlusturma_FormClosed;
             Load += BesinOlusturma_Load;
             ((System.ComponentModel.ISupportInitialize)pbxYiyecek).EndInit();
             ResumeLayout(false);

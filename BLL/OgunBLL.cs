@@ -66,6 +66,18 @@ namespace BLL
            .Where(o => o.OgunAdi==ogunler && o.KullaniciID == kullaniciId&&o.YemekYemeZamani.Day==DateTime.Now.Day).ToList();
             return ogun;
         }
+        public List<Ogun> listeleme(int kullaniciID,Ogunler ogun)
+        {
+            using (var context = new CaloCalcDbContext())
+            {
+                var yiyecekler = context.Ogunler
+                    .Include(y => y.Yiyecekler)
+                    .Where(y => y.OgunAdi == ogun&&y.KullaniciID==kullaniciID&&y.YemekYemeZamani.Day==DateTime.Now.Day)
+                    .ToList();
+
+                return yiyecekler;
+            }
+        }
         public List<Ogun> Fıfo2(int kullaniciId, Ogunler ogunler)
         {
             var ogun = Db.Ogunler
@@ -144,18 +156,6 @@ namespace BLL
         //        return yiyecekler;
         //    }
         //}
-        public List<Ogun> listeleme(int kullaniciID)
-        {
-            using (var context = new CaloCalcDbContext())
-            {
-                var yiyecekler = context.Ogunler
-                    .Include(y => y.Yiyecekler)
-                    .Where(y => y.OgunAdi == Ogunler.Kahvaltı&&y.KullaniciID==kullaniciID)
-                    .ToList();
-
-                return yiyecekler;
-            }
-        }
 
 
 

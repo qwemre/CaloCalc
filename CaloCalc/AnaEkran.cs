@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entities;
 using DAL.Context;
+using CaloCalc.Helper;
+
+
 
 namespace CaloCalc
 {
@@ -18,29 +21,24 @@ namespace CaloCalc
     {
         int id;
         Yiyecek yiyecek;
-        Ogun ogun;
-        Ogun ogun1;
-        Ogun ogun2;
-        Ogun ogun3;
-        Ogun ogun4;
-        Ogun ogun5;
+        //Ogun ogun;
+        //Ogun ogun1;
+        //Ogun ogun2;
+        //Ogun ogun3;
+        //Ogun ogun4;
+        //Ogun ogun5;
         DateTime lastUpdate = DateTime.Parse("2023-05-10"); // örnek bir tarih
-
+        CaloCalc.Helper.Methods helper = new();
         public AnaEkran(int ıd)
         {
             InitializeComponent();
             this.id = ıd;
 
+            //ogun = new Ogun();
 
             if (DateTime.Now.Subtract(lastUpdate).TotalDays >= 1)
             {
-                ogun = new Ogun() { OgunAdi = Ogunler.Kahvaltı };
-                ogun1 = new Ogun() { OgunAdi = Ogunler.SabahAtistirmasi };
-                ogun2 = new Ogun() { OgunAdi = Ogunler.OglenYemegi };
-                ogun3 = new Ogun() { OgunAdi = Ogunler.OglenAtistirmasi };
-                ogun4 = new Ogun() { OgunAdi = Ogunler.AksamYemegi };
-                ogun5 = new Ogun() { OgunAdi = Ogunler.AksamAtistirmasi };
-                lastUpdate = DateTime.Now;
+                
             }
 
 
@@ -85,12 +83,13 @@ namespace CaloCalc
             cbxAksamAtistirmasi.DisplayMember = "YiyecekAdi";
             cbxAksamAtistirmasi.ValueMember = "YiyecekID";
 
-            //dgvKahvaltiListe.DataSource = bll.Kullanicilar.OguneGoreYenenYemekRaporu(id, Ogunler.Kahvaltı);
-            //dgvSabahAtistirmaListe.DataSource = bll.Kullanicilar.OguneGoreYenenYemekRaporu(id, Ogunler.SabahAtistirmasi);
-            //dgvOglenYemegiListe.DataSource = bll.Kullanicilar.OguneGoreYenenYemekRaporu(id, Ogunler.OglenYemegi);
-            //dgvOglenAtistirmasiListe.DataSource = bll.Kullanicilar.OguneGoreYenenYemekRaporu(id, Ogunler.OglenAtistirmasi);
-            //dgvAksamYemegiListe.DataSource = bll.Kullanicilar.OguneGoreYenenYemekRaporu(id, Ogunler.AksamYemegi);
-            //dgvAksamAtistirmasiListe.DataSource = bll.Kullanicilar.OguneGoreYenenYemekRaporu(id, Ogunler.AksamAtistirmasi);
+            helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
+            helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
+            helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
+            helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
+            helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
+            helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
+
 
         }
         private void btnBesinEkle_Click(object sender, EventArgs e)
@@ -105,13 +104,14 @@ namespace CaloCalc
 
         }
 
-
+        Ogun ogun;
         private void btnKahvaltıEkle_Click(object sender, EventArgs e)
         {
-
+            ogun=new();
             yiyecek = bll.Yiyecekler.Ara((int)cbxSabahKahvaltısı.SelectedValue);
             ogun.KullaniciID = id;
             ogun.YiyecekID = yiyecek.YiyecekID;
+            ogun.OgunAdi = Ogunler.Kahvaltı;
             ogun.PorsiyonAdet = (double)nudKahvaltiPorsiyon.Value;
             ogun.YemekYemeZamani = DateTime.Now;
             ogun.OgunAdi = Ogunler.Kahvaltı;
@@ -119,36 +119,10 @@ namespace CaloCalc
             bool kontrol = bll.Ogunler.Ekle(ogun);
             if (kontrol)
             {
-                MessageBox.Show("eklendi");
-                //var ogun1 = bll.Ogunler.Fıfo(id, Ogunler.Kahvaltı);
-                //if (ogun1 != null)
-                //{
-                //    foreach (var yemek in ogun1)
-                //    {
-                //           ListViewItem lvi = new ListViewItem();
-                //            lvi.Text = yiyecek.YiyecekAdi.ToString();
-                //            lvi.SubItems.Add(yiyecek.Kalori.ToString());
-                //            lvi.SubItems.Add(yemek.PorsiyonAdet.ToString());
-                //            lvi.SubItems.Add((yemek.PorsiyonAdet * yiyecek.Kalori).ToString());
-                //            listView1.Items.Add(lvi);
+                helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
+                MessageBox.Show("Eklendi");
+                bll = new CaloCalcBussinessLogic();
 
-                //    }
-                //}
-                var liste = bll.Ogunler.listeleme(id);
-                if (liste != null)
-                {
-                    foreach (var yemek in liste)
-                    {
-
-                        ListViewItem lvi = new ListViewItem();
-                        lvi.Text =bll.Yiyecekler.Ara(yemek.YiyecekID).YiyecekAdi.ToString();
-                        lvi.SubItems.Add(bll.Yiyecekler.Ara(yemek.YiyecekID).Kalori.ToString());
-                        lvi.SubItems.Add(yemek.PorsiyonAdet.ToString());
-                        lvi.SubItems.Add((yemek.PorsiyonAdet * bll.Yiyecekler.Ara(yemek.YiyecekID).Kalori).ToString());
-                        listView1.Items.Add(lvi);
-
-                    }
-                }
             }
 
         }
@@ -157,6 +131,9 @@ namespace CaloCalc
         {
 
         }
+
+
+
     }
 
 

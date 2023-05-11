@@ -29,6 +29,7 @@ namespace CaloCalc
         //Ogun ogun5;
         DateTime lastUpdate = DateTime.Parse("2023-05-10"); // örnek bir tarih
         CaloCalc.Helper.Methods helper = new();
+        
         public AnaEkran(int ıd)
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace CaloCalc
 
             if (DateTime.Now.Subtract(lastUpdate).TotalDays >= 1)
             {
-                
+
             }
 
 
@@ -84,20 +85,20 @@ namespace CaloCalc
             cbxAksamAtistirmasi.ValueMember = "YiyecekID";
 
             helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
-            helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
-            helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
-            helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
-            helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
-            helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
+            helper.ListViewYazdirma(id, Ogunler.SabahAtistirmasi, lviSabahAtistirmasiList);
+            helper.ListViewYazdirma(id, Ogunler.OglenYemegi, lviOglenYemegiList);
+            helper.ListViewYazdirma(id, Ogunler.OglenAtistirmasi, lviOglenAtistirmasiList);
+            helper.ListViewYazdirma(id, Ogunler.AksamYemegi, lviAksamYemegiList);
+            helper.ListViewYazdirma(id, Ogunler.AksamAtistirmasi, lviSabahAtistirmasiList);
 
 
         }
         private void btnBesinEkle_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            BesinOlusturma frm = new BesinOlusturma();
+            this.Close();
+            BesinOlusturma frm = new BesinOlusturma(id);
             frm.ShowDialog();
-            this.Visible = true;
+           
         }
         private void tabPage1_Click(object sender, EventArgs e)
         {
@@ -107,14 +108,13 @@ namespace CaloCalc
         Ogun ogun;
         private void btnKahvaltıEkle_Click(object sender, EventArgs e)
         {
-            ogun=new();
+            ogun = new();
             yiyecek = bll.Yiyecekler.Ara((int)cbxSabahKahvaltısı.SelectedValue);
             ogun.KullaniciID = id;
             ogun.YiyecekID = yiyecek.YiyecekID;
             ogun.OgunAdi = Ogunler.Kahvaltı;
             ogun.PorsiyonAdet = (double)nudKahvaltiPorsiyon.Value;
             ogun.YemekYemeZamani = DateTime.Now;
-            ogun.OgunAdi = Ogunler.Kahvaltı;
             ogun.ToplamKalori = (yiyecek.Kalori * ogun.PorsiyonAdet);
             bool kontrol = bll.Ogunler.Ekle(ogun);
             if (kontrol)
@@ -132,8 +132,110 @@ namespace CaloCalc
 
         }
 
+        private void btnSabahAtistirmasiEkle_Click(object sender, EventArgs e)
+        {
 
+            ogun = new();
+            yiyecek = bll.Yiyecekler.Ara((int)cbxSabahAtistirmasi.SelectedValue);
+            ogun.KullaniciID = id;
+            ogun.YiyecekID = yiyecek.YiyecekID;
+            ogun.OgunAdi = Ogunler.AksamAtistirmasi;
+            ogun.PorsiyonAdet = (double)nudSabahAtistirmasiPorsiyon.Value;
+            ogun.YemekYemeZamani = DateTime.Now;
+            ogun.ToplamKalori = (yiyecek.Kalori * ogun.PorsiyonAdet);
+            bool kontrol = bll.Ogunler.Ekle(ogun);
+            if (kontrol)
+            {
+                helper.ListViewYazdirma(id, Ogunler.SabahAtistirmasi, lviSabahAtistirmasiList);
+                MessageBox.Show("Eklendi");
+                bll = new CaloCalcBussinessLogic();
 
+            }
+        }
+
+        private void btnOglenYemegiEkle_Click(object sender, EventArgs e)
+        {
+
+            ogun = new();
+            yiyecek = bll.Yiyecekler.Ara((int)cbxOglenYemegi.SelectedValue);
+            ogun.KullaniciID = id;
+            ogun.YiyecekID = yiyecek.YiyecekID;
+            ogun.OgunAdi = Ogunler.OglenYemegi;
+            ogun.PorsiyonAdet = (double)nudOglenYemegiPorsiyon.Value;
+            ogun.YemekYemeZamani = DateTime.Now;
+            ogun.ToplamKalori = (yiyecek.Kalori * ogun.PorsiyonAdet);
+            bool kontrol = bll.Ogunler.Ekle(ogun);
+            if (kontrol)
+            {
+                helper.ListViewYazdirma(id, Ogunler.OglenYemegi, lviOglenYemegiList);
+                MessageBox.Show("Eklendi");
+                bll = new CaloCalcBussinessLogic();
+
+            }
+        }
+
+        private void btnOglenAtistirmasiEkle_Click(object sender, EventArgs e)
+        {
+
+            ogun = new();
+            yiyecek = bll.Yiyecekler.Ara((int)cbxOglenAtistirmasi.SelectedValue);
+            ogun.KullaniciID = id;
+            ogun.YiyecekID = yiyecek.YiyecekID;
+            ogun.OgunAdi = Ogunler.OglenAtistirmasi;
+            ogun.PorsiyonAdet = (double)nudOglenAtistirmasiPorsiyon.Value;
+            ogun.YemekYemeZamani = DateTime.Now;
+            ogun.ToplamKalori = (yiyecek.Kalori * ogun.PorsiyonAdet);
+            bool kontrol = bll.Ogunler.Ekle(ogun);
+            if (kontrol)
+            {
+                helper.ListViewYazdirma(id, Ogunler.OglenAtistirmasi, lviOglenAtistirmasiList);
+                MessageBox.Show("Eklendi");
+                bll = new CaloCalcBussinessLogic();
+
+            }
+        }
+
+        private void btnAksamYemegiEkle_Click(object sender, EventArgs e)
+        {
+
+            ogun = new();
+            yiyecek = bll.Yiyecekler.Ara((int)cbxAksamYemegi.SelectedValue);
+            ogun.KullaniciID = id;
+            ogun.YiyecekID = yiyecek.YiyecekID;
+            ogun.OgunAdi = Ogunler.AksamYemegi;
+            ogun.PorsiyonAdet = (double)nudAksamYemegiPorsiyon.Value;
+            ogun.YemekYemeZamani = DateTime.Now;
+            ogun.ToplamKalori = (yiyecek.Kalori * ogun.PorsiyonAdet);
+            bool kontrol = bll.Ogunler.Ekle(ogun);
+            if (kontrol)
+            {
+                helper.ListViewYazdirma(id, Ogunler.AksamYemegi, lviAksamYemegiList);
+                MessageBox.Show("Eklendi");
+                bll = new CaloCalcBussinessLogic();
+
+            }
+        }
+
+        private void btnAksamAtistirmasiEkle_Click(object sender, EventArgs e)
+        {
+
+            ogun = new();
+            yiyecek = bll.Yiyecekler.Ara((int)cbxAksamAtistirmasi.SelectedValue);
+            ogun.KullaniciID = id;
+            ogun.YiyecekID = yiyecek.YiyecekID;
+            ogun.OgunAdi = Ogunler.Kahvaltı;
+            ogun.PorsiyonAdet = (double)nudAksamAtistirmasiPorsiyon.Value;
+            ogun.YemekYemeZamani = DateTime.Now;
+            ogun.ToplamKalori = (yiyecek.Kalori * ogun.PorsiyonAdet);
+            bool kontrol = bll.Ogunler.Ekle(ogun);
+            if (kontrol)
+            {
+                helper.ListViewYazdirma(id, Ogunler.AksamAtistirmasi, lviAksamAtistirmasiList);
+                MessageBox.Show("Eklendi");
+                bll = new CaloCalcBussinessLogic();
+
+            }
+        }
     }
 
 

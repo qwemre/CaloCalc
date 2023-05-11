@@ -172,7 +172,12 @@ namespace CaloCalc
                     foreach (var yemek in ogun1)
                     {
                         ListViewItem lvi = new ListViewItem();
-                       //lvi.Text = yemek
+                        lvi.Text = yemek.Kullanici.Adi;
+                        foreach (var item in yemek.Yiyecekler)
+                        {
+                            
+                        }
+
                         //lvi.SubItems.Add(yemek.Yiyecekler.Kalori.ToString());
                         lvi.SubItems.Add(yemek.PorsiyonAdet.ToString());
                         //lvi.SubItems.Add((yemek.PorsiyonAdet * yemek.Yiyecekler.Kalori).ToString());

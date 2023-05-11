@@ -85,11 +85,6 @@
             btnKahvaltiGuncelle = new Button();
             btnKahvaltiSil = new Button();
             tabPage9 = new TabPage();
-            listView1 = new ListView();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
-            columnHeader4 = new ColumnHeader();
             btnKahvaltıEkle = new Button();
             btnBesinEkle = new Button();
             tabControl2 = new TabControl();
@@ -768,34 +763,6 @@
             tabPage9.Text = "Kahvaltı ";
             tabPage9.UseVisualStyleBackColor = true;
             // 
-            // listView1
-            // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
-            listView1.FullRowSelect = true;
-            listView1.GridLines = true;
-            listView1.Location = new Point(93, 254);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(314, 158);
-            listView1.TabIndex = 30;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "Yiyecek";
-            // 
-            // columnHeader2
-            // 
-            columnHeader2.Text = "Kalori";
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.Text = "Adet";
-            // 
-            // columnHeader4
-            // 
-            columnHeader4.Text = "Toplam Kalori";
-            // 
             // btnKahvaltıEkle
             // 
             btnKahvaltıEkle.Location = new Point(227, 146);
@@ -1116,7 +1083,7 @@
             listView1.Location = new Point(93, 254);
             listView1.Name = "listView1";
             listView1.Size = new Size(314, 211);
-            listView1.TabIndex = 30;
+            listView1.TabIndex = 31;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
             // 

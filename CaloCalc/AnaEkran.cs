@@ -42,7 +42,7 @@ namespace CaloCalc
                 ogun5 = new Ogun() { OgunAdi = Ogunler.AksamAtistirmasi };
                 lastUpdate = DateTime.Now;
             }
-            yiyecek = new Yiyecek();
+
 
             bll = new CaloCalcBussinessLogic();
         }
@@ -108,14 +108,14 @@ namespace CaloCalc
 
         private void btnKahvaltıEkle_Click(object sender, EventArgs e)
         {
-
-            yiyecek = bll.Yiyecekler.Ara((int)cbxSabahKahvaltısı.SelectedValue);
+                        
+            var yiyecek1 = bll.Yiyecekler.Ara((int)cbxSabahKahvaltısı.SelectedValue);
             ogun.KullaniciID = id;
-            ogun.Yiyecekler.Add(yiyecek);
+            ogun.YiyecekID = yiyecek1.YiyecekID;
             ogun.PorsiyonAdet = (double)nudKahvaltiPorsiyon.Value;
             ogun.YemekYemeZamani = DateTime.Now;
             ogun.OgunAdi = Ogunler.Kahvaltı;
-            ogun.ToplamKalori = (yiyecek.Kalori * ogun.PorsiyonAdet);
+            ogun.ToplamKalori = (yiyecek1.Kalori * ogun.PorsiyonAdet);
             bool kontrol = bll.Ogunler.Ekle(ogun);
             if (kontrol)
             {
@@ -125,14 +125,13 @@ namespace CaloCalc
                 {
                     foreach (var yemek in ogun1)
                     {
-                        ListViewItem lvi = new ListViewItem();
-                        foreach (var item in yemek.Yiyecekler)
-                        {
-                            lvi.Text = item.YiyecekAdi.ToString();
-                            lvi.SubItems.Add(item.Kalori.ToString());
-                            lvi.SubItems.Add(item.Ogun.PorsiyonAdet.ToString());
-                            lvi.SubItems.Add((item.Ogun.PorsiyonAdet * item.Kalori).ToString());
-                        }
+                           ListViewItem lvi = new ListViewItem();
+                            lvi.Text = yiyecek1.YiyecekAdi.ToString();
+                            lvi.SubItems.Add(yiyecek1.Kalori.ToString());
+                            lvi.SubItems.Add(yemek.PorsiyonAdet.ToString());
+                            lvi.SubItems.Add((yemek.PorsiyonAdet * yiyecek1.Kalori).ToString());
+                            listView1.Items.Add(lvi);
+                        
                     }
                 }
 

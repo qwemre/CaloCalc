@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -89,7 +90,72 @@ namespace BLL
         }
 
 
+        //public List<Entities.Yiyecek> listeleme(int kullaniciID,int ogunID)
+        //{
+        //    using (var context = new CaloCalcDbContext())
+        //    {
+        //        var yiyecekler = context.Yiyecekler
+        //            .Join(context.Ogunler,
+        //                  y => y.YiyecekID,
+        //                  o => o.OgunID,
+        //                  (y, o) => new
+        //                  {
+        //                      o.OgunID,
+        //                      o.KullaniciID,
+        //                      y.YiyecekAdi,
+        //                      y.Kalori,                              
+        //                      o.OgunAdi,
+        //                      o.YemekYemeZamani,
+        //                      o.PorsiyonAdet,
+        //                      o.ToplamKalori
+        //                  }).Where(x=>x.KullaniciID==kullaniciID&&x.OgunID==ogunID)
+        //            .ToList();
+        //        return yiyecekler;
+        //    }
 
+        //}
+        //public List<Yiyecek> listeleme(int kullaniciID, Ogunler ogunler)
+        //{
+        //    using (var context = new CaloCalcDbContext())
+        //    {
+        //        var yiyecekler = context.Yiyecekler
+        //            .Join(context.Ogunler,
+        //                  y => y.OgunID,
+        //                  o => o.OgunID,
+        //                  (y, o) => new { Yiyecek = y, Ogun = o })
+        //            .Where(x => x.Ogun.KullaniciID == kullaniciID && x.Ogun.OgunAdi==ogunler && x.Ogun.YemekYemeZamani.Day == DateTime.Now.Day)
+        //            .Select(x => x.Yiyecek)
+        //            .ToList();
+        //        return yiyecekler;
+        //    }
+        //}
+        //public List<Yiyecek> listeleme(int kullaniciID)
+        //{
+        //    using (var context = new CaloCalcDbContext())
+        //    {
+        //        var yiyecekler = context.Yiyecekler
+        //            .Join(context.Ogunler,
+        //                  y => y.YiyecekID,
+        //                  o => o.YiyecekID,
+        //                  (y, o) => new { Yiyecek = y, Ogun = o })
+        //            .Where(x => x.Ogun.OgunAdi == Ogunler.Kahvaltı&&x.Ogun.Kullanici.KullaniciID==kullaniciID)
+        //            .Select(x => x.Yiyecek)
+        //            .ToList();
+        //        return yiyecekler;
+        //    }
+        //}
+        public List<Ogun> listeleme(int kullaniciID)
+        {
+            using (var context = new CaloCalcDbContext())
+            {
+                var yiyecekler = context.Ogunler
+                    .Include(y => y.Yiyecekler)
+                    .Where(y => y.OgunAdi == Ogunler.Kahvaltı&&y.KullaniciID==kullaniciID)
+                    .ToList();
+
+                return yiyecekler;
+            }
+        }
 
 
 

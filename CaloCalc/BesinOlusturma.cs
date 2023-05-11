@@ -62,8 +62,8 @@ namespace CaloCalc
                 Yiyecek yiyecek = new Yiyecek();
                 yiyecek.YiyecekAdi = txtYemekAdi.Text;
                 yiyecek.Kalori = double.Parse(mtxtKalori.Text);
-                yiyecek.Porsiyon = 1;
-                yiyecek.Kategori = (Kategori)cbxKategori.SelectedItem;
+                
+                yiyecek.KategoriID = (int)cbxKategori.SelectedValue;
                 yiyecek.FotografYolu = yol;
                 yiyecek.Fotograf = File.ReadAllBytes(yol);
                 bool eklendiMi = bll.Yiyecekler.Ekle(yiyecek);

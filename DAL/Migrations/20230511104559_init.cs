@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DAL.Migrations
 {
-    public partial class vol1 : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Kategori",
+                name: "Kategoriler",
                 columns: table => new
                 {
                     KategoriID = table.Column<int>(type: "int", nullable: false)
@@ -19,7 +19,7 @@ namespace DAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Kategori", x => x.KategoriID);
+                    table.PrimaryKey("PK_Kategoriler", x => x.KategoriID);
                 });
 
             migrationBuilder.CreateTable(
@@ -39,29 +39,6 @@ namespace DAL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Kullanicilar", x => x.KullaniciID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Yiyecekler",
-                columns: table => new
-                {
-                    YiyecekID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    YiyecekAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Kalori = table.Column<double>(type: "float", nullable: false),
-                    Porsiyon = table.Column<int>(type: "int", nullable: false),
-                    KategoriID = table.Column<int>(type: "int", nullable: false),
-                    OgunID = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Yiyecekler", x => x.YiyecekID);
-                    table.ForeignKey(
-                        name: "FK_Yiyecekler_Kategori_KategoriID",
-                        column: x => x.KategoriID,
-                        principalTable: "Kategori",
-                        principalColumn: "KategoriID",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -88,27 +65,50 @@ namespace DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "OgunYiyecek",
+                name: "Yiyecekler",
                 columns: table => new
                 {
-                    OgunlerOgunID = table.Column<int>(type: "int", nullable: false),
-                    YiyeceklerYiyecekID = table.Column<int>(type: "int", nullable: false)
+                    YiyecekID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    YiyecekAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Kalori = table.Column<double>(type: "float", nullable: false),
+                    Porsiyon = table.Column<int>(type: "int", nullable: false),
+                    Fotograf = table.Column<byte[]>(type: "image", nullable: true),
+                    FotografYolu = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    OgunID = table.Column<int>(type: "int", nullable: false),
+                    KategoriID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OgunYiyecek", x => new { x.OgunlerOgunID, x.YiyeceklerYiyecekID });
+                    table.PrimaryKey("PK_Yiyecekler", x => x.YiyecekID);
                     table.ForeignKey(
-                        name: "FK_OgunYiyecek_Ogunler_OgunlerOgunID",
-                        column: x => x.OgunlerOgunID,
+                        name: "FK_Yiyecekler_Kategoriler_KategoriID",
+                        column: x => x.KategoriID,
+                        principalTable: "Kategoriler",
+                        principalColumn: "KategoriID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Yiyecekler_Ogunler_OgunID",
+                        column: x => x.OgunID,
                         principalTable: "Ogunler",
                         principalColumn: "OgunID",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_OgunYiyecek_Yiyecekler_YiyeceklerYiyecekID",
-                        column: x => x.YiyeceklerYiyecekID,
-                        principalTable: "Yiyecekler",
-                        principalColumn: "YiyecekID",
-                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Kategoriler",
+                columns: new[] { "KategoriID", "KategoriAdi" },
+                values: new object[,]
+                {
+                    { 1, "Ana Yemekler" },
+                    { 2, "Çorbalar" },
+                    { 3, "Salatalar" },
+                    { 4, "Tatlılar" },
+                    { 5, "İçecekler" },
+                    { 6, "Meyveler" },
+                    { 7, "Abur Cubur" },
+                    { 8, "Kahvaltılık" },
+                    { 9, "Sebzeler" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -117,32 +117,29 @@ namespace DAL.Migrations
                 column: "KullaniciID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_OgunYiyecek_YiyeceklerYiyecekID",
-                table: "OgunYiyecek",
-                column: "YiyeceklerYiyecekID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Yiyecekler_KategoriID",
                 table: "Yiyecekler",
                 column: "KategoriID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Yiyecekler_OgunID",
+                table: "Yiyecekler",
+                column: "OgunID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "OgunYiyecek");
+                name: "Yiyecekler");
+
+            migrationBuilder.DropTable(
+                name: "Kategoriler");
 
             migrationBuilder.DropTable(
                 name: "Ogunler");
 
             migrationBuilder.DropTable(
-                name: "Yiyecekler");
-
-            migrationBuilder.DropTable(
                 name: "Kullanicilar");
-
-            migrationBuilder.DropTable(
-                name: "Kategori");
         }
     }
 }

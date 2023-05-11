@@ -1,5 +1,7 @@
 ﻿using DAL.Context;
 using Entities;
+using Entities.Enums;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,5 +44,55 @@ namespace BLL
             Db.Ogunler.Remove(Ara(id));
             return Db.SaveChanges() > 0;
         }
+        public List<Ogun> OguneGoreYenenYemekRaporu(int kullaniciId, Ogunler ogunAdi)
+        {
+            var tarih = DateTime.Now.Date;
+            var ogunler = Db.Ogunler
+                .Where(o => o.KullaniciID == kullaniciId && o.YemekYemeZamani.Date == tarih && o.OgunAdi == ogunAdi)
+                .ToList();
+            return ogunler;
+        }
+
+        public List<Ogun> Fıfo(int kullaniciId,Ogunler ogunler)
+        {
+            var ogun = Db.Ogunler
+           .Include(o => o.Yiyecekler)
+           .Where(o => o.OgunAdi==ogunler && o.KullaniciID == kullaniciId).ToList();
+            return ogun;
+        }
+        public List<Ogun> Fıfo2(int kullaniciId, Ogunler ogunler)
+        {
+            var ogun = Db.Ogunler
+           .Include(o => o.Yiyecekler)
+           .Where(o => o.OgunAdi == ogunler && o.KullaniciID == kullaniciId).ToList();
+            
+            return ogun;
+        }
+
+
+
+
+
+
+
+
+        //public List<object> GetYemekRaporu(int kullaniciId, Ogunler ogunAdi)
+        //{
+
+        //        var rapor = Db.Ogunler
+        //            .Include(o => o.Yiyecekler)
+        //            .Where(o => o.OgunAdi == ogunAdi && o.KullaniciID == kullaniciId)
+        //            .Select(o => new
+        //            {
+        //                YemekAdi = o.Yiyecekler
+        //                KullaniciAdi = o.Kullanici.Adi,
+        //                OgunAdi = o.OgunAdi.ToString()
+        //            })
+        //            .ToList();
+
+        //        return rapor.Cast<object>().ToList();
+
+        //}
     }
+
 }

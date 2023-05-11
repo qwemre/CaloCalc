@@ -46,43 +46,7 @@ namespace BLL
             return Db.SaveChanges() > 0;
         }
 
-        public void EnCokYenenYemekOguneGore(int kullaniciId)
-        {
-            var userMeals = Db.Ogunler
-            .Where(o => o.KullaniciID == kullaniciId)
-            .Include(o => o.Yiyecekler)
-            .ToList();
-
-            var mealDetails = userMeals
-                .SelectMany(o => o.Yiyecekler.Select(y => new
-                {
-                    MealType = o.OgunAdi,
-                    FoodName = y.YiyecekAdi,
-                    Calories = y.Porsiyon * y.Kalori
-                }))
-                .GroupBy(d => new { d.MealType, d.FoodName })
-                .Select(g => new
-                {
-                    MealType = g.Key.MealType,
-                    FoodName = g.Key.FoodName,
-                    TotalCalories = g.Sum(d => d.Calories)
-                })
-                .OrderBy(d => d.MealType)
-                .ThenBy(d => d.FoodName)
-                .ToList();
-        }
-
-        public void EnCokYenenYemekler()
-        {
-            var mostEatenFoods = Db.Ogunler
-                .SelectMany(o => o.Yiyecekler)
-                .GroupBy(y => y)
-                .OrderByDescending(g => g.Count())
-                .Take(10) 
-                .Select(g => new { Yemek = g.Key, Toplam = g.Count() })
-                .ToList();
-            
-        }
+     
         public Yiyecek AdaGoreAra(string yiyecekAdi)
         {
             return Db.Yiyecekler.Find(yiyecekAdi);

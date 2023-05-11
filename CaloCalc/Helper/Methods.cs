@@ -29,6 +29,7 @@ namespace CaloCalc.Helper
                     lvi.SubItems.Add(bll.Yiyecekler.Ara(yemek.YiyecekID).Kalori.ToString());
                     lvi.SubItems.Add(yemek.PorsiyonAdet.ToString());
                     lvi.SubItems.Add((yemek.PorsiyonAdet * bll.Yiyecekler.Ara(yemek.YiyecekID).Kalori).ToString());
+                    lvi.Tag = yemek.OgunID;
                     listView.Items.Add(lvi);
                 }
             }

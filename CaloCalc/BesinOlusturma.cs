@@ -16,10 +16,12 @@ namespace CaloCalc
 {
     public partial class BesinOlusturma : Form
     {
-        public BesinOlusturma()
+        int id;
+        public BesinOlusturma(int id)
         {
             InitializeComponent();
             bll = new CaloCalcBussinessLogic();
+            this.id = id;
         }
         CaloCalcBussinessLogic bll;
         private void BesinOlusturma_Load(object sender, EventArgs e)
@@ -70,6 +72,8 @@ namespace CaloCalc
                 if (eklendiMi)
                 {
                     MessageBox.Show("Başarılı bir şekilde ekleme yaptınız.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AnaEkran anaEkran = new AnaEkran(id);
+                    anaEkran.ShowDialog();
                     this.Close();
                 }
                 else

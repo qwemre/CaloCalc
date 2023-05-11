@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(CaloCalcDbContext))]
-    [Migration("20230507223540_vol1")]
+    [Migration("20230511102009_vol1")]
     partial class vol1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,7 +38,54 @@ namespace DAL.Migrations
 
                     b.HasKey("KategoriID");
 
-                    b.ToTable("Kategori");
+                    b.ToTable("Kategoriler");
+
+                    b.HasData(
+                        new
+                        {
+                            KategoriID = 1,
+                            KategoriAdi = "Ana Yemekler"
+                        },
+                        new
+                        {
+                            KategoriID = 2,
+                            KategoriAdi = "Çorbalar"
+                        },
+                        new
+                        {
+                            KategoriID = 3,
+                            KategoriAdi = "Salatalar"
+                        },
+                        new
+                        {
+                            KategoriID = 4,
+                            KategoriAdi = "Tatlılar"
+                        },
+                        new
+                        {
+                            KategoriID = 5,
+                            KategoriAdi = "İçecekler"
+                        },
+                        new
+                        {
+                            KategoriID = 6,
+                            KategoriAdi = "Meyveler"
+                        },
+                        new
+                        {
+                            KategoriID = 7,
+                            KategoriAdi = "Abur Cubur"
+                        },
+                        new
+                        {
+                            KategoriID = 8,
+                            KategoriAdi = "Kahvaltılık"
+                        },
+                        new
+                        {
+                            KategoriID = 9,
+                            KategoriAdi = "Sebzeler"
+                        });
                 });
 
             modelBuilder.Entity("Entities.Kullanici", b =>
@@ -117,6 +164,13 @@ namespace DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("YiyecekID"), 1L, 1);
 
+                    b.Property<byte[]>("Fotograf")
+                        .HasColumnType("image");
+
+                    b.Property<string>("FotografYolu")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
                     b.Property<double>("Kalori")
                         .HasColumnType("float");
 
@@ -137,22 +191,9 @@ namespace DAL.Migrations
 
                     b.HasIndex("KategoriID");
 
+                    b.HasIndex("OgunID");
+
                     b.ToTable("Yiyecekler");
-                });
-
-            modelBuilder.Entity("OgunYiyecek", b =>
-                {
-                    b.Property<int>("OgunlerOgunID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("YiyeceklerYiyecekID")
-                        .HasColumnType("int");
-
-                    b.HasKey("OgunlerOgunID", "YiyeceklerYiyecekID");
-
-                    b.HasIndex("YiyeceklerYiyecekID");
-
-                    b.ToTable("OgunYiyecek");
                 });
 
             modelBuilder.Entity("Entities.Ogun", b =>
@@ -174,22 +215,15 @@ namespace DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Entities.Ogun", "Ogun")
+                        .WithMany("Yiyecekler")
+                        .HasForeignKey("OgunID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Kategori");
-                });
 
-            modelBuilder.Entity("OgunYiyecek", b =>
-                {
-                    b.HasOne("Entities.Ogun", null)
-                        .WithMany()
-                        .HasForeignKey("OgunlerOgunID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Entities.Yiyecek", null)
-                        .WithMany()
-                        .HasForeignKey("YiyeceklerYiyecekID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Ogun");
                 });
 
             modelBuilder.Entity("Entities.Kategori", b =>
@@ -200,6 +234,11 @@ namespace DAL.Migrations
             modelBuilder.Entity("Entities.Kullanici", b =>
                 {
                     b.Navigation("Ogunler");
+                });
+
+            modelBuilder.Entity("Entities.Ogun", b =>
+                {
+                    b.Navigation("Yiyecekler");
                 });
 #pragma warning restore 612, 618
         }

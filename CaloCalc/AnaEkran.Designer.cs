@@ -79,7 +79,6 @@
             label8 = new Label();
             nudKahvaltiPorsiyon = new NumericUpDown();
             cbxSabahKahvaltısı = new ComboBox();
-            dgvKahvaltiListe = new DataGridView();
             btnKahvaltiOgunSil = new Button();
             lblKahvaltiKalori = new Label();
             label21 = new Label();
@@ -115,6 +114,11 @@
             dataGridView17 = new DataGridView();
             tabPage11 = new TabPage();
             tabControl1 = new TabControl();
+            listView1 = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
             ((System.ComponentModel.ISupportInitialize)nudAksamAtistirmasiPorsiyon).BeginInit();
             tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAksamAtistirmasiListe).BeginInit();
@@ -126,7 +130,6 @@
             tabPage4.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudKahvaltiPorsiyon).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvKahvaltiListe).BeginInit();
             tabPage9.SuspendLayout();
             tabControl2.SuspendLayout();
             tabPage10.SuspendLayout();
@@ -695,15 +698,6 @@
             cbxSabahKahvaltısı.Size = new Size(314, 25);
             cbxSabahKahvaltısı.TabIndex = 28;
             // 
-            // dgvKahvaltiListe
-            // 
-            dgvKahvaltiListe.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvKahvaltiListe.Location = new Point(91, 253);
-            dgvKahvaltiListe.Name = "dgvKahvaltiListe";
-            dgvKahvaltiListe.RowTemplate.Height = 25;
-            dgvKahvaltiListe.Size = new Size(328, 129);
-            dgvKahvaltiListe.TabIndex = 24;
-            // 
             // btnKahvaltiOgunSil
             // 
             btnKahvaltiOgunSil.Location = new Point(442, 442);
@@ -752,9 +746,9 @@
             // 
             // tabPage9
             // 
+            tabPage9.Controls.Add(listView1);
             tabPage9.Controls.Add(nudKahvaltiPorsiyon);
             tabPage9.Controls.Add(cbxSabahKahvaltısı);
-            tabPage9.Controls.Add(dgvKahvaltiListe);
             tabPage9.Controls.Add(btnKahvaltiOgunSil);
             tabPage9.Controls.Add(lblKahvaltiKalori);
             tabPage9.Controls.Add(label21);
@@ -1081,6 +1075,34 @@
             tabControl1.Size = new Size(568, 577);
             tabControl1.TabIndex = 1;
             // 
+            // listView1
+            // 
+            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
+            listView1.FullRowSelect = true;
+            listView1.GridLines = true;
+            listView1.Location = new Point(93, 254);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(314, 211);
+            listView1.TabIndex = 30;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Yiyecek";
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Kalori";
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Adet";
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Toplam Kalori";
+            // 
             // AnaEkran
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1105,7 +1127,6 @@
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nudKahvaltiPorsiyon).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvKahvaltiListe).EndInit();
             tabPage9.ResumeLayout(false);
             tabPage9.PerformLayout();
             tabControl2.ResumeLayout(false);
@@ -1183,7 +1204,6 @@
         private Label label8;
         private NumericUpDown nudKahvaltiPorsiyon;
         private ComboBox cbxSabahKahvaltısı;
-        private DataGridView dgvKahvaltiListe;
         private Button btnKahvaltiOgunSil;
         private Label lblKahvaltiKalori;
         private Label label21;
@@ -1219,5 +1239,10 @@
         private DataGridView dataGridView17;
         private TabPage tabPage11;
         private TabControl tabControl1;
+        private ListView listView1;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
     }
 }

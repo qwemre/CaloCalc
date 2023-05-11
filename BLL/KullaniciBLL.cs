@@ -89,29 +89,7 @@ namespace BLL
                 .ToList();
         }
 
-        public void HaftalikKategoriKiyasRaporu(int kullaniciId)
-        {
-            var oneWeekAgo = DateTime.Today.AddDays(-7);
-            var userMeals = Db.Ogunler
-                .Include(o => o.Yiyecekler)
-                .Where(o => o.KullaniciID == kullaniciId && o.YemekYemeZamani >= oneWeekAgo)
-                .ToList();
 
-            var weeklyComparison = Db.Ogunler
-                .Include(o => o.Yiyecekler)
-                .Where(o => o.KullaniciID != kullaniciId && o.YemekYemeZamani >= oneWeekAgo)
-                .GroupBy(o => new { WeekStart = o.YemekYemeZamani.Date.AddDays(-(int)o.YemekYemeZamani.DayOfWeek), o.Yiyecekler.FirstOrDefault().Kategori })
-                .Select(g => new
-                {
-                    WeekStart = g.Key.WeekStart,
-                    Category = g.Key.Kategori,
-                    UserCalories = userMeals.Where(um => um.YemekYemeZamani.Date.AddDays(-(int)um.YemekYemeZamani.DayOfWeek) == g.Key.WeekStart && um.Yiyecekler.FirstOrDefault().Kategori == g.Key.Kategori).Sum(um => um.ToplamKalori),
-                    OtherUsersCalories = g.Sum(o => o.ToplamKalori)
-                })
-                .OrderByDescending(c => c.WeekStart)
-                .ThenBy(c => c.Category)
-                .ToList();
-        }
         public double GunSonuRaporu(int kullaniciId)
         {
             var tarih = DateTime.Now.Date;
@@ -157,12 +135,11 @@ namespace BLL
             var tarih = DateTime.Now.Date;
             var ogunler = Db.Ogunler
                 .Where(o => o.KullaniciID == kullaniciId && o.YemekYemeZamani.Date == tarih && o.OgunAdi == ogunAdi)
-                .Include(o => o.Yiyecekler)
+                .Include(o => o.Yiyecekler).ThenInclude(k => k.YiyecekAdi)
                 .ToList();
             return ogunler;
-
         }
-
+        
     }
 }
 

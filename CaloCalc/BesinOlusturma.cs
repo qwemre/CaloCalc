@@ -57,24 +57,25 @@ namespace CaloCalc
             }
             else if (yiyecekKontrol is not null)
             {
-                MessageBox.Show("Eklemeye çalıştığınız yiyecek zaten mevcut","Uyarı");
+                MessageBox.Show("Eklemeye çalıştığınız yiyecek zaten mevcut", "Uyarı");
             }
             else
             {
                 Yiyecek yiyecek = new Yiyecek();
                 yiyecek.YiyecekAdi = txtYemekAdi.Text;
                 yiyecek.Kalori = double.Parse(mtxtKalori.Text);
-                
+
                 yiyecek.KategoriID = (int)cbxKategori.SelectedValue;
                 yiyecek.FotografYolu = yol;
                 yiyecek.Fotograf = File.ReadAllBytes(yol);
                 bool eklendiMi = bll.Yiyecekler.Ekle(yiyecek);
                 if (eklendiMi)
                 {
+                    this.Hide();
+                    this.Close();
                     MessageBox.Show("Başarılı bir şekilde ekleme yaptınız.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     AnaEkran anaEkran = new AnaEkran(id);
                     anaEkran.ShowDialog();
-                    this.Close();
                 }
                 else
                 {
@@ -82,6 +83,13 @@ namespace CaloCalc
                 }
             }
         }
-        
+
+        private void BesinOlusturma_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            this.Close();            
+            AnaEkran anaEkran = new AnaEkran(id);
+            anaEkran.ShowDialog();
+        }
     }
 }

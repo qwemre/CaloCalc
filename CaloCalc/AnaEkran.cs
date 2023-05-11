@@ -29,7 +29,7 @@ namespace CaloCalc
         //Ogun ogun5;
         DateTime lastUpdate = DateTime.Parse("2023-05-10"); // örnek bir tarih
         CaloCalc.Helper.Methods helper = new();
-        
+
         public AnaEkran(int ıd)
         {
             InitializeComponent();
@@ -98,7 +98,7 @@ namespace CaloCalc
             this.Close();
             BesinOlusturma frm = new BesinOlusturma(id);
             frm.ShowDialog();
-           
+
         }
         private void tabPage1_Click(object sender, EventArgs e)
         {
@@ -127,10 +127,7 @@ namespace CaloCalc
 
         }
 
-        private void btnKahvaltiOgunSil_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btnSabahAtistirmasiEkle_Click(object sender, EventArgs e)
         {
@@ -233,6 +230,66 @@ namespace CaloCalc
                 helper.ListViewYazdirma(id, Ogunler.AksamAtistirmasi, lviAksamAtistirmasiList);
                 MessageBox.Show("Eklendi");
                 bll = new CaloCalcBussinessLogic();
+
+            }
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 0)
+            {
+                bll = new CaloCalcBussinessLogic();
+                lblSabah.Text = bll.Kullanicilar.OguneGoreKaloriRaporu(id, Ogunler.Kahvaltı).ToString();
+                lblSabahAtistirma.Text = bll.Kullanicilar.OguneGoreKaloriRaporu(id, Ogunler.SabahAtistirmasi).ToString();
+                lblOglen.Text = bll.Kullanicilar.OguneGoreKaloriRaporu(id, Ogunler.OglenYemegi).ToString();
+                lblOglenAtistirma.Text = bll.Kullanicilar.OguneGoreKaloriRaporu(id, Ogunler.OglenAtistirmasi).ToString();
+                lblAksam.Text = bll.Kullanicilar.OguneGoreKaloriRaporu(id, Ogunler.AksamYemegi).ToString();
+                lblAksamAtistirma.Text = bll.Kullanicilar.OguneGoreKaloriRaporu(id, Ogunler.AksamAtistirmasi).ToString();
+                lblToplam.Text = bll.Kullanicilar.GunSonuRaporu(id).ToString();
+            }
+        }
+
+        private void btnKahvaltiSil_Click(object sender, EventArgs e)
+        {
+            if (lvSabahKahvaltiListe.SelectedItems.Count > 0) // En az bir öğe seçili mi diye kontrol ediyoruz.
+            {
+                int ogunID = (int)lvSabahKahvaltiListe.SelectedItems[0].Tag;
+                bool sildiMi = bll.Ogunler.Sil(ogunID);
+                if (sildiMi)
+                {
+                    MessageBox.Show("Silindi");
+                    helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
+                }
+                else
+                {
+                    MessageBox.Show("Bir hata olustu silemedik.");
+                }
+
+            }
+        }
+
+        private void btnKahvaltiGuncelle_Click(object sender, EventArgs e)
+        {
+            if (lvSabahKahvaltiListe.SelectedItems.Count > 0) // En az bir öğe seçili mi diye kontrol ediyoruz.
+            {
+                int ogunID = (int)lvSabahKahvaltiListe.SelectedItems[0].Tag;
+                Ogun guncellenecekOgun = bll.Ogunler.Ara(ogunID);
+                yiyecek = bll.Yiyecekler.Ara((int)cbxSabahKahvaltısı.SelectedValue);
+                guncellenecekOgun.YiyecekID = yiyecek.YiyecekID;
+                guncellenecekOgun.PorsiyonAdet = (double)nudKahvaltiPorsiyon.Value;
+                guncellenecekOgun.YemekYemeZamani = DateTime.Now;
+                guncellenecekOgun.ToplamKalori = (yiyecek.Kalori * guncellenecekOgun.PorsiyonAdet);
+                bool güncellediMi = bll.Ogunler.Guncelle(guncellenecekOgun);
+                if (güncellediMi)
+                {
+                    MessageBox.Show("Güncellendi");
+                    helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
+                }
+                else
+                {
+                    MessageBox.Show("Bir hata olustu güncellenemdi.");
+                }
+
 
             }
         }

@@ -15,7 +15,8 @@ namespace DAL.Migrations
                 {
                     KategoriID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    KategoriAdi = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    KategoriAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    YiyecekID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -34,7 +35,8 @@ namespace DAL.Migrations
                     Soyad = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Yasi = table.Column<int>(type: "int", nullable: false),
                     Boy = table.Column<int>(type: "int", nullable: false),
-                    Kilo = table.Column<int>(type: "int", nullable: false)
+                    Kilo = table.Column<int>(type: "int", nullable: false),
+                    OgunID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -51,7 +53,8 @@ namespace DAL.Migrations
                     YemekYemeZamani = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PorsiyonAdet = table.Column<double>(type: "float", nullable: false),
                     ToplamKalori = table.Column<double>(type: "float", nullable: false),
-                    KullaniciID = table.Column<int>(type: "int", nullable: false)
+                    KullaniciID = table.Column<int>(type: "int", nullable: false),
+                    YiyecekID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -72,10 +75,9 @@ namespace DAL.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     YiyecekAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Kalori = table.Column<double>(type: "float", nullable: false),
-                    Porsiyon = table.Column<int>(type: "int", nullable: false),
                     Fotograf = table.Column<byte[]>(type: "image", nullable: true),
                     FotografYolu = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
-                    OgunID = table.Column<int>(type: "int", nullable: false),
+                    OgunID = table.Column<int>(type: "int", nullable: true),
                     KategoriID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -91,24 +93,23 @@ namespace DAL.Migrations
                         name: "FK_Yiyecekler_Ogunler_OgunID",
                         column: x => x.OgunID,
                         principalTable: "Ogunler",
-                        principalColumn: "OgunID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "OgunID");
                 });
 
             migrationBuilder.InsertData(
                 table: "Kategoriler",
-                columns: new[] { "KategoriID", "KategoriAdi" },
+                columns: new[] { "KategoriID", "KategoriAdi", "YiyecekID" },
                 values: new object[,]
                 {
-                    { 1, "Ana Yemekler" },
-                    { 2, "Çorbalar" },
-                    { 3, "Salatalar" },
-                    { 4, "Tatlılar" },
-                    { 5, "İçecekler" },
-                    { 6, "Meyveler" },
-                    { 7, "Abur Cubur" },
-                    { 8, "Kahvaltılık" },
-                    { 9, "Sebzeler" }
+                    { 1, "Ana Yemekler", 0 },
+                    { 2, "Çorbalar", 0 },
+                    { 3, "Salatalar", 0 },
+                    { 4, "Tatlılar", 0 },
+                    { 5, "İçecekler", 0 },
+                    { 6, "Meyveler", 0 },
+                    { 7, "Abur Cubur", 0 },
+                    { 8, "Kahvaltılık", 0 },
+                    { 9, "Sebzeler", 0 }
                 });
 
             migrationBuilder.CreateIndex(

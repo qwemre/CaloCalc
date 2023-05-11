@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(CaloCalcDbContext))]
-    [Migration("20230511104559_init")]
+    [Migration("20230511132902_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,6 +36,9 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("YiyecekID")
+                        .HasColumnType("int");
+
                     b.HasKey("KategoriID");
 
                     b.ToTable("Kategoriler");
@@ -44,47 +47,56 @@ namespace DAL.Migrations
                         new
                         {
                             KategoriID = 1,
-                            KategoriAdi = "Ana Yemekler"
+                            KategoriAdi = "Ana Yemekler",
+                            YiyecekID = 0
                         },
                         new
                         {
                             KategoriID = 2,
-                            KategoriAdi = "Çorbalar"
+                            KategoriAdi = "Çorbalar",
+                            YiyecekID = 0
                         },
                         new
                         {
                             KategoriID = 3,
-                            KategoriAdi = "Salatalar"
+                            KategoriAdi = "Salatalar",
+                            YiyecekID = 0
                         },
                         new
                         {
                             KategoriID = 4,
-                            KategoriAdi = "Tatlılar"
+                            KategoriAdi = "Tatlılar",
+                            YiyecekID = 0
                         },
                         new
                         {
                             KategoriID = 5,
-                            KategoriAdi = "İçecekler"
+                            KategoriAdi = "İçecekler",
+                            YiyecekID = 0
                         },
                         new
                         {
                             KategoriID = 6,
-                            KategoriAdi = "Meyveler"
+                            KategoriAdi = "Meyveler",
+                            YiyecekID = 0
                         },
                         new
                         {
                             KategoriID = 7,
-                            KategoriAdi = "Abur Cubur"
+                            KategoriAdi = "Abur Cubur",
+                            YiyecekID = 0
                         },
                         new
                         {
                             KategoriID = 8,
-                            KategoriAdi = "Kahvaltılık"
+                            KategoriAdi = "Kahvaltılık",
+                            YiyecekID = 0
                         },
                         new
                         {
                             KategoriID = 9,
-                            KategoriAdi = "Sebzeler"
+                            KategoriAdi = "Sebzeler",
+                            YiyecekID = 0
                         });
                 });
 
@@ -109,6 +121,9 @@ namespace DAL.Migrations
                     b.Property<string>("KullaniciMail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OgunID")
+                        .HasColumnType("int");
 
                     b.Property<string>("Sifre")
                         .IsRequired()
@@ -149,6 +164,9 @@ namespace DAL.Migrations
                     b.Property<DateTime>("YemekYemeZamani")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("YiyecekID")
+                        .HasColumnType("int");
+
                     b.HasKey("OgunID");
 
                     b.HasIndex("KullaniciID");
@@ -177,10 +195,7 @@ namespace DAL.Migrations
                     b.Property<int>("KategoriID")
                         .HasColumnType("int");
 
-                    b.Property<int>("OgunID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Porsiyon")
+                    b.Property<int?>("OgunID")
                         .HasColumnType("int");
 
                     b.Property<string>("YiyecekAdi")
@@ -217,9 +232,7 @@ namespace DAL.Migrations
 
                     b.HasOne("Entities.Ogun", "Ogun")
                         .WithMany("Yiyecekler")
-                        .HasForeignKey("OgunID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("OgunID");
 
                     b.Navigation("Kategori");
 

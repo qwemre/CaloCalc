@@ -11,6 +11,7 @@ namespace Entities
         [Key]
         public int KategoriID { get; set; }
         public string KategoriAdi { get; set; }
+        public int YiyecekID { get; set; }
         public virtual ICollection<Yiyecek> Yiyecekler { get; set; }
     }
 }

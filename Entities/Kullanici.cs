@@ -22,6 +22,7 @@ namespace Entities
         public int Yasi { get; set; }
         public int Boy { get; set; }
         public int Kilo { get; set; }
+        public int OgunID { get; set; }
         public virtual ICollection<Ogun> Ogunler { get; set; }
     }
 }

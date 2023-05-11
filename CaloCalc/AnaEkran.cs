@@ -108,36 +108,51 @@ namespace CaloCalc
 
         private void btnKahvaltıEkle_Click(object sender, EventArgs e)
         {
-                        
-            var yiyecek1 = bll.Yiyecekler.Ara((int)cbxSabahKahvaltısı.SelectedValue);
+
+            yiyecek = bll.Yiyecekler.Ara((int)cbxSabahKahvaltısı.SelectedValue);
             ogun.KullaniciID = id;
-            ogun.YiyecekID = yiyecek1.YiyecekID;
+            ogun.YiyecekID = yiyecek.YiyecekID;
             ogun.PorsiyonAdet = (double)nudKahvaltiPorsiyon.Value;
             ogun.YemekYemeZamani = DateTime.Now;
             ogun.OgunAdi = Ogunler.Kahvaltı;
-            ogun.ToplamKalori = (yiyecek1.Kalori * ogun.PorsiyonAdet);
+            ogun.ToplamKalori = (yiyecek.Kalori * ogun.PorsiyonAdet);
             bool kontrol = bll.Ogunler.Ekle(ogun);
             if (kontrol)
             {
                 MessageBox.Show("eklendi");
-                var ogun1 = bll.Ogunler.Fıfo(id, Ogunler.Kahvaltı);
-                if (ogun1 != null)
+                //var ogun1 = bll.Ogunler.Fıfo(id, Ogunler.Kahvaltı);
+                //if (ogun1 != null)
+                //{
+                //    foreach (var yemek in ogun1)
+                //    {
+                //           ListViewItem lvi = new ListViewItem();
+                //            lvi.Text = yiyecek.YiyecekAdi.ToString();
+                //            lvi.SubItems.Add(yiyecek.Kalori.ToString());
+                //            lvi.SubItems.Add(yemek.PorsiyonAdet.ToString());
+                //            lvi.SubItems.Add((yemek.PorsiyonAdet * yiyecek.Kalori).ToString());
+                //            listView1.Items.Add(lvi);
+
+                //    }
+                //}
+                var liste = bll.Ogunler.listeleme(id);
+                if (liste != null)
                 {
-                    foreach (var yemek in ogun1)
+                    foreach (var yemek in liste)
                     {
-                           ListViewItem lvi = new ListViewItem();
-                            lvi.Text = yiyecek1.YiyecekAdi.ToString();
-                            lvi.SubItems.Add(yiyecek1.Kalori.ToString());
-                            lvi.SubItems.Add(yemek.PorsiyonAdet.ToString());
-                            lvi.SubItems.Add((yemek.PorsiyonAdet * yiyecek1.Kalori).ToString());
-                            listView1.Items.Add(lvi);
-                        
+
+                        ListViewItem lvi = new ListViewItem();
+                        lvi.Text =bll.Yiyecekler.Ara(yemek.YiyecekID).YiyecekAdi.ToString();
+                        lvi.SubItems.Add(bll.Yiyecekler.Ara(yemek.YiyecekID).Kalori.ToString());
+                        lvi.SubItems.Add(yemek.PorsiyonAdet.ToString());
+                        lvi.SubItems.Add((yemek.PorsiyonAdet * bll.Yiyecekler.Ara(yemek.YiyecekID).Kalori).ToString());
+                        listView1.Items.Add(lvi);
+
                     }
                 }
-
             }
 
         }
+
         private void btnKahvaltiOgunSil_Click(object sender, EventArgs e)
         {
 

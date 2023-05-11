@@ -17,15 +17,38 @@ namespace CaloCalc
     public partial class AnaEkran : Form
     {
         int id;
+        Yiyecek yiyecek;
+        Ogun ogun;
+        Ogun ogun1;
+        Ogun ogun2;
+        Ogun ogun3;
+        Ogun ogun4;
+        Ogun ogun5;
+        DateTime lastUpdate = DateTime.Parse("2023-05-10"); // örnek bir tarih
+
         public AnaEkran(int ıd)
         {
             InitializeComponent();
             this.id = ıd;
-            ogun = new Ogun();
+
+
+            if (DateTime.Now.Subtract(lastUpdate).TotalDays >= 1)
+            {
+                ogun = new Ogun() { OgunAdi = Ogunler.Kahvaltı };
+                ogun1 = new Ogun() { OgunAdi = Ogunler.SabahAtistirmasi };
+                ogun2 = new Ogun() { OgunAdi = Ogunler.OglenYemegi };
+                ogun3 = new Ogun() { OgunAdi = Ogunler.OglenAtistirmasi };
+                ogun4 = new Ogun() { OgunAdi = Ogunler.AksamYemegi };
+                ogun5 = new Ogun() { OgunAdi = Ogunler.AksamAtistirmasi };
+                lastUpdate = DateTime.Now;
+            }
             yiyecek = new Yiyecek();
 
             bll = new CaloCalcBussinessLogic();
         }
+
+
+
 
         CaloCalcBussinessLogic bll;
         private void AnaEkran_Load(object sender, EventArgs e)
@@ -81,82 +104,14 @@ namespace CaloCalc
         {
 
         }
-        Ogun ogun;
-        Yiyecek yiyecek;
+
 
         private void btnKahvaltıEkle_Click(object sender, EventArgs e)
         {
-            //Yiyecek yiyecek = bll.Yiyecekler.Ara((int)cbxSabahKahvaltısı.SelectedValue);
-            //ogun.KullaniciID = id;
-            //ogun.YiyecekID = (int)cbxSabahKahvaltısı.SelectedValue;
-            //ogun.PorsiyonAdet = (double)nudKahvaltiPorsiyon.Value;
-            //ogun.YemekYemeZamani = DateTime.Now;
 
-            //ogun.ToplamKalori = ogun.PorsiyonAdet * yiyecek.Kalori;
-            //ogun.Yiyecekler.Add(yiyecek);
-            //bool kontrol= bll.Ogunler.Ekle(ogun);
-
-            //if (kontrol)
-            //{
-            //    MessageBox.Show("Test");
-            //}
-            //using (var context = new CaloCalcDbContext())
-            //{
-            //    var yiyecekler = context.Yiyecekler
-            //        .Where(y => y.Ogunler.Any(o => o.KullaniciID == id))
-            //        .Select(y => new
-            //        {
-            //            YiyecekAdi = y.YiyecekAdi,
-            //            Kalori = y.Kalori,
-            //            Porsiyon = y.Porsiyon
-            //        })
-            //        .ToList();
-
-            //    foreach (var item in yiyecekler)
-            //    {
-            //        ListViewItem lvi = new ListViewItem();
-            //        lvi.Text = item.YiyecekAdi;
-            //        lvi.SubItems.Add(item.Kalori.ToString());
-            //        lvi.SubItems.Add(item.Porsiyon.ToString());
-            //        lvi.SubItems.Add((item.Porsiyon * item.Kalori).ToString());
-            //        listView1.Items.Add(lvi);
-            //    }
-            //}
-
-            //using (var context = new CaloCalcDbContext())
-            //{
-
-            //    var yiyecekler = context.Yiyecekler
-            //        .Join(context.Ogunler,
-            //              y => y.YiyecekID,
-            //              o => o.OgunID,
-            //              (y, o) => new
-            //              {
-            //                  y.YiyecekAdi,
-            //                  y.Kalori,
-            //                  y.Porsiyon,
-            //                  o.OgunAdi,
-            //                  o.YemekYemeZamani,
-            //                  o.PorsiyonAdet,
-            //                  o.ToplamKalori,
-            //                  o.KullaniciID
-
-            //              }).Where(x => x.KullaniciID == id)
-            //        .ToList();
-            //    foreach (var item in yiyecekler)
-            //    {
-            //        ListViewItem lvi = new ListViewItem();
-            //        lvi.Text = item.YiyecekAdi;
-            //        lvi.SubItems.Add(item.Kalori.ToString());
-            //        lvi.SubItems.Add(item.Porsiyon.ToString());
-            //        lvi.SubItems.Add((item.PorsiyonAdet * item.Kalori).ToString());
-
-            //        listView1.Items.Add(lvi);
-            //    }
-            //}
-            
+            yiyecek = bll.Yiyecekler.Ara((int)cbxSabahKahvaltısı.SelectedValue);
             ogun.KullaniciID = id;
-           // ogun.Kullanici = (int)cbxSabahKahvaltısı.SelectedValue;
+            ogun.Yiyecekler.Add(yiyecek);
             ogun.PorsiyonAdet = (double)nudKahvaltiPorsiyon.Value;
             ogun.YemekYemeZamani = DateTime.Now;
             ogun.OgunAdi = Ogunler.Kahvaltı;
@@ -168,49 +123,26 @@ namespace CaloCalc
                 var ogun1 = bll.Ogunler.Fıfo(id, Ogunler.Kahvaltı);
                 if (ogun1 != null)
                 {
-
                     foreach (var yemek in ogun1)
                     {
                         ListViewItem lvi = new ListViewItem();
-                        lvi.Text = yemek.Kullanici.Adi;
                         foreach (var item in yemek.Yiyecekler)
                         {
-                            
+                            lvi.Text = item.YiyecekAdi.ToString();
+                            lvi.SubItems.Add(item.Kalori.ToString());
+                            lvi.SubItems.Add(item.Ogun.PorsiyonAdet.ToString());
+                            lvi.SubItems.Add((item.Ogun.PorsiyonAdet * item.Kalori).ToString());
                         }
-
-                        //lvi.SubItems.Add(yemek.Yiyecekler.Kalori.ToString());
-                        lvi.SubItems.Add(yemek.PorsiyonAdet.ToString());
-                        //lvi.SubItems.Add((yemek.PorsiyonAdet * yemek.Yiyecekler.Kalori).ToString());
-                        listView1.Items.Add(lvi);
                     }
-
                 }
+
             }
-            else
-            {
-                MessageBox.Show("eklenemedi");
-            }
-            //var ogun1 = bll.Ogunler.Fıfo(id, Ogunler.Kahvaltı);
-            //if (ogun1 != null)
-            //{
-              
-            //    foreach (var yemek in ogun1)
-            //    {
-            //        ListViewItem lvi = new ListViewItem();
-            //        lvi.Text = yemek.Yiyecekler.YiyecekAdi;
-            //        lvi.SubItems.Add(yemek.Yiyecekler.Kalori.ToString());  
-            //        lvi.SubItems.Add(yemek.PorsiyonAdet.ToString());
-            //        lvi.SubItems.Add((yemek.PorsiyonAdet * yemek.Yiyecekler.Kalori).ToString());
-            //        listView1.Items.Add(lvi);
-            //    }
-              
-            //}
+
         }
+        private void btnKahvaltiOgunSil_Click(object sender, EventArgs e)
+        {
 
-    private void btnKahvaltiOgunSil_Click(object sender, EventArgs e)
-    {
-
-    }
+        }
     }
 
 

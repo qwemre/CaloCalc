@@ -29,7 +29,7 @@ namespace DAL.Context
         {
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseLazyLoadingProxies()
-                .UseSqlServer("Data source=DESKTOP-HNK2G88\\MSSQLSERVER01;initial catalog=Prj_KD15_CaloCalc;integrated security=true");
+                .UseSqlServer("Data Source=DESKTOP-JSFRVR1\\MSSQLKD15;initial catalog=Prj_KD15_CaloCalc;integrated security=true");
             
         }
     }

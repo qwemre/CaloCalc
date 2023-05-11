@@ -25,7 +25,12 @@ namespace BLL
         public bool Ekle(Ogun entity)
         {
             Db.Ogunler.Add(entity);
-            return Db.SaveChanges() > 0;
+            if (Db.SaveChanges() > 0)
+            { 
+                return true;
+            }
+            else { return false; }
+            
         }
 
         public bool Guncelle(Ogun entity)
@@ -57,7 +62,7 @@ namespace BLL
         {
             var ogun = Db.Ogunler
            .Include(o => o.Yiyecekler)
-           .Where(o => o.OgunAdi==ogunler && o.KullaniciID == kullaniciId).ToList();
+           .Where(o => o.OgunAdi==ogunler && o.KullaniciID == kullaniciId&&o.YemekYemeZamani.Day==DateTime.Now.Day).ToList();
             return ogun;
         }
         public List<Ogun> Fıfo2(int kullaniciId, Ogunler ogunler)
@@ -66,6 +71,20 @@ namespace BLL
            .Include(o => o.Yiyecekler)
            .Where(o => o.OgunAdi == ogunler && o.KullaniciID == kullaniciId).ToList();
             
+            return ogun;
+        }
+        public int KisiOgunIDBul(int kullaniciID, Ogunler ogunler)
+        {
+            var SonOgun = Db.Ogunler
+                                .Where(x => x.KullaniciID == kullaniciID && x.OgunAdi == ogunler)
+                                .LastOrDefault();
+            int OgunID = SonOgun.OgunID;
+            return OgunID;
+            
+        }
+        public List<Ogun> OgunAra(int ogunID,int kullaniciID)
+        {
+            var ogun=Db.Ogunler.Where(x=>x.KullaniciID==kullaniciID&&x.OgunID==ogunID).ToList();
             return ogun;
         }
 

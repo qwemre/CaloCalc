@@ -25,7 +25,12 @@ namespace BLL
         public bool Ekle(Yiyecek entity)
         {
             Db.Yiyecekler.Add(entity);
-            return Db.SaveChanges() > 0;
+            if (Db.SaveChanges() > 0)
+            {
+                return true;
+            }
+            else
+            return false;
         }
 
         public bool Guncelle(Yiyecek entity)
@@ -49,7 +54,7 @@ namespace BLL
      
         public Yiyecek AdaGoreAra(string yiyecekAdi)
         {
-            return Db.Yiyecekler.Find(yiyecekAdi);
+            return Db.Yiyecekler.FirstOrDefault(x=>x.YiyecekAdi==yiyecekAdi);
         }
        
 

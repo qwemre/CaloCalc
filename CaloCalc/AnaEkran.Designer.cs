@@ -756,7 +756,7 @@
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(560, 549);
+            tabPage1.Size = new Size(563, 549);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Ana Sayfa";
             // 
@@ -1130,7 +1130,7 @@
             tabPage8.Location = new Point(4, 24);
             tabPage8.Name = "tabPage8";
             tabPage8.Padding = new Padding(3);
-            tabPage8.Size = new Size(560, 549);
+            tabPage8.Size = new Size(563, 549);
             tabPage8.TabIndex = 7;
             tabPage8.Text = "Yemek mi yedin?";
             tabPage8.UseVisualStyleBackColor = true;
@@ -1341,7 +1341,7 @@
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(568, 577);
+            tabControl1.Size = new Size(571, 577);
             tabControl1.TabIndex = 1;
             tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 

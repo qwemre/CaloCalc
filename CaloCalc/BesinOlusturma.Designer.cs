@@ -45,9 +45,13 @@
             // llblKaloriInternet
             // 
             llblKaloriInternet.AutoSize = true;
-            llblKaloriInternet.Location = new Point(343, 216);
+            llblKaloriInternet.BackColor = Color.Transparent;
+            llblKaloriInternet.Font = new Font("Palatino Linotype", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            llblKaloriInternet.ForeColor = Color.DarkOrange;
+            llblKaloriInternet.LinkColor = Color.Red;
+            llblKaloriInternet.Location = new Point(202, 201);
             llblKaloriInternet.Name = "llblKaloriInternet";
-            llblKaloriInternet.Size = new Size(162, 15);
+            llblKaloriInternet.Size = new Size(194, 18);
             llblKaloriInternet.TabIndex = 47;
             llblKaloriInternet.TabStop = true;
             llblKaloriInternet.Text = "Kalorisini Bilmiyor Musunuz ?";
@@ -55,81 +59,105 @@
             // 
             // btnKaydet
             // 
-            btnKaydet.Location = new Point(405, 309);
+            btnKaydet.BackColor = Color.Transparent;
+            btnKaydet.BackgroundImageLayout = ImageLayout.None;
+            btnKaydet.FlatStyle = FlatStyle.Flat;
+            btnKaydet.Font = new Font("Palatino Linotype", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnKaydet.Location = new Point(280, 248);
+            btnKaydet.Margin = new Padding(3, 4, 3, 4);
             btnKaydet.Name = "btnKaydet";
-            btnKaydet.Size = new Size(75, 23);
+            btnKaydet.Size = new Size(225, 64);
             btnKaydet.TabIndex = 46;
             btnKaydet.Text = "Kaydet";
-            btnKaydet.UseVisualStyleBackColor = true;
+            btnKaydet.UseVisualStyleBackColor = false;
             btnKaydet.Click += btnKaydet_Click;
             // 
             // mtxtKalori
             // 
-            mtxtKalori.Location = new Point(395, 174);
+            mtxtKalori.Location = new Point(202, 149);
+            mtxtKalori.Margin = new Padding(3, 4, 3, 4);
             mtxtKalori.Mask = "0000";
             mtxtKalori.Name = "mtxtKalori";
-            mtxtKalori.Size = new Size(100, 23);
+            mtxtKalori.Size = new Size(189, 25);
             mtxtKalori.TabIndex = 45;
+            mtxtKalori.Text = "0";
             // 
             // pbxYiyecek
             // 
-            pbxYiyecek.Location = new Point(395, 234);
+            pbxYiyecek.BackColor = Color.WhiteSmoke;
+            pbxYiyecek.Location = new Point(474, 27);
+            pbxYiyecek.Margin = new Padding(3, 4, 3, 4);
             pbxYiyecek.Name = "pbxYiyecek";
-            pbxYiyecek.Size = new Size(100, 50);
+            pbxYiyecek.Size = new Size(201, 90);
             pbxYiyecek.TabIndex = 44;
             pbxYiyecek.TabStop = false;
             // 
             // txtYemekAdi
             // 
-            txtYemekAdi.Location = new Point(395, 72);
+            txtYemekAdi.Location = new Point(202, 27);
+            txtYemekAdi.Margin = new Padding(3, 4, 3, 4);
             txtYemekAdi.Name = "txtYemekAdi";
-            txtYemekAdi.Size = new Size(100, 23);
+            txtYemekAdi.Size = new Size(189, 25);
             txtYemekAdi.TabIndex = 43;
             // 
             // cbxKategori
             // 
             cbxKategori.FormattingEnabled = true;
-            cbxKategori.Location = new Point(395, 125);
+            cbxKategori.Location = new Point(202, 91);
+            cbxKategori.Margin = new Padding(3, 4, 3, 4);
             cbxKategori.Name = "cbxKategori";
-            cbxKategori.Size = new Size(100, 23);
+            cbxKategori.Size = new Size(189, 26);
             cbxKategori.TabIndex = 41;
             // 
             // btnResimEkle
             // 
-            btnResimEkle.Location = new Point(297, 261);
+            btnResimEkle.BackColor = Color.Transparent;
+            btnResimEkle.FlatStyle = FlatStyle.Flat;
+            btnResimEkle.Font = new Font("Palatino Linotype", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnResimEkle.Location = new Point(519, 141);
+            btnResimEkle.Margin = new Padding(3, 4, 3, 4);
             btnResimEkle.Name = "btnResimEkle";
-            btnResimEkle.Size = new Size(75, 23);
+            btnResimEkle.Size = new Size(115, 33);
             btnResimEkle.TabIndex = 40;
             btnResimEkle.Text = "Resim Ekle";
-            btnResimEkle.UseVisualStyleBackColor = true;
+            btnResimEkle.UseVisualStyleBackColor = false;
             btnResimEkle.Click += btnResimEkle_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(306, 182);
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Palatino Linotype", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(126, 150);
             label4.Name = "label4";
-            label4.Size = new Size(37, 15);
+            label4.Size = new Size(68, 24);
             label4.TabIndex = 36;
-            label4.Text = "Kalori";
+            label4.Text = "Kalori:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(297, 128);
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Palatino Linotype", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(106, 92);
             label2.Name = "label2";
-            label2.Size = new Size(51, 15);
+            label2.Size = new Size(88, 24);
             label2.TabIndex = 38;
-            label2.Text = "Kategori";
+            label2.Text = "Kategori:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(297, 80);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Palatino Linotype", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(95, 28);
             label1.Name = "label1";
-            label1.Size = new Size(63, 15);
+            label1.Size = new Size(106, 24);
             label1.TabIndex = 39;
-            label1.Text = "Yemek Adı";
+            label1.Text = "Yemek Adı:";
             // 
             // openFileDialog1
             // 
@@ -137,9 +165,12 @@
             // 
             // BesinOlusturma
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.White;
+            BackgroundImage = Properties.Resources.besin2;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(737, 500);
             Controls.Add(llblKaloriInternet);
             Controls.Add(btnKaydet);
             Controls.Add(mtxtKalori);
@@ -150,6 +181,8 @@
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(label1);
+            Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "BesinOlusturma";
             Text = "BesinOlusturma";
             FormClosed += BesinOlusturma_FormClosed;

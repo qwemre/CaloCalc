@@ -87,9 +87,11 @@ namespace CaloCalc
         private void BesinOlusturma_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Hide();
-            this.Close();            
+            this.Close();
             AnaEkran anaEkran = new AnaEkran(id);
             anaEkran.ShowDialog();
         }
+
+
     }
 }

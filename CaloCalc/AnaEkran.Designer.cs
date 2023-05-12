@@ -134,14 +134,30 @@
             columnHeader25 = new ColumnHeader();
             columnHeader26 = new ColumnHeader();
             columnHeader27 = new ColumnHeader();
-            dgvEnCokYediklerinAylik = new DataGridView();
-            dgvEnCokYediklerinHafta = new DataGridView();
+            columnHeader28 = new ColumnHeader();
             tabPage7 = new TabPage();
-            dataGridView1 = new DataGridView();
-            dataGridView17 = new DataGridView();
+            lviEnCokYediklerimAylik = new ListView();
+            columnHeader33 = new ColumnHeader();
+            columnHeader34 = new ColumnHeader();
+            columnHeader35 = new ColumnHeader();
+            columnHeader36 = new ColumnHeader();
+            lviEnCokYediklerimHaftalik = new ListView();
+            columnHeader29 = new ColumnHeader();
+            columnHeader30 = new ColumnHeader();
+            columnHeader31 = new ColumnHeader();
+            columnHeader32 = new ColumnHeader();
             tabPage11 = new TabPage();
             tabControl1 = new TabControl();
-            columnHeader28 = new ColumnHeader();
+            lviDigerleriEnCokNeYemisHaftalik = new ListView();
+            columnHeader37 = new ColumnHeader();
+            columnHeader38 = new ColumnHeader();
+            columnHeader39 = new ColumnHeader();
+            columnHeader40 = new ColumnHeader();
+            lviDigerleriEnCokNeYemisAylik = new ListView();
+            columnHeader41 = new ColumnHeader();
+            columnHeader42 = new ColumnHeader();
+            columnHeader43 = new ColumnHeader();
+            columnHeader44 = new ColumnHeader();
             ((System.ComponentModel.ISupportInitialize)nudAksamAtistirmasiPorsiyon).BeginInit();
             tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudAksamYemegiPorsiyon).BeginInit();
@@ -158,11 +174,7 @@
             ((System.ComponentModel.ISupportInitialize)nudOglenYemegiPorsiyon).BeginInit();
             tabPage8.SuspendLayout();
             tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvEnCokYediklerinAylik).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvEnCokYediklerinHafta).BeginInit();
             tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView17).BeginInit();
             tabPage11.SuspendLayout();
             tabControl1.SuspendLayout();
             SuspendLayout();
@@ -1140,9 +1152,9 @@
             lviEnCokYenenler.Columns.AddRange(new ColumnHeader[] { columnHeader25, columnHeader26, columnHeader27, columnHeader28 });
             lviEnCokYenenler.FullRowSelect = true;
             lviEnCokYenenler.GridLines = true;
-            lviEnCokYenenler.Location = new Point(17, 23);
+            lviEnCokYenenler.Location = new Point(8, 22);
             lviEnCokYenenler.Name = "lviEnCokYenenler";
-            lviEnCokYenenler.Size = new Size(518, 422);
+            lviEnCokYenenler.Size = new Size(531, 422);
             lviEnCokYenenler.TabIndex = 32;
             lviEnCokYenenler.UseCompatibleStateImageBehavior = false;
             lviEnCokYenenler.View = View.Details;
@@ -1162,26 +1174,15 @@
             columnHeader27.Text = "Toplam Adet";
             columnHeader27.Width = 125;
             // 
-            // dgvEnCokYediklerinAylik
+            // columnHeader28
             // 
-            dgvEnCokYediklerinAylik.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEnCokYediklerinAylik.Location = new Point(137, 252);
-            dgvEnCokYediklerinAylik.Name = "dgvEnCokYediklerinAylik";
-            dgvEnCokYediklerinAylik.Size = new Size(240, 150);
-            dgvEnCokYediklerinAylik.TabIndex = 0;
-            // 
-            // dgvEnCokYediklerinHafta
-            // 
-            dgvEnCokYediklerinHafta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEnCokYediklerinHafta.Location = new Point(137, 69);
-            dgvEnCokYediklerinHafta.Name = "dgvEnCokYediklerinHafta";
-            dgvEnCokYediklerinHafta.Size = new Size(240, 150);
-            dgvEnCokYediklerinHafta.TabIndex = 0;
+            columnHeader28.Text = "Ogun Adi";
+            columnHeader28.Width = 140;
             // 
             // tabPage7
             // 
-            tabPage7.Controls.Add(dgvEnCokYediklerinAylik);
-            tabPage7.Controls.Add(dgvEnCokYediklerinHafta);
+            tabPage7.Controls.Add(lviEnCokYediklerimAylik);
+            tabPage7.Controls.Add(lviEnCokYediklerimHaftalik);
             tabPage7.Location = new Point(4, 24);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
@@ -1190,28 +1191,74 @@
             tabPage7.Text = "En Çok Yediklerim";
             tabPage7.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // lviEnCokYediklerimAylik
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(97, 287);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(340, 134);
-            dataGridView1.TabIndex = 0;
+            lviEnCokYediklerimAylik.Columns.AddRange(new ColumnHeader[] { columnHeader33, columnHeader34, columnHeader35, columnHeader36 });
+            lviEnCokYediklerimAylik.FullRowSelect = true;
+            lviEnCokYediklerimAylik.GridLines = true;
+            lviEnCokYediklerimAylik.Location = new Point(6, 295);
+            lviEnCokYediklerimAylik.Name = "lviEnCokYediklerimAylik";
+            lviEnCokYediklerimAylik.Size = new Size(546, 179);
+            lviEnCokYediklerimAylik.TabIndex = 34;
+            lviEnCokYediklerimAylik.UseCompatibleStateImageBehavior = false;
+            lviEnCokYediklerimAylik.View = View.Details;
             // 
-            // dataGridView17
+            // columnHeader33
             // 
-            dataGridView17.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView17.Location = new Point(97, 87);
-            dataGridView17.Name = "dataGridView17";
-            dataGridView17.RowTemplate.Height = 25;
-            dataGridView17.Size = new Size(340, 134);
-            dataGridView17.TabIndex = 0;
+            columnHeader33.Text = "Yiyecek";
+            columnHeader33.Width = 125;
+            // 
+            // columnHeader34
+            // 
+            columnHeader34.Text = "Kalori";
+            columnHeader34.Width = 125;
+            // 
+            // columnHeader35
+            // 
+            columnHeader35.Text = "Toplam Adet";
+            columnHeader35.Width = 125;
+            // 
+            // columnHeader36
+            // 
+            columnHeader36.Text = "Ogun Adi";
+            columnHeader36.Width = 130;
+            // 
+            // lviEnCokYediklerimHaftalik
+            // 
+            lviEnCokYediklerimHaftalik.Columns.AddRange(new ColumnHeader[] { columnHeader29, columnHeader30, columnHeader31, columnHeader32 });
+            lviEnCokYediklerimHaftalik.FullRowSelect = true;
+            lviEnCokYediklerimHaftalik.GridLines = true;
+            lviEnCokYediklerimHaftalik.Location = new Point(6, 35);
+            lviEnCokYediklerimHaftalik.Name = "lviEnCokYediklerimHaftalik";
+            lviEnCokYediklerimHaftalik.Size = new Size(546, 179);
+            lviEnCokYediklerimHaftalik.TabIndex = 33;
+            lviEnCokYediklerimHaftalik.UseCompatibleStateImageBehavior = false;
+            lviEnCokYediklerimHaftalik.View = View.Details;
+            // 
+            // columnHeader29
+            // 
+            columnHeader29.Text = "Yiyecek";
+            columnHeader29.Width = 125;
+            // 
+            // columnHeader30
+            // 
+            columnHeader30.Text = "Kalori";
+            columnHeader30.Width = 125;
+            // 
+            // columnHeader31
+            // 
+            columnHeader31.Text = "Toplam Adet";
+            columnHeader31.Width = 125;
+            // 
+            // columnHeader32
+            // 
+            columnHeader32.Text = "Ogun Adi";
+            columnHeader32.Width = 130;
             // 
             // tabPage11
             // 
-            tabPage11.Controls.Add(dataGridView1);
-            tabPage11.Controls.Add(dataGridView17);
+            tabPage11.Controls.Add(lviDigerleriEnCokNeYemisAylik);
+            tabPage11.Controls.Add(lviDigerleriEnCokNeYemisHaftalik);
             tabPage11.Location = new Point(4, 24);
             tabPage11.Name = "tabPage11";
             tabPage11.Padding = new Padding(3);
@@ -1235,10 +1282,69 @@
             tabControl1.TabIndex = 1;
             tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 
-            // columnHeader28
+            // lviDigerleriEnCokNeYemisHaftalik
             // 
-            columnHeader28.Text = "Ogun Adi";
-            columnHeader28.Width = 150;
+            lviDigerleriEnCokNeYemisHaftalik.Columns.AddRange(new ColumnHeader[] { columnHeader37, columnHeader38, columnHeader39, columnHeader40 });
+            lviDigerleriEnCokNeYemisHaftalik.FullRowSelect = true;
+            lviDigerleriEnCokNeYemisHaftalik.GridLines = true;
+            lviDigerleriEnCokNeYemisHaftalik.Location = new Point(6, 25);
+            lviDigerleriEnCokNeYemisHaftalik.Name = "lviDigerleriEnCokNeYemisHaftalik";
+            lviDigerleriEnCokNeYemisHaftalik.Size = new Size(546, 179);
+            lviDigerleriEnCokNeYemisHaftalik.TabIndex = 34;
+            lviDigerleriEnCokNeYemisHaftalik.UseCompatibleStateImageBehavior = false;
+            lviDigerleriEnCokNeYemisHaftalik.View = View.Details;
+            // 
+            // columnHeader37
+            // 
+            columnHeader37.Text = "Yiyecek";
+            columnHeader37.Width = 125;
+            // 
+            // columnHeader38
+            // 
+            columnHeader38.Text = "Kalori";
+            columnHeader38.Width = 125;
+            // 
+            // columnHeader39
+            // 
+            columnHeader39.Text = "Toplam Adet";
+            columnHeader39.Width = 125;
+            // 
+            // columnHeader40
+            // 
+            columnHeader40.Text = "Ogun Adi";
+            columnHeader40.Width = 130;
+            // 
+            // lviDigerleriEnCokNeYemisAylik
+            // 
+            lviDigerleriEnCokNeYemisAylik.Columns.AddRange(new ColumnHeader[] { columnHeader41, columnHeader42, columnHeader43, columnHeader44 });
+            lviDigerleriEnCokNeYemisAylik.FullRowSelect = true;
+            lviDigerleriEnCokNeYemisAylik.GridLines = true;
+            lviDigerleriEnCokNeYemisAylik.Location = new Point(3, 294);
+            lviDigerleriEnCokNeYemisAylik.Name = "lviDigerleriEnCokNeYemisAylik";
+            lviDigerleriEnCokNeYemisAylik.Size = new Size(546, 179);
+            lviDigerleriEnCokNeYemisAylik.TabIndex = 35;
+            lviDigerleriEnCokNeYemisAylik.UseCompatibleStateImageBehavior = false;
+            lviDigerleriEnCokNeYemisAylik.View = View.Details;
+            // 
+            // columnHeader41
+            // 
+            columnHeader41.Text = "Yiyecek";
+            columnHeader41.Width = 125;
+            // 
+            // columnHeader42
+            // 
+            columnHeader42.Text = "Kalori";
+            columnHeader42.Width = 125;
+            // 
+            // columnHeader43
+            // 
+            columnHeader43.Text = "Toplam Adet";
+            columnHeader43.Width = 125;
+            // 
+            // columnHeader44
+            // 
+            columnHeader44.Text = "Ogun Adi";
+            columnHeader44.Width = 130;
             // 
             // AnaEkran
             // 
@@ -1272,11 +1378,7 @@
             ((System.ComponentModel.ISupportInitialize)nudOglenYemegiPorsiyon).EndInit();
             tabPage8.ResumeLayout(false);
             tabPage6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvEnCokYediklerinAylik).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvEnCokYediklerinHafta).EndInit();
             tabPage7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView17).EndInit();
             tabPage11.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
             ResumeLayout(false);
@@ -1356,11 +1458,7 @@
         private Label lblOglenYemegiKalori;
         private TabPage tabPage8;
         private TabPage tabPage6;
-        private DataGridView dgvEnCokYediklerinAylik;
-        private DataGridView dgvEnCokYediklerinHafta;
         private TabPage tabPage7;
-        private DataGridView dataGridView1;
-        private DataGridView dataGridView17;
         private TabPage tabPage11;
         private TabControl tabControl1;
         private ListView lvSabahKahvaltiListe;
@@ -1398,5 +1496,25 @@
         private ColumnHeader columnHeader26;
         private ColumnHeader columnHeader27;
         private ColumnHeader columnHeader28;
+        private ListView lviEnCokYediklerimAylik;
+        private ColumnHeader columnHeader33;
+        private ColumnHeader columnHeader34;
+        private ColumnHeader columnHeader35;
+        private ColumnHeader columnHeader36;
+        private ListView lviEnCokYediklerimHaftalik;
+        private ColumnHeader columnHeader29;
+        private ColumnHeader columnHeader30;
+        private ColumnHeader columnHeader31;
+        private ColumnHeader columnHeader32;
+        private ListView lviDigerleriEnCokNeYemisAylik;
+        private ColumnHeader columnHeader41;
+        private ColumnHeader columnHeader42;
+        private ColumnHeader columnHeader43;
+        private ColumnHeader columnHeader44;
+        private ListView lviDigerleriEnCokNeYemisHaftalik;
+        private ColumnHeader columnHeader37;
+        private ColumnHeader columnHeader38;
+        private ColumnHeader columnHeader39;
+        private ColumnHeader columnHeader40;
     }
 }

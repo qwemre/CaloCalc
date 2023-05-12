@@ -32,7 +32,7 @@ namespace CaloCalc
 
             bll = new CaloCalcBussinessLogic();
 
-   
+
         }
 
 
@@ -252,6 +252,75 @@ namespace CaloCalc
                     }
                 }
             }
+            else if (tabControl1.SelectedIndex == 3)
+            {
+                bll = new CaloCalcBussinessLogic();
+                var liste = bll.Yiyecekler.EnCokYediklerim(id, 7);
+
+                if (liste != null)
+                {
+                    lviEnCokYediklerimHaftalik.Items.Clear();
+                    foreach (var yemek in liste)
+                    {
+                        ListViewItem lvi = new ListViewItem();
+                        lvi.Text = yemek.YiyecekAdi.ToString();
+                        lvi.SubItems.Add(yemek.Kalori.ToString());
+                        lvi.SubItems.Add(yemek.Toplam.ToString());
+                        lvi.SubItems.Add(yemek.Ogun.OgunAdi.ToString());
+                        lviEnCokYediklerimHaftalik.Items.Add(lvi);
+                    }
+                }
+
+                bll = new CaloCalcBussinessLogic();
+                var liste1 = bll.Yiyecekler.EnCokYediklerim(id, 30);
+
+                if (liste1 != null)
+                {
+                    lviEnCokYediklerimAylik.Items.Clear();
+                    foreach (var yemek in liste1)
+                    {
+                        ListViewItem lvi = new ListViewItem();
+                        lvi.Text = yemek.YiyecekAdi.ToString();
+                        lvi.SubItems.Add(yemek.Kalori.ToString());
+                        lvi.SubItems.Add(yemek.Toplam.ToString());
+                        lvi.SubItems.Add(yemek.Ogun.OgunAdi.ToString());
+                        lviEnCokYediklerimAylik.Items.Add(lvi);
+                    }
+                }
+            }
+            else if (tabControl1.SelectedIndex == 4)
+            {
+                bll= new CaloCalcBussinessLogic();
+                var liste = bll.Yiyecekler.EnCokYedikleri(id, 7);
+                if (liste != null)
+                {
+                    lviDigerleriEnCokNeYemisHaftalik.Items.Clear();
+                    foreach (var yemek in liste)
+                    {
+                        ListViewItem lvi = new ListViewItem();
+                        lvi.Text = yemek.YiyecekAdi.ToString();
+                        lvi.SubItems.Add(yemek.Kalori.ToString());
+                        lvi.SubItems.Add(yemek.Toplam.ToString());
+                        lvi.SubItems.Add(yemek.Ogun.OgunAdi.ToString());
+                        lviDigerleriEnCokNeYemisHaftalik.Items.Add(lvi);
+                    }
+                }
+                bll = new CaloCalcBussinessLogic();
+                var liste1 = bll.Yiyecekler.EnCokYedikleri(id, 30);
+                if (liste1 != null)
+                {
+                    lviDigerleriEnCokNeYemisAylik.Items.Clear();
+                    foreach (var yemek in liste1)
+                    {
+                        ListViewItem lvi = new ListViewItem();
+                        lvi.Text = yemek.YiyecekAdi.ToString();
+                        lvi.SubItems.Add(yemek.Kalori.ToString());
+                        lvi.SubItems.Add(yemek.Toplam.ToString());
+                        lvi.SubItems.Add(yemek.Ogun.OgunAdi.ToString());
+                        lviDigerleriEnCokNeYemisAylik.Items.Add(lvi);
+                    }
+                }
+            }
         }
 
         private void btnKahvaltiSil_Click(object sender, EventArgs e)
@@ -275,7 +344,7 @@ namespace CaloCalc
 
         private void btnKahvaltiGuncelle_Click(object sender, EventArgs e)
         {
-            if (lvSabahKahvaltiListe.SelectedItems.Count > 0) 
+            if (lvSabahKahvaltiListe.SelectedItems.Count > 0)
             {
                 int ogunID = (int)lvSabahKahvaltiListe.SelectedItems[0].Tag;
                 Ogun guncellenecekOgun = bll.Ogunler.Ara(ogunID);
@@ -524,6 +593,8 @@ namespace CaloCalc
 
             }
         }
+
+
     }
 
 

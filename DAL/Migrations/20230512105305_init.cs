@@ -75,6 +75,7 @@ namespace DAL.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     YiyecekAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Kalori = table.Column<double>(type: "float", nullable: false),
+                    Toplam = table.Column<int>(type: "int", nullable: true),
                     Fotograf = table.Column<byte[]>(type: "image", nullable: true),
                     FotografYolu = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
                     OgunID = table.Column<int>(type: "int", nullable: true),

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(CaloCalcDbContext))]
-    [Migration("20230511205524_init")]
+    [Migration("20230512105305_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -196,6 +196,9 @@ namespace DAL.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("OgunID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Toplam")
                         .HasColumnType("int");
 
                     b.Property<string>("YiyecekAdi")

@@ -127,7 +127,7 @@ namespace CaloCalc
 
         }
 
-       
+
 
         private void btnSabahAtistirmasiEkle_Click(object sender, EventArgs e)
         {
@@ -247,6 +247,25 @@ namespace CaloCalc
                 lblAksamAtistirma.Text = bll.Kullanicilar.OguneGoreKaloriRaporu(id, Ogunler.AksamAtistirmasi).ToString();
                 lblToplam.Text = bll.Kullanicilar.GunSonuRaporu(id).ToString();
             }
+            else if (tabControl1.SelectedIndex == 2)
+            {
+                bll = new CaloCalcBussinessLogic();
+                var liste = bll.Yiyecekler.EnCokYenenler();
+
+                if (liste != null)
+                {
+                    lviEnCokYenenler.Items.Clear();
+                    foreach (var yemek in liste)
+                    {
+                        ListViewItem lvi = new ListViewItem();
+                        lvi.Text = yemek.YiyecekAdi.ToString();
+                        lvi.SubItems.Add(yemek.Kalori.ToString());
+                        lvi.SubItems.Add(yemek.Toplam.ToString());
+                        lvi.SubItems.Add(yemek.Ogun.OgunAdi.ToString());
+                        lviEnCokYenenler.Items.Add(lvi);
+                    }
+                }
+            }
         }
 
         private void btnKahvaltiSil_Click(object sender, EventArgs e)
@@ -290,8 +309,8 @@ namespace CaloCalc
                     MessageBox.Show("Bir hata olustu güncellenemdi.");
                 }
 
-
             }
+
         }
     }
 

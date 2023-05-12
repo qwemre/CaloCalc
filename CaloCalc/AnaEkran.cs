@@ -206,7 +206,7 @@ namespace CaloCalc
             yiyecek = bll.Yiyecekler.Ara((int)cbxAksamAtistirmasi.SelectedValue);
             ogun.KullaniciID = id;
             ogun.YiyecekID = yiyecek.YiyecekID;
-            ogun.OgunAdi = Ogunler.Kahvaltı;
+            ogun.OgunAdi = Ogunler.AksamAtistirmasi;
             ogun.PorsiyonAdet = (double)nudAksamAtistirmasiPorsiyon.Value;
             ogun.YemekYemeZamani = DateTime.Now;
             ogun.ToplamKalori = (yiyecek.Kalori * ogun.PorsiyonAdet);
@@ -346,7 +346,7 @@ namespace CaloCalc
 
         private void btnOglenYemegiGuncelle_Click(object sender, EventArgs e)
         {
-            if (lvSabahKahvaltiListe.SelectedItems.Count > 0)
+            if (lviOglenYemegiList.SelectedItems.Count > 0)
             {
                 int ogunID = (int)lviOglenYemegiList.SelectedItems[0].Tag;
                 Ogun guncellenecekOgun = bll.Ogunler.Ara(ogunID);
@@ -462,7 +462,7 @@ namespace CaloCalc
                 Ogun guncellenecekOgun = bll.Ogunler.Ara(ogunID);
                 yiyecek = bll.Yiyecekler.Ara((int)cbxAksamYemegi.SelectedValue);
                 guncellenecekOgun.YiyecekID = yiyecek.YiyecekID;
-                guncellenecekOgun.PorsiyonAdet = (double)nudAksamAtistirmasiPorsiyon.Value;
+                guncellenecekOgun.PorsiyonAdet = (double)nudAksamYemegiPorsiyon.Value;
                 guncellenecekOgun.YemekYemeZamani = DateTime.Now;
                 guncellenecekOgun.ToplamKalori = (yiyecek.Kalori * guncellenecekOgun.PorsiyonAdet);
                 bool güncellediMi = bll.Ogunler.Guncelle(guncellenecekOgun);

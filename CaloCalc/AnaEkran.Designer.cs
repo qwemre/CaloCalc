@@ -172,6 +172,7 @@
             btnOglenYemegiSil.TabIndex = 31;
             btnOglenYemegiSil.Text = "Sil";
             btnOglenYemegiSil.UseVisualStyleBackColor = true;
+            btnOglenYemegiSil.Click += btnOglenYemegiSil_Click;
             // 
             // nudAksamAtistirmasiPorsiyon
             // 
@@ -277,6 +278,7 @@
             btnAksamAtistirmasiGuncelle.TabIndex = 30;
             btnAksamAtistirmasiGuncelle.Text = "Güncelle";
             btnAksamAtistirmasiGuncelle.UseVisualStyleBackColor = true;
+            btnAksamAtistirmasiGuncelle.Click += btnAksamAtistirmasiGuncelle_Click;
             // 
             // btnAksamAtistirmasiSil
             // 
@@ -286,6 +288,7 @@
             btnAksamAtistirmasiSil.TabIndex = 31;
             btnAksamAtistirmasiSil.Text = "Sil";
             btnAksamAtistirmasiSil.UseVisualStyleBackColor = true;
+            btnAksamAtistirmasiSil.Click += btnAksamAtistirmasiSil_Click;
             // 
             // btnAksamAtistirmasiEkle
             // 
@@ -354,6 +357,7 @@
             btnAksamYemegiGuncelle.TabIndex = 30;
             btnAksamYemegiGuncelle.Text = "Güncelle";
             btnAksamYemegiGuncelle.UseVisualStyleBackColor = true;
+            btnAksamYemegiGuncelle.Click += btnAksamYemegiGuncelle_Click;
             // 
             // btnAksamYemegiSil
             // 
@@ -363,6 +367,7 @@
             btnAksamYemegiSil.TabIndex = 31;
             btnAksamYemegiSil.Text = "Sil";
             btnAksamYemegiSil.UseVisualStyleBackColor = true;
+            btnAksamYemegiSil.Click += btnAksamYemegiSil_Click;
             // 
             // btnAksamYemegiEkle
             // 
@@ -488,6 +493,7 @@
             btnOglenAtistirmasiGuncelle.TabIndex = 30;
             btnOglenAtistirmasiGuncelle.Text = "Güncelle";
             btnOglenAtistirmasiGuncelle.UseVisualStyleBackColor = true;
+            btnOglenAtistirmasiGuncelle.Click += btnOglenAtistirmasiGuncelle_Click;
             // 
             // btnOglenAtistirmasiSil
             // 
@@ -497,6 +503,7 @@
             btnOglenAtistirmasiSil.TabIndex = 31;
             btnOglenAtistirmasiSil.Text = "Sil";
             btnOglenAtistirmasiSil.UseVisualStyleBackColor = true;
+            btnOglenAtistirmasiSil.Click += btnOglenAtistirmasiSil_Click;
             // 
             // btnOglenAtistirmasiEkle
             // 
@@ -573,6 +580,7 @@
             btnOglenYemegiGuncelle.TabIndex = 30;
             btnOglenYemegiGuncelle.Text = "Güncelle";
             btnOglenYemegiGuncelle.UseVisualStyleBackColor = true;
+            btnOglenYemegiGuncelle.Click += btnOglenYemegiGuncelle_Click;
             // 
             // label13
             // 
@@ -992,6 +1000,7 @@
             btnSabahAtistirmasiGuncelle.TabIndex = 30;
             btnSabahAtistirmasiGuncelle.Text = "Güncelle";
             btnSabahAtistirmasiGuncelle.UseVisualStyleBackColor = true;
+            btnSabahAtistirmasiGuncelle.Click += btnSabahAtistirmasiGuncelle_Click;
             // 
             // btnSabahAtistirmasiSil
             // 
@@ -1001,6 +1010,7 @@
             btnSabahAtistirmasiSil.TabIndex = 31;
             btnSabahAtistirmasiSil.Text = "Sil";
             btnSabahAtistirmasiSil.UseVisualStyleBackColor = true;
+            btnSabahAtistirmasiSil.Click += btnSabahAtistirmasiSil_Click;
             // 
             // btnSabahAtistirmasiEkle
             // 

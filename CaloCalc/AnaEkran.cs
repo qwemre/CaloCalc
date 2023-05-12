@@ -21,12 +21,7 @@ namespace CaloCalc
     {
         int id;
         Yiyecek yiyecek;
-        //Ogun ogun;
-        //Ogun ogun1;
-        //Ogun ogun2;
-        //Ogun ogun3;
-        //Ogun ogun4;
-        //Ogun ogun5;
+
         DateTime lastUpdate = DateTime.Parse("2023-05-10"); // örnek bir tarih
         CaloCalc.Helper.Methods helper = new();
 
@@ -35,15 +30,9 @@ namespace CaloCalc
             InitializeComponent();
             this.id = ıd;
 
-            //ogun = new Ogun();
-
-            if (DateTime.Now.Subtract(lastUpdate).TotalDays >= 1)
-            {
-
-            }
-
-
             bll = new CaloCalcBussinessLogic();
+
+   
         }
 
 
@@ -136,7 +125,7 @@ namespace CaloCalc
             yiyecek = bll.Yiyecekler.Ara((int)cbxSabahAtistirmasi.SelectedValue);
             ogun.KullaniciID = id;
             ogun.YiyecekID = yiyecek.YiyecekID;
-            ogun.OgunAdi = Ogunler.AksamAtistirmasi;
+            ogun.OgunAdi = Ogunler.SabahAtistirmasi;
             ogun.PorsiyonAdet = (double)nudSabahAtistirmasiPorsiyon.Value;
             ogun.YemekYemeZamani = DateTime.Now;
             ogun.ToplamKalori = (yiyecek.Kalori * ogun.PorsiyonAdet);
@@ -270,7 +259,7 @@ namespace CaloCalc
 
         private void btnKahvaltiSil_Click(object sender, EventArgs e)
         {
-            if (lvSabahKahvaltiListe.SelectedItems.Count > 0) // En az bir öğe seçili mi diye kontrol ediyoruz.
+            if (lvSabahKahvaltiListe.SelectedItems.Count > 0)
             {
                 int ogunID = (int)lvSabahKahvaltiListe.SelectedItems[0].Tag;
                 bool sildiMi = bll.Ogunler.Sil(ogunID);
@@ -289,7 +278,7 @@ namespace CaloCalc
 
         private void btnKahvaltiGuncelle_Click(object sender, EventArgs e)
         {
-            if (lvSabahKahvaltiListe.SelectedItems.Count > 0) // En az bir öğe seçili mi diye kontrol ediyoruz.
+            if (lvSabahKahvaltiListe.SelectedItems.Count > 0) 
             {
                 int ogunID = (int)lvSabahKahvaltiListe.SelectedItems[0].Tag;
                 Ogun guncellenecekOgun = bll.Ogunler.Ara(ogunID);
@@ -311,6 +300,232 @@ namespace CaloCalc
 
             }
 
+        }
+
+        private void btnSabahAtistirmasiSil_Click(object sender, EventArgs e)
+        {
+            if (lviSabahAtistirmasiList.SelectedItems.Count > 0)
+            {
+                int ogunID = (int)lviSabahAtistirmasiList.SelectedItems[0].Tag;
+                bool sildiMi = bll.Ogunler.Sil(ogunID);
+                if (sildiMi)
+                {
+                    MessageBox.Show("Silindi");
+                    helper.ListViewYazdirma(id, Ogunler.SabahAtistirmasi, lviSabahAtistirmasiList);
+                }
+                else
+                {
+                    MessageBox.Show("Bir hata olustu silemedik.");
+                }
+
+            }
+        }
+
+        private void btnSabahAtistirmasiGuncelle_Click(object sender, EventArgs e)
+        {
+            if (lviSabahAtistirmasiList.SelectedItems.Count > 0)
+            {
+                int ogunID = (int)lviSabahAtistirmasiList.SelectedItems[0].Tag;
+                Ogun guncellenecekOgun = bll.Ogunler.Ara(ogunID);
+                yiyecek = bll.Yiyecekler.Ara((int)cbxSabahAtistirmasi.SelectedValue);
+                guncellenecekOgun.YiyecekID = yiyecek.YiyecekID;
+                guncellenecekOgun.PorsiyonAdet = (double)nudSabahAtistirmasiPorsiyon.Value;
+                guncellenecekOgun.YemekYemeZamani = DateTime.Now;
+                guncellenecekOgun.ToplamKalori = (yiyecek.Kalori * guncellenecekOgun.PorsiyonAdet);
+                bool güncellediMi = bll.Ogunler.Guncelle(guncellenecekOgun);
+                if (güncellediMi)
+                {
+                    MessageBox.Show("Güncellendi");
+                    helper.ListViewYazdirma(id, Ogunler.SabahAtistirmasi, lviSabahAtistirmasiList);
+                }
+                else
+                {
+                    MessageBox.Show("Bir hata olustu güncellenemdi.");
+                }
+
+
+            }
+        }
+
+        private void btnOglenYemegiGuncelle_Click(object sender, EventArgs e)
+        {
+            if (lvSabahKahvaltiListe.SelectedItems.Count > 0)
+            {
+                int ogunID = (int)lviOglenYemegiList.SelectedItems[0].Tag;
+                Ogun guncellenecekOgun = bll.Ogunler.Ara(ogunID);
+                yiyecek = bll.Yiyecekler.Ara((int)cbxOglenYemegi.SelectedValue);
+                guncellenecekOgun.YiyecekID = yiyecek.YiyecekID;
+                guncellenecekOgun.PorsiyonAdet = (double)nudOglenYemegiPorsiyon.Value;
+                guncellenecekOgun.YemekYemeZamani = DateTime.Now;
+                guncellenecekOgun.ToplamKalori = (yiyecek.Kalori * guncellenecekOgun.PorsiyonAdet);
+                bool güncellediMi = bll.Ogunler.Guncelle(guncellenecekOgun);
+                if (güncellediMi)
+                {
+                    MessageBox.Show("Güncellendi");
+                    helper.ListViewYazdirma(id, Ogunler.OglenYemegi, lviOglenYemegiList);
+                }
+                else
+                {
+                    MessageBox.Show("Bir hata olustu güncellenemdi.");
+                }
+
+
+            }
+        }
+
+        private void btnOglenYemegiSil_Click(object sender, EventArgs e)
+        {
+            if (lviOglenYemegiList.SelectedItems.Count > 0)
+            {
+                int ogunID = (int)lviOglenYemegiList.SelectedItems[0].Tag;
+                bool sildiMi = bll.Ogunler.Sil(ogunID);
+                if (sildiMi)
+                {
+                    MessageBox.Show("Silindi");
+                    helper.ListViewYazdirma(id, Ogunler.OglenYemegi, lviOglenYemegiList);
+                }
+                else
+                {
+                    MessageBox.Show("Bir hata olustu silemedik.");
+                }
+
+            }
+        }
+
+        private void btnOglenAtistirmasiSil_Click(object sender, EventArgs e)
+        {
+            if (lviOglenAtistirmasiList.SelectedItems.Count > 0)
+            {
+                int ogunID = (int)lviOglenAtistirmasiList.SelectedItems[0].Tag;
+                bool sildiMi = bll.Ogunler.Sil(ogunID);
+                if (sildiMi)
+                {
+                    MessageBox.Show("Silindi");
+                    helper.ListViewYazdirma(id, Ogunler.OglenAtistirmasi, lviOglenAtistirmasiList);
+                }
+                else
+                {
+                    MessageBox.Show("Bir hata olustu silemedik.");
+                }
+
+            }
+
+        }
+
+        private void btnOglenAtistirmasiGuncelle_Click(object sender, EventArgs e)
+        {
+            if (lviOglenAtistirmasiList.SelectedItems.Count > 0)
+            {
+                int ogunID = (int)lviOglenAtistirmasiList.SelectedItems[0].Tag;
+                Ogun guncellenecekOgun = bll.Ogunler.Ara(ogunID);
+                yiyecek = bll.Yiyecekler.Ara((int)cbxOglenAtistirmasi.SelectedValue);
+                guncellenecekOgun.YiyecekID = yiyecek.YiyecekID;
+                guncellenecekOgun.PorsiyonAdet = (double)nudOglenAtistirmasiPorsiyon.Value;
+                guncellenecekOgun.YemekYemeZamani = DateTime.Now;
+                guncellenecekOgun.ToplamKalori = (yiyecek.Kalori * guncellenecekOgun.PorsiyonAdet);
+                bool güncellediMi = bll.Ogunler.Guncelle(guncellenecekOgun);
+                if (güncellediMi)
+                {
+                    MessageBox.Show("Güncellendi");
+                    helper.ListViewYazdirma(id, Ogunler.OglenAtistirmasi, lviOglenAtistirmasiList);
+                }
+                else
+                {
+                    MessageBox.Show("Bir hata olustu güncellenemdi.");
+                }
+
+
+            }
+        }
+
+        private void btnAksamYemegiSil_Click(object sender, EventArgs e)
+        {
+            if (lviAksamYemegiList.SelectedItems.Count > 0)
+            {
+                int ogunID = (int)lviAksamYemegiList.SelectedItems[0].Tag;
+                bool sildiMi = bll.Ogunler.Sil(ogunID);
+                if (sildiMi)
+                {
+                    MessageBox.Show("Silindi");
+                    helper.ListViewYazdirma(id, Ogunler.AksamYemegi, lviAksamYemegiList);
+                }
+                else
+                {
+                    MessageBox.Show("Bir hata olustu silemedik.");
+                }
+
+            }
+        }
+
+        private void btnAksamYemegiGuncelle_Click(object sender, EventArgs e)
+        {
+            if (lviAksamYemegiList.SelectedItems.Count > 0)
+            {
+                int ogunID = (int)lviAksamYemegiList.SelectedItems[0].Tag;
+                Ogun guncellenecekOgun = bll.Ogunler.Ara(ogunID);
+                yiyecek = bll.Yiyecekler.Ara((int)cbxAksamYemegi.SelectedValue);
+                guncellenecekOgun.YiyecekID = yiyecek.YiyecekID;
+                guncellenecekOgun.PorsiyonAdet = (double)nudAksamAtistirmasiPorsiyon.Value;
+                guncellenecekOgun.YemekYemeZamani = DateTime.Now;
+                guncellenecekOgun.ToplamKalori = (yiyecek.Kalori * guncellenecekOgun.PorsiyonAdet);
+                bool güncellediMi = bll.Ogunler.Guncelle(guncellenecekOgun);
+                if (güncellediMi)
+                {
+                    MessageBox.Show("Güncellendi");
+                    helper.ListViewYazdirma(id, Ogunler.AksamYemegi, lviAksamYemegiList);
+                }
+                else
+                {
+                    MessageBox.Show("Bir hata olustu güncellenemdi.");
+                }
+
+
+            }
+        }
+
+        private void btnAksamAtistirmasiSil_Click(object sender, EventArgs e)
+        {
+            if (lviAksamAtistirmasiList.SelectedItems.Count > 0)
+            {
+                int ogunID = (int)lviAksamAtistirmasiList.SelectedItems[0].Tag;
+                bool sildiMi = bll.Ogunler.Sil(ogunID);
+                if (sildiMi)
+                {
+                    MessageBox.Show("Silindi");
+                    helper.ListViewYazdirma(id, Ogunler.AksamAtistirmasi, lviAksamAtistirmasiList);
+                }
+                else
+                {
+                    MessageBox.Show("Bir hata olustu silemedik.");
+                }
+
+            }
+        }
+
+        private void btnAksamAtistirmasiGuncelle_Click(object sender, EventArgs e)
+        {
+            if (lviAksamAtistirmasiList.SelectedItems.Count > 0)
+            {
+                int ogunID = (int)lviAksamAtistirmasiList.SelectedItems[0].Tag;
+                Ogun guncellenecekOgun = bll.Ogunler.Ara(ogunID);
+                yiyecek = bll.Yiyecekler.Ara((int)cbxSabahAtistirmasi.SelectedValue);
+                guncellenecekOgun.YiyecekID = yiyecek.YiyecekID;
+                guncellenecekOgun.PorsiyonAdet = (double)nudAksamAtistirmasiPorsiyon.Value;
+                guncellenecekOgun.YemekYemeZamani = DateTime.Now;
+                guncellenecekOgun.ToplamKalori = (yiyecek.Kalori * guncellenecekOgun.PorsiyonAdet);
+                bool güncellediMi = bll.Ogunler.Guncelle(guncellenecekOgun);
+                if (güncellediMi)
+                {
+                    MessageBox.Show("Güncellendi");
+                    helper.ListViewYazdirma(id, Ogunler.AksamAtistirmasi, lviAksamAtistirmasiList);
+                }
+                else
+                {
+                    MessageBox.Show("Bir hata olustu güncellenemdi.");
+                }
+
+
+            }
         }
     }
 

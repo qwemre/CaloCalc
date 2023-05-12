@@ -196,6 +196,9 @@ namespace DAL.Migrations
                     b.Property<int?>("OgunID")
                         .HasColumnType("int");
 
+                    b.Property<int?>("Toplam")
+                        .HasColumnType("int");
+
                     b.Property<string>("YiyecekAdi")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

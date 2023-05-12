@@ -129,8 +129,11 @@
             btnOglenYemegiOgunSil = new Button();
             lblOglenYemegiKalori = new Label();
             tabPage8 = new TabPage();
-            dgvEnCokYenenler = new DataGridView();
             tabPage6 = new TabPage();
+            lviEnCokYenenler = new ListView();
+            columnHeader25 = new ColumnHeader();
+            columnHeader26 = new ColumnHeader();
+            columnHeader27 = new ColumnHeader();
             dgvEnCokYediklerinAylik = new DataGridView();
             dgvEnCokYediklerinHafta = new DataGridView();
             tabPage7 = new TabPage();
@@ -138,6 +141,7 @@
             dataGridView17 = new DataGridView();
             tabPage11 = new TabPage();
             tabControl1 = new TabControl();
+            columnHeader28 = new ColumnHeader();
             ((System.ComponentModel.ISupportInitialize)nudAksamAtistirmasiPorsiyon).BeginInit();
             tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudAksamYemegiPorsiyon).BeginInit();
@@ -153,7 +157,6 @@
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudOglenYemegiPorsiyon).BeginInit();
             tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvEnCokYenenler).BeginInit();
             tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEnCokYediklerinAylik).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvEnCokYediklerinHafta).BeginInit();
@@ -1111,17 +1114,9 @@
             tabPage8.Text = "Yemek mi yedin?";
             tabPage8.UseVisualStyleBackColor = true;
             // 
-            // dgvEnCokYenenler
-            // 
-            dgvEnCokYenenler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEnCokYenenler.Location = new Point(60, 107);
-            dgvEnCokYenenler.Name = "dgvEnCokYenenler";
-            dgvEnCokYenenler.Size = new Size(332, 165);
-            dgvEnCokYenenler.TabIndex = 0;
-            // 
             // tabPage6
             // 
-            tabPage6.Controls.Add(dgvEnCokYenenler);
+            tabPage6.Controls.Add(lviEnCokYenenler);
             tabPage6.Location = new Point(4, 24);
             tabPage6.Name = "tabPage6";
             tabPage6.Padding = new Padding(3);
@@ -1129,6 +1124,33 @@
             tabPage6.TabIndex = 8;
             tabPage6.Text = "En Çok Yenenler";
             tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // lviEnCokYenenler
+            // 
+            lviEnCokYenenler.Columns.AddRange(new ColumnHeader[] { columnHeader25, columnHeader26, columnHeader27, columnHeader28 });
+            lviEnCokYenenler.FullRowSelect = true;
+            lviEnCokYenenler.GridLines = true;
+            lviEnCokYenenler.Location = new Point(17, 23);
+            lviEnCokYenenler.Name = "lviEnCokYenenler";
+            lviEnCokYenenler.Size = new Size(518, 422);
+            lviEnCokYenenler.TabIndex = 32;
+            lviEnCokYenenler.UseCompatibleStateImageBehavior = false;
+            lviEnCokYenenler.View = View.Details;
+            // 
+            // columnHeader25
+            // 
+            columnHeader25.Text = "Yiyecek";
+            columnHeader25.Width = 125;
+            // 
+            // columnHeader26
+            // 
+            columnHeader26.Text = "Kalori";
+            columnHeader26.Width = 125;
+            // 
+            // columnHeader27
+            // 
+            columnHeader27.Text = "Toplam Adet";
+            columnHeader27.Width = 125;
             // 
             // dgvEnCokYediklerinAylik
             // 
@@ -1203,6 +1225,11 @@
             tabControl1.TabIndex = 1;
             tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 
+            // columnHeader28
+            // 
+            columnHeader28.Text = "Ogun Adi";
+            columnHeader28.Width = 150;
+            // 
             // AnaEkran
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1234,7 +1261,6 @@
             tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nudOglenYemegiPorsiyon).EndInit();
             tabPage8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvEnCokYenenler).EndInit();
             tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvEnCokYediklerinAylik).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvEnCokYediklerinHafta).EndInit();
@@ -1319,7 +1345,6 @@
         private Button btnOglenYemegiOgunSil;
         private Label lblOglenYemegiKalori;
         private TabPage tabPage8;
-        private DataGridView dgvEnCokYenenler;
         private TabPage tabPage6;
         private DataGridView dgvEnCokYediklerinAylik;
         private DataGridView dgvEnCokYediklerinHafta;
@@ -1358,5 +1383,10 @@
         private ColumnHeader columnHeader10;
         private ColumnHeader columnHeader11;
         private ColumnHeader columnHeader12;
+        private ListView lviEnCokYenenler;
+        private ColumnHeader columnHeader25;
+        private ColumnHeader columnHeader26;
+        private ColumnHeader columnHeader27;
+        private ColumnHeader columnHeader28;
     }
 }

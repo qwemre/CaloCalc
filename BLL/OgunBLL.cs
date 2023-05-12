@@ -100,6 +100,7 @@ namespace BLL
             var ogun=Db.Ogunler.Where(x=>x.KullaniciID==kullaniciID&&x.OgunID==ogunID).ToList();
             return ogun;
         }
+       
 
 
         //public List<Entities.Yiyecek> listeleme(int kullaniciID,int ogunID)

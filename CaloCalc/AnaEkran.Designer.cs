@@ -91,8 +91,6 @@
             label8 = new Label();
             nudKahvaltiPorsiyon = new NumericUpDown();
             cbxSabahKahvaltısı = new ComboBox();
-            lblKahvaltiKalori = new Label();
-            label21 = new Label();
             btnKahvaltiGuncelle = new Button();
             btnKahvaltiSil = new Button();
             tabPage9 = new TabPage();
@@ -158,6 +156,10 @@
             columnHeader39 = new ColumnHeader();
             columnHeader40 = new ColumnHeader();
             tabControl1 = new TabControl();
+            label2 = new Label();
+            label6 = new Label();
+            label10 = new Label();
+            label14 = new Label();
             ((System.ComponentModel.ISupportInitialize)nudAksamAtistirmasiPorsiyon).BeginInit();
             tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudAksamYemegiPorsiyon).BeginInit();
@@ -181,9 +183,10 @@
             // 
             // btnOglenYemegiSil
             // 
-            btnOglenYemegiSil.Location = new Point(135, 176);
+            btnOglenYemegiSil.Location = new Point(154, 235);
+            btnOglenYemegiSil.Margin = new Padding(3, 4, 3, 4);
             btnOglenYemegiSil.Name = "btnOglenYemegiSil";
-            btnOglenYemegiSil.Size = new Size(75, 23);
+            btnOglenYemegiSil.Size = new Size(86, 31);
             btnOglenYemegiSil.TabIndex = 31;
             btnOglenYemegiSil.Text = "Sil";
             btnOglenYemegiSil.UseVisualStyleBackColor = true;
@@ -193,11 +196,12 @@
             // 
             nudAksamAtistirmasiPorsiyon.DecimalPlaces = 1;
             nudAksamAtistirmasiPorsiyon.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
-            nudAksamAtistirmasiPorsiyon.Location = new Point(392, 147);
+            nudAksamAtistirmasiPorsiyon.Location = new Point(448, 196);
+            nudAksamAtistirmasiPorsiyon.Margin = new Padding(3, 4, 3, 4);
             nudAksamAtistirmasiPorsiyon.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             nudAksamAtistirmasiPorsiyon.Minimum = new decimal(new int[] { 5, 0, 0, 65536 });
             nudAksamAtistirmasiPorsiyon.Name = "nudAksamAtistirmasiPorsiyon";
-            nudAksamAtistirmasiPorsiyon.Size = new Size(73, 23);
+            nudAksamAtistirmasiPorsiyon.Size = new Size(83, 27);
             nudAksamAtistirmasiPorsiyon.TabIndex = 39;
             nudAksamAtistirmasiPorsiyon.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -206,9 +210,10 @@
             cbxAksamAtistirmasi.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cbxAksamAtistirmasi.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbxAksamAtistirmasi.FormattingEnabled = true;
-            cbxAksamAtistirmasi.Location = new Point(111, 23);
+            cbxAksamAtistirmasi.Location = new Point(127, 31);
+            cbxAksamAtistirmasi.Margin = new Padding(3, 4, 3, 4);
             cbxAksamAtistirmasi.Name = "cbxAksamAtistirmasi";
-            cbxAksamAtistirmasi.Size = new Size(314, 23);
+            cbxAksamAtistirmasi.Size = new Size(358, 28);
             cbxAksamAtistirmasi.TabIndex = 38;
             // 
             // tabPage5
@@ -222,10 +227,11 @@
             tabPage5.Controls.Add(btnAksamAtistirmasiGuncelle);
             tabPage5.Controls.Add(btnAksamAtistirmasiSil);
             tabPage5.Controls.Add(btnAksamAtistirmasiEkle);
-            tabPage5.Location = new Point(4, 24);
+            tabPage5.Location = new Point(4, 29);
+            tabPage5.Margin = new Padding(3, 4, 3, 4);
             tabPage5.Name = "tabPage5";
-            tabPage5.Padding = new Padding(3);
-            tabPage5.Size = new Size(554, 480);
+            tabPage5.Padding = new Padding(3, 4, 3, 4);
+            tabPage5.Size = new Size(661, 510);
             tabPage5.TabIndex = 5;
             tabPage5.Text = "Akşam Atıştırması";
             tabPage5.UseVisualStyleBackColor = true;
@@ -235,9 +241,10 @@
             lviAksamAtistirmasiList.Columns.AddRange(new ColumnHeader[] { columnHeader21, columnHeader22, columnHeader23, columnHeader24 });
             lviAksamAtistirmasiList.FullRowSelect = true;
             lviAksamAtistirmasiList.GridLines = true;
-            lviAksamAtistirmasiList.Location = new Point(96, 252);
+            lviAksamAtistirmasiList.Location = new Point(110, 336);
+            lviAksamAtistirmasiList.Margin = new Padding(3, 4, 3, 4);
             lviAksamAtistirmasiList.Name = "lviAksamAtistirmasiList";
-            lviAksamAtistirmasiList.Size = new Size(314, 211);
+            lviAksamAtistirmasiList.Size = new Size(358, 280);
             lviAksamAtistirmasiList.TabIndex = 40;
             lviAksamAtistirmasiList.UseCompatibleStateImageBehavior = false;
             lviAksamAtistirmasiList.View = View.Details;
@@ -260,9 +267,10 @@
             // 
             // btnAksamAtistirmasiOgunSil
             // 
-            btnAksamAtistirmasiOgunSil.Location = new Point(452, 460);
+            btnAksamAtistirmasiOgunSil.Location = new Point(517, 613);
+            btnAksamAtistirmasiOgunSil.Margin = new Padding(3, 4, 3, 4);
             btnAksamAtistirmasiOgunSil.Name = "btnAksamAtistirmasiOgunSil";
-            btnAksamAtistirmasiOgunSil.Size = new Size(75, 23);
+            btnAksamAtistirmasiOgunSil.Size = new Size(86, 31);
             btnAksamAtistirmasiOgunSil.TabIndex = 35;
             btnAksamAtistirmasiOgunSil.Text = "Ögünü Sil";
             btnAksamAtistirmasiOgunSil.UseVisualStyleBackColor = true;
@@ -270,26 +278,27 @@
             // lblAksamAtistirmasiKalori
             // 
             lblAksamAtistirmasiKalori.AutoSize = true;
-            lblAksamAtistirmasiKalori.Location = new Point(258, 219);
+            lblAksamAtistirmasiKalori.Location = new Point(295, 292);
             lblAksamAtistirmasiKalori.Name = "lblAksamAtistirmasiKalori";
-            lblAksamAtistirmasiKalori.Size = new Size(13, 15);
+            lblAksamAtistirmasiKalori.Size = new Size(17, 20);
             lblAksamAtistirmasiKalori.TabIndex = 33;
             lblAksamAtistirmasiKalori.Text = "0";
             // 
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(114, 219);
+            label17.Location = new Point(130, 292);
             label17.Name = "label17";
-            label17.Size = new Size(73, 15);
+            label17.Size = new Size(92, 20);
             label17.TabIndex = 34;
             label17.Text = "Alınan kalori";
             // 
             // btnAksamAtistirmasiGuncelle
             // 
-            btnAksamAtistirmasiGuncelle.Location = new Point(24, 176);
+            btnAksamAtistirmasiGuncelle.Location = new Point(27, 235);
+            btnAksamAtistirmasiGuncelle.Margin = new Padding(3, 4, 3, 4);
             btnAksamAtistirmasiGuncelle.Name = "btnAksamAtistirmasiGuncelle";
-            btnAksamAtistirmasiGuncelle.Size = new Size(75, 23);
+            btnAksamAtistirmasiGuncelle.Size = new Size(86, 31);
             btnAksamAtistirmasiGuncelle.TabIndex = 30;
             btnAksamAtistirmasiGuncelle.Text = "Güncelle";
             btnAksamAtistirmasiGuncelle.UseVisualStyleBackColor = true;
@@ -297,9 +306,10 @@
             // 
             // btnAksamAtistirmasiSil
             // 
-            btnAksamAtistirmasiSil.Location = new Point(135, 176);
+            btnAksamAtistirmasiSil.Location = new Point(154, 235);
+            btnAksamAtistirmasiSil.Margin = new Padding(3, 4, 3, 4);
             btnAksamAtistirmasiSil.Name = "btnAksamAtistirmasiSil";
-            btnAksamAtistirmasiSil.Size = new Size(75, 23);
+            btnAksamAtistirmasiSil.Size = new Size(86, 31);
             btnAksamAtistirmasiSil.TabIndex = 31;
             btnAksamAtistirmasiSil.Text = "Sil";
             btnAksamAtistirmasiSil.UseVisualStyleBackColor = true;
@@ -307,9 +317,10 @@
             // 
             // btnAksamAtistirmasiEkle
             // 
-            btnAksamAtistirmasiEkle.Location = new Point(245, 147);
+            btnAksamAtistirmasiEkle.Location = new Point(280, 196);
+            btnAksamAtistirmasiEkle.Margin = new Padding(3, 4, 3, 4);
             btnAksamAtistirmasiEkle.Name = "btnAksamAtistirmasiEkle";
-            btnAksamAtistirmasiEkle.Size = new Size(75, 23);
+            btnAksamAtistirmasiEkle.Size = new Size(86, 31);
             btnAksamAtistirmasiEkle.TabIndex = 32;
             btnAksamAtistirmasiEkle.Text = "Ekle";
             btnAksamAtistirmasiEkle.UseVisualStyleBackColor = true;
@@ -319,11 +330,12 @@
             // 
             nudAksamYemegiPorsiyon.DecimalPlaces = 1;
             nudAksamYemegiPorsiyon.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
-            nudAksamYemegiPorsiyon.Location = new Point(392, 147);
+            nudAksamYemegiPorsiyon.Location = new Point(448, 196);
+            nudAksamYemegiPorsiyon.Margin = new Padding(3, 4, 3, 4);
             nudAksamYemegiPorsiyon.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             nudAksamYemegiPorsiyon.Minimum = new decimal(new int[] { 5, 0, 0, 65536 });
             nudAksamYemegiPorsiyon.Name = "nudAksamYemegiPorsiyon";
-            nudAksamYemegiPorsiyon.Size = new Size(73, 23);
+            nudAksamYemegiPorsiyon.Size = new Size(83, 27);
             nudAksamYemegiPorsiyon.TabIndex = 39;
             nudAksamYemegiPorsiyon.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -332,16 +344,18 @@
             cbxAksamYemegi.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cbxAksamYemegi.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbxAksamYemegi.FormattingEnabled = true;
-            cbxAksamYemegi.Location = new Point(111, 23);
+            cbxAksamYemegi.Location = new Point(127, 31);
+            cbxAksamYemegi.Margin = new Padding(3, 4, 3, 4);
             cbxAksamYemegi.Name = "cbxAksamYemegi";
-            cbxAksamYemegi.Size = new Size(314, 23);
+            cbxAksamYemegi.Size = new Size(358, 28);
             cbxAksamYemegi.TabIndex = 38;
             // 
             // btnAksamYemegiOgunSil
             // 
-            btnAksamYemegiOgunSil.Location = new Point(452, 460);
+            btnAksamYemegiOgunSil.Location = new Point(517, 613);
+            btnAksamYemegiOgunSil.Margin = new Padding(3, 4, 3, 4);
             btnAksamYemegiOgunSil.Name = "btnAksamYemegiOgunSil";
-            btnAksamYemegiOgunSil.Size = new Size(75, 23);
+            btnAksamYemegiOgunSil.Size = new Size(86, 31);
             btnAksamYemegiOgunSil.TabIndex = 35;
             btnAksamYemegiOgunSil.Text = "Ögünü Sil";
             btnAksamYemegiOgunSil.UseVisualStyleBackColor = true;
@@ -349,26 +363,27 @@
             // lblAksamYemegiKalori
             // 
             lblAksamYemegiKalori.AutoSize = true;
-            lblAksamYemegiKalori.Location = new Point(258, 219);
+            lblAksamYemegiKalori.Location = new Point(295, 292);
             lblAksamYemegiKalori.Name = "lblAksamYemegiKalori";
-            lblAksamYemegiKalori.Size = new Size(13, 15);
+            lblAksamYemegiKalori.Size = new Size(17, 20);
             lblAksamYemegiKalori.TabIndex = 33;
             lblAksamYemegiKalori.Text = "0";
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(114, 219);
+            label15.Location = new Point(130, 292);
             label15.Name = "label15";
-            label15.Size = new Size(73, 15);
+            label15.Size = new Size(92, 20);
             label15.TabIndex = 34;
             label15.Text = "Alınan kalori";
             // 
             // btnAksamYemegiGuncelle
             // 
-            btnAksamYemegiGuncelle.Location = new Point(24, 176);
+            btnAksamYemegiGuncelle.Location = new Point(27, 235);
+            btnAksamYemegiGuncelle.Margin = new Padding(3, 4, 3, 4);
             btnAksamYemegiGuncelle.Name = "btnAksamYemegiGuncelle";
-            btnAksamYemegiGuncelle.Size = new Size(75, 23);
+            btnAksamYemegiGuncelle.Size = new Size(86, 31);
             btnAksamYemegiGuncelle.TabIndex = 30;
             btnAksamYemegiGuncelle.Text = "Güncelle";
             btnAksamYemegiGuncelle.UseVisualStyleBackColor = true;
@@ -376,9 +391,10 @@
             // 
             // btnAksamYemegiSil
             // 
-            btnAksamYemegiSil.Location = new Point(135, 176);
+            btnAksamYemegiSil.Location = new Point(154, 235);
+            btnAksamYemegiSil.Margin = new Padding(3, 4, 3, 4);
             btnAksamYemegiSil.Name = "btnAksamYemegiSil";
-            btnAksamYemegiSil.Size = new Size(75, 23);
+            btnAksamYemegiSil.Size = new Size(86, 31);
             btnAksamYemegiSil.TabIndex = 31;
             btnAksamYemegiSil.Text = "Sil";
             btnAksamYemegiSil.UseVisualStyleBackColor = true;
@@ -386,9 +402,10 @@
             // 
             // btnAksamYemegiEkle
             // 
-            btnAksamYemegiEkle.Location = new Point(245, 147);
+            btnAksamYemegiEkle.Location = new Point(280, 196);
+            btnAksamYemegiEkle.Margin = new Padding(3, 4, 3, 4);
             btnAksamYemegiEkle.Name = "btnAksamYemegiEkle";
-            btnAksamYemegiEkle.Size = new Size(75, 23);
+            btnAksamYemegiEkle.Size = new Size(86, 31);
             btnAksamYemegiEkle.TabIndex = 32;
             btnAksamYemegiEkle.Text = "Ekle";
             btnAksamYemegiEkle.UseVisualStyleBackColor = true;
@@ -397,10 +414,12 @@
             // lblToplam
             // 
             lblToplam.AutoSize = true;
-            lblToplam.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            lblToplam.Location = new Point(377, 23);
+            lblToplam.BackColor = Color.Transparent;
+            lblToplam.Font = new Font("Gabriola", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            lblToplam.ForeColor = Color.Transparent;
+            lblToplam.Location = new Point(539, 4);
             lblToplam.Name = "lblToplam";
-            lblToplam.Size = new Size(27, 32);
+            lblToplam.Size = new Size(48, 74);
             lblToplam.TabIndex = 1;
             lblToplam.Text = "0";
             // 
@@ -415,10 +434,11 @@
             tabPage3.Controls.Add(btnOglenAtistirmasiGuncelle);
             tabPage3.Controls.Add(btnOglenAtistirmasiSil);
             tabPage3.Controls.Add(btnOglenAtistirmasiEkle);
-            tabPage3.Location = new Point(4, 24);
+            tabPage3.Location = new Point(4, 29);
+            tabPage3.Margin = new Padding(3, 4, 3, 4);
             tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(554, 480);
+            tabPage3.Padding = new Padding(3, 4, 3, 4);
+            tabPage3.Size = new Size(661, 510);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "Öğlen Atıştırması";
             tabPage3.UseVisualStyleBackColor = true;
@@ -428,9 +448,10 @@
             lviOglenAtistirmasiList.Columns.AddRange(new ColumnHeader[] { columnHeader13, columnHeader14, columnHeader15, columnHeader16 });
             lviOglenAtistirmasiList.FullRowSelect = true;
             lviOglenAtistirmasiList.GridLines = true;
-            lviOglenAtistirmasiList.Location = new Point(111, 250);
+            lviOglenAtistirmasiList.Location = new Point(127, 333);
+            lviOglenAtistirmasiList.Margin = new Padding(3, 4, 3, 4);
             lviOglenAtistirmasiList.Name = "lviOglenAtistirmasiList";
-            lviOglenAtistirmasiList.Size = new Size(314, 211);
+            lviOglenAtistirmasiList.Size = new Size(358, 280);
             lviOglenAtistirmasiList.TabIndex = 40;
             lviOglenAtistirmasiList.UseCompatibleStateImageBehavior = false;
             lviOglenAtistirmasiList.View = View.Details;
@@ -455,11 +476,12 @@
             // 
             nudOglenAtistirmasiPorsiyon.DecimalPlaces = 1;
             nudOglenAtistirmasiPorsiyon.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
-            nudOglenAtistirmasiPorsiyon.Location = new Point(392, 147);
+            nudOglenAtistirmasiPorsiyon.Location = new Point(448, 196);
+            nudOglenAtistirmasiPorsiyon.Margin = new Padding(3, 4, 3, 4);
             nudOglenAtistirmasiPorsiyon.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             nudOglenAtistirmasiPorsiyon.Minimum = new decimal(new int[] { 5, 0, 0, 65536 });
             nudOglenAtistirmasiPorsiyon.Name = "nudOglenAtistirmasiPorsiyon";
-            nudOglenAtistirmasiPorsiyon.Size = new Size(73, 23);
+            nudOglenAtistirmasiPorsiyon.Size = new Size(83, 27);
             nudOglenAtistirmasiPorsiyon.TabIndex = 39;
             nudOglenAtistirmasiPorsiyon.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -468,16 +490,18 @@
             cbxOglenAtistirmasi.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cbxOglenAtistirmasi.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbxOglenAtistirmasi.FormattingEnabled = true;
-            cbxOglenAtistirmasi.Location = new Point(111, 23);
+            cbxOglenAtistirmasi.Location = new Point(127, 31);
+            cbxOglenAtistirmasi.Margin = new Padding(3, 4, 3, 4);
             cbxOglenAtistirmasi.Name = "cbxOglenAtistirmasi";
-            cbxOglenAtistirmasi.Size = new Size(314, 23);
+            cbxOglenAtistirmasi.Size = new Size(358, 28);
             cbxOglenAtistirmasi.TabIndex = 38;
             // 
             // btnOglenAtistirmasiOgunSil
             // 
-            btnOglenAtistirmasiOgunSil.Location = new Point(452, 460);
+            btnOglenAtistirmasiOgunSil.Location = new Point(517, 613);
+            btnOglenAtistirmasiOgunSil.Margin = new Padding(3, 4, 3, 4);
             btnOglenAtistirmasiOgunSil.Name = "btnOglenAtistirmasiOgunSil";
-            btnOglenAtistirmasiOgunSil.Size = new Size(75, 23);
+            btnOglenAtistirmasiOgunSil.Size = new Size(86, 31);
             btnOglenAtistirmasiOgunSil.TabIndex = 35;
             btnOglenAtistirmasiOgunSil.Text = "Ögünü Sil";
             btnOglenAtistirmasiOgunSil.UseVisualStyleBackColor = true;
@@ -485,26 +509,27 @@
             // lblOglenAtistirmasiKalori
             // 
             lblOglenAtistirmasiKalori.AutoSize = true;
-            lblOglenAtistirmasiKalori.Location = new Point(258, 219);
+            lblOglenAtistirmasiKalori.Location = new Point(295, 292);
             lblOglenAtistirmasiKalori.Name = "lblOglenAtistirmasiKalori";
-            lblOglenAtistirmasiKalori.Size = new Size(13, 15);
+            lblOglenAtistirmasiKalori.Size = new Size(17, 20);
             lblOglenAtistirmasiKalori.TabIndex = 33;
             lblOglenAtistirmasiKalori.Text = "0";
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(114, 219);
+            label12.Location = new Point(130, 292);
             label12.Name = "label12";
-            label12.Size = new Size(73, 15);
+            label12.Size = new Size(92, 20);
             label12.TabIndex = 34;
             label12.Text = "Alınan kalori";
             // 
             // btnOglenAtistirmasiGuncelle
             // 
-            btnOglenAtistirmasiGuncelle.Location = new Point(24, 176);
+            btnOglenAtistirmasiGuncelle.Location = new Point(27, 235);
+            btnOglenAtistirmasiGuncelle.Margin = new Padding(3, 4, 3, 4);
             btnOglenAtistirmasiGuncelle.Name = "btnOglenAtistirmasiGuncelle";
-            btnOglenAtistirmasiGuncelle.Size = new Size(75, 23);
+            btnOglenAtistirmasiGuncelle.Size = new Size(86, 31);
             btnOglenAtistirmasiGuncelle.TabIndex = 30;
             btnOglenAtistirmasiGuncelle.Text = "Güncelle";
             btnOglenAtistirmasiGuncelle.UseVisualStyleBackColor = true;
@@ -512,9 +537,10 @@
             // 
             // btnOglenAtistirmasiSil
             // 
-            btnOglenAtistirmasiSil.Location = new Point(135, 176);
+            btnOglenAtistirmasiSil.Location = new Point(154, 235);
+            btnOglenAtistirmasiSil.Margin = new Padding(3, 4, 3, 4);
             btnOglenAtistirmasiSil.Name = "btnOglenAtistirmasiSil";
-            btnOglenAtistirmasiSil.Size = new Size(75, 23);
+            btnOglenAtistirmasiSil.Size = new Size(86, 31);
             btnOglenAtistirmasiSil.TabIndex = 31;
             btnOglenAtistirmasiSil.Text = "Sil";
             btnOglenAtistirmasiSil.UseVisualStyleBackColor = true;
@@ -522,9 +548,10 @@
             // 
             // btnOglenAtistirmasiEkle
             // 
-            btnOglenAtistirmasiEkle.Location = new Point(245, 147);
+            btnOglenAtistirmasiEkle.Location = new Point(280, 196);
+            btnOglenAtistirmasiEkle.Margin = new Padding(3, 4, 3, 4);
             btnOglenAtistirmasiEkle.Name = "btnOglenAtistirmasiEkle";
-            btnOglenAtistirmasiEkle.Size = new Size(75, 23);
+            btnOglenAtistirmasiEkle.Size = new Size(86, 31);
             btnOglenAtistirmasiEkle.TabIndex = 32;
             btnOglenAtistirmasiEkle.Text = "Ekle";
             btnOglenAtistirmasiEkle.UseVisualStyleBackColor = true;
@@ -532,9 +559,10 @@
             // 
             // btnOglenYemegiEkle
             // 
-            btnOglenYemegiEkle.Location = new Point(245, 147);
+            btnOglenYemegiEkle.Location = new Point(280, 196);
+            btnOglenYemegiEkle.Margin = new Padding(3, 4, 3, 4);
             btnOglenYemegiEkle.Name = "btnOglenYemegiEkle";
-            btnOglenYemegiEkle.Size = new Size(75, 23);
+            btnOglenYemegiEkle.Size = new Size(86, 31);
             btnOglenYemegiEkle.TabIndex = 32;
             btnOglenYemegiEkle.Text = "Ekle";
             btnOglenYemegiEkle.UseVisualStyleBackColor = true;
@@ -551,10 +579,11 @@
             tabPage4.Controls.Add(btnAksamYemegiGuncelle);
             tabPage4.Controls.Add(btnAksamYemegiSil);
             tabPage4.Controls.Add(btnAksamYemegiEkle);
-            tabPage4.Location = new Point(4, 24);
+            tabPage4.Location = new Point(4, 29);
+            tabPage4.Margin = new Padding(3, 4, 3, 4);
             tabPage4.Name = "tabPage4";
-            tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(554, 480);
+            tabPage4.Padding = new Padding(3, 4, 3, 4);
+            tabPage4.Size = new Size(661, 510);
             tabPage4.TabIndex = 4;
             tabPage4.Text = "Akşam Yemeği";
             tabPage4.UseVisualStyleBackColor = true;
@@ -564,9 +593,10 @@
             lviAksamYemegiList.Columns.AddRange(new ColumnHeader[] { columnHeader17, columnHeader18, columnHeader19, columnHeader20 });
             lviAksamYemegiList.FullRowSelect = true;
             lviAksamYemegiList.GridLines = true;
-            lviAksamYemegiList.Location = new Point(114, 250);
+            lviAksamYemegiList.Location = new Point(130, 333);
+            lviAksamYemegiList.Margin = new Padding(3, 4, 3, 4);
             lviAksamYemegiList.Name = "lviAksamYemegiList";
-            lviAksamYemegiList.Size = new Size(314, 211);
+            lviAksamYemegiList.Size = new Size(358, 280);
             lviAksamYemegiList.TabIndex = 40;
             lviAksamYemegiList.UseCompatibleStateImageBehavior = false;
             lviAksamYemegiList.View = View.Details;
@@ -589,9 +619,10 @@
             // 
             // btnOglenYemegiGuncelle
             // 
-            btnOglenYemegiGuncelle.Location = new Point(24, 176);
+            btnOglenYemegiGuncelle.Location = new Point(27, 235);
+            btnOglenYemegiGuncelle.Margin = new Padding(3, 4, 3, 4);
             btnOglenYemegiGuncelle.Name = "btnOglenYemegiGuncelle";
-            btnOglenYemegiGuncelle.Size = new Size(75, 23);
+            btnOglenYemegiGuncelle.Size = new Size(86, 31);
             btnOglenYemegiGuncelle.TabIndex = 30;
             btnOglenYemegiGuncelle.Text = "Güncelle";
             btnOglenYemegiGuncelle.UseVisualStyleBackColor = true;
@@ -601,20 +632,23 @@
             // 
             label13.AutoSize = true;
             label13.BackColor = Color.Transparent;
-            label13.Font = new Font("Times New Roman", 15.75F, FontStyle.Italic, GraphicsUnit.Point);
-            label13.Location = new Point(22, 301);
+            label13.Font = new Font("Gabriola", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.ForeColor = Color.Black;
+            label13.Location = new Point(220, 449);
             label13.Name = "label13";
-            label13.Size = new Size(175, 23);
+            label13.Size = new Size(210, 51);
             label13.TabIndex = 13;
             label13.Text = "Akşam Atıştırması :";
             // 
             // lblAksamAtistirma
             // 
             lblAksamAtistirma.AutoSize = true;
-            lblAksamAtistirma.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAksamAtistirma.Location = new Point(377, 301);
+            lblAksamAtistirma.BackColor = Color.Transparent;
+            lblAksamAtistirma.Font = new Font("Gabriola", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAksamAtistirma.ForeColor = Color.Black;
+            lblAksamAtistirma.Location = new Point(434, 449);
             lblAksamAtistirma.Name = "lblAksamAtistirma";
-            lblAksamAtistirma.Size = new Size(22, 25);
+            lblAksamAtistirma.Size = new Size(33, 51);
             lblAksamAtistirma.TabIndex = 12;
             lblAksamAtistirma.Text = "0";
             // 
@@ -622,20 +656,23 @@
             // 
             label11.AutoSize = true;
             label11.BackColor = Color.Transparent;
-            label11.Font = new Font("Times New Roman", 15.75F, FontStyle.Italic, GraphicsUnit.Point);
-            label11.Location = new Point(22, 261);
+            label11.Font = new Font("Gabriola", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.ForeColor = Color.Black;
+            label11.Location = new Point(220, 396);
             label11.Name = "label11";
-            label11.Size = new Size(133, 23);
+            label11.Size = new Size(171, 51);
             label11.TabIndex = 11;
-            label11.Text = "Akşam Yemği :";
+            label11.Text = "Akşam Yemeği :";
             // 
             // lblAksam
             // 
             lblAksam.AutoSize = true;
-            lblAksam.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAksam.Location = new Point(377, 261);
+            lblAksam.BackColor = Color.Transparent;
+            lblAksam.Font = new Font("Gabriola", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAksam.ForeColor = Color.Black;
+            lblAksam.Location = new Point(434, 396);
             lblAksam.Name = "lblAksam";
-            lblAksam.Size = new Size(22, 25);
+            lblAksam.Size = new Size(33, 51);
             lblAksam.TabIndex = 10;
             lblAksam.Text = "0";
             // 
@@ -643,30 +680,35 @@
             // 
             label9.AutoSize = true;
             label9.BackColor = Color.Transparent;
-            label9.Font = new Font("Times New Roman", 15.75F, FontStyle.Italic, GraphicsUnit.Point);
-            label9.Location = new Point(22, 221);
+            label9.Font = new Font("Gabriola", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.ForeColor = Color.Black;
+            label9.Location = new Point(220, 343);
             label9.Name = "label9";
-            label9.Size = new Size(171, 23);
+            label9.Size = new Size(202, 51);
             label9.TabIndex = 9;
             label9.Text = "Öğlen Atıştırması :";
             // 
             // lblOglenAtistirma
             // 
             lblOglenAtistirma.AutoSize = true;
-            lblOglenAtistirma.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblOglenAtistirma.Location = new Point(377, 221);
+            lblOglenAtistirma.BackColor = Color.Transparent;
+            lblOglenAtistirma.Font = new Font("Gabriola", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lblOglenAtistirma.ForeColor = Color.Black;
+            lblOglenAtistirma.Location = new Point(434, 343);
             lblOglenAtistirma.Name = "lblOglenAtistirma";
-            lblOglenAtistirma.Size = new Size(22, 25);
+            lblOglenAtistirma.Size = new Size(33, 51);
             lblOglenAtistirma.TabIndex = 8;
             lblOglenAtistirma.Text = "0";
             // 
             // lblOglen
             // 
             lblOglen.AutoSize = true;
-            lblOglen.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblOglen.Location = new Point(377, 181);
+            lblOglen.BackColor = Color.Transparent;
+            lblOglen.Font = new Font("Gabriola", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lblOglen.ForeColor = Color.Black;
+            lblOglen.Location = new Point(434, 239);
             lblOglen.Name = "lblOglen";
-            lblOglen.Size = new Size(22, 25);
+            lblOglen.Size = new Size(33, 51);
             lblOglen.TabIndex = 7;
             lblOglen.Text = "0";
             // 
@@ -674,20 +716,23 @@
             // 
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Times New Roman", 15.75F, FontStyle.Italic, GraphicsUnit.Point);
-            label7.Location = new Point(22, 181);
+            label7.Font = new Font("Gabriola", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = Color.Black;
+            label7.Location = new Point(220, 239);
             label7.Name = "label7";
-            label7.Size = new Size(138, 23);
+            label7.Size = new Size(163, 51);
             label7.TabIndex = 6;
             label7.Text = "Öğlen Yemeği :";
             // 
             // lblSabahAtistirma
             // 
             lblSabahAtistirma.AutoSize = true;
-            lblSabahAtistirma.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSabahAtistirma.Location = new Point(377, 141);
+            lblSabahAtistirma.BackColor = Color.Transparent;
+            lblSabahAtistirma.Font = new Font("Gabriola", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSabahAtistirma.ForeColor = Color.Black;
+            lblSabahAtistirma.Location = new Point(434, 186);
             lblSabahAtistirma.Name = "lblSabahAtistirma";
-            lblSabahAtistirma.Size = new Size(22, 25);
+            lblSabahAtistirma.Size = new Size(33, 51);
             lblSabahAtistirma.TabIndex = 5;
             lblSabahAtistirma.Text = "0";
             // 
@@ -695,20 +740,23 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Times New Roman", 15.75F, FontStyle.Italic, GraphicsUnit.Point);
-            label5.Location = new Point(22, 141);
+            label5.Font = new Font("Gabriola", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = Color.Black;
+            label5.Location = new Point(220, 186);
             label5.Name = "label5";
-            label5.Size = new Size(174, 23);
+            label5.Size = new Size(203, 51);
             label5.TabIndex = 4;
             label5.Text = "Sabah Atıştırması :";
             // 
             // lblSabah
             // 
             lblSabah.AutoSize = true;
-            lblSabah.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSabah.Location = new Point(377, 101);
+            lblSabah.BackColor = Color.Transparent;
+            lblSabah.Font = new Font("Gabriola", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSabah.ForeColor = Color.Black;
+            lblSabah.Location = new Point(434, 133);
             lblSabah.Name = "lblSabah";
-            lblSabah.Size = new Size(22, 25);
+            lblSabah.Size = new Size(33, 51);
             lblSabah.TabIndex = 3;
             lblSabah.Text = "0";
             // 
@@ -716,10 +764,11 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Times New Roman", 15.75F, FontStyle.Italic, GraphicsUnit.Point);
-            label3.Location = new Point(22, 101);
+            label3.Font = new Font("Gabriola", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(220, 133);
             label3.Name = "label3";
-            label3.Size = new Size(170, 23);
+            label3.Size = new Size(192, 51);
             label3.TabIndex = 2;
             label3.Text = "Sabah Kahvaltısı :";
             // 
@@ -727,16 +776,18 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(22, 23);
+            label1.Font = new Font("Gabriola", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.Transparent;
+            label1.Location = new Point(122, 4);
             label1.Name = "label1";
-            label1.Size = new Size(350, 32);
+            label1.Size = new Size(428, 74);
             label1.TabIndex = 0;
             label1.Text = "Bugün Alınan Toplam Kalori :";
             // 
             // tabPage1
             // 
-            tabPage1.BackColor = Color.LightSlateGray;
+            tabPage1.BackColor = Color.DimGray;
+            tabPage1.BackgroundImage = Properties.Resources.anasayfa2;
             tabPage1.BackgroundImageLayout = ImageLayout.Stretch;
             tabPage1.Controls.Add(label13);
             tabPage1.Controls.Add(lblAksamAtistirma);
@@ -753,19 +804,20 @@
             tabPage1.Controls.Add(lblToplam);
             tabPage1.Controls.Add(label1);
             tabPage1.Font = new Font("Times New Roman", 15.75F, FontStyle.Italic, GraphicsUnit.Point);
-            tabPage1.Location = new Point(4, 24);
+            tabPage1.Location = new Point(4, 29);
+            tabPage1.Margin = new Padding(3, 4, 3, 4);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(563, 549);
+            tabPage1.Padding = new Padding(3, 4, 3, 4);
+            tabPage1.Size = new Size(680, 663);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Ana Sayfa";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(114, 219);
+            label8.Location = new Point(130, 292);
             label8.Name = "label8";
-            label8.Size = new Size(73, 15);
+            label8.Size = new Size(92, 20);
             label8.TabIndex = 34;
             label8.Text = "Alınan kalori";
             // 
@@ -773,11 +825,12 @@
             // 
             nudKahvaltiPorsiyon.DecimalPlaces = 1;
             nudKahvaltiPorsiyon.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
-            nudKahvaltiPorsiyon.Location = new Point(374, 146);
+            nudKahvaltiPorsiyon.Location = new Point(217, 73);
+            nudKahvaltiPorsiyon.Margin = new Padding(3, 4, 3, 4);
             nudKahvaltiPorsiyon.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             nudKahvaltiPorsiyon.Minimum = new decimal(new int[] { 5, 0, 0, 65536 });
             nudKahvaltiPorsiyon.Name = "nudKahvaltiPorsiyon";
-            nudKahvaltiPorsiyon.Size = new Size(73, 23);
+            nudKahvaltiPorsiyon.Size = new Size(83, 27);
             nudKahvaltiPorsiyon.TabIndex = 29;
             nudKahvaltiPorsiyon.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -786,34 +839,18 @@
             cbxSabahKahvaltısı.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cbxSabahKahvaltısı.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbxSabahKahvaltısı.FormattingEnabled = true;
-            cbxSabahKahvaltısı.Location = new Point(93, 22);
+            cbxSabahKahvaltısı.Location = new Point(217, 22);
+            cbxSabahKahvaltısı.Margin = new Padding(3, 4, 3, 4);
             cbxSabahKahvaltısı.Name = "cbxSabahKahvaltısı";
-            cbxSabahKahvaltısı.Size = new Size(314, 23);
+            cbxSabahKahvaltısı.Size = new Size(299, 28);
             cbxSabahKahvaltısı.TabIndex = 28;
-            // 
-            // lblKahvaltiKalori
-            // 
-            lblKahvaltiKalori.AutoSize = true;
-            lblKahvaltiKalori.Location = new Point(240, 218);
-            lblKahvaltiKalori.Name = "lblKahvaltiKalori";
-            lblKahvaltiKalori.Size = new Size(13, 15);
-            lblKahvaltiKalori.TabIndex = 19;
-            lblKahvaltiKalori.Text = "0";
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Location = new Point(96, 218);
-            label21.Name = "label21";
-            label21.Size = new Size(73, 15);
-            label21.TabIndex = 20;
-            label21.Text = "Alınan kalori";
             // 
             // btnKahvaltiGuncelle
             // 
-            btnKahvaltiGuncelle.Location = new Point(6, 175);
+            btnKahvaltiGuncelle.Location = new Point(167, 402);
+            btnKahvaltiGuncelle.Margin = new Padding(3, 4, 3, 4);
             btnKahvaltiGuncelle.Name = "btnKahvaltiGuncelle";
-            btnKahvaltiGuncelle.Size = new Size(75, 23);
+            btnKahvaltiGuncelle.Size = new Size(157, 52);
             btnKahvaltiGuncelle.TabIndex = 16;
             btnKahvaltiGuncelle.Text = "Güncelle";
             btnKahvaltiGuncelle.UseVisualStyleBackColor = true;
@@ -821,9 +858,10 @@
             // 
             // btnKahvaltiSil
             // 
-            btnKahvaltiSil.Location = new Point(117, 175);
+            btnKahvaltiSil.Location = new Point(371, 402);
+            btnKahvaltiSil.Margin = new Padding(3, 4, 3, 4);
             btnKahvaltiSil.Name = "btnKahvaltiSil";
-            btnKahvaltiSil.Size = new Size(75, 23);
+            btnKahvaltiSil.Size = new Size(162, 52);
             btnKahvaltiSil.TabIndex = 17;
             btnKahvaltiSil.Text = "Sil";
             btnKahvaltiSil.UseVisualStyleBackColor = true;
@@ -831,30 +869,33 @@
             // 
             // tabPage9
             // 
+            tabPage9.BackColor = Color.Silver;
+            tabPage9.BackgroundImageLayout = ImageLayout.Stretch;
+            tabPage9.Controls.Add(label14);
+            tabPage9.Controls.Add(label10);
             tabPage9.Controls.Add(lvSabahKahvaltiListe);
             tabPage9.Controls.Add(nudKahvaltiPorsiyon);
             tabPage9.Controls.Add(cbxSabahKahvaltısı);
-            tabPage9.Controls.Add(lblKahvaltiKalori);
-            tabPage9.Controls.Add(label21);
             tabPage9.Controls.Add(btnKahvaltiGuncelle);
             tabPage9.Controls.Add(btnKahvaltiSil);
             tabPage9.Controls.Add(btnKahvaltıEkle);
-            tabPage9.Location = new Point(4, 24);
+            tabPage9.Location = new Point(4, 29);
+            tabPage9.Margin = new Padding(3, 4, 3, 4);
             tabPage9.Name = "tabPage9";
-            tabPage9.Padding = new Padding(3);
-            tabPage9.Size = new Size(554, 480);
+            tabPage9.Padding = new Padding(3, 4, 3, 4);
+            tabPage9.Size = new Size(661, 510);
             tabPage9.TabIndex = 0;
             tabPage9.Text = "Kahvaltı ";
-            tabPage9.UseVisualStyleBackColor = true;
             // 
             // lvSabahKahvaltiListe
             // 
             lvSabahKahvaltiListe.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
             lvSabahKahvaltiListe.FullRowSelect = true;
             lvSabahKahvaltiListe.GridLines = true;
-            lvSabahKahvaltiListe.Location = new Point(93, 254);
+            lvSabahKahvaltiListe.Location = new Point(4, 133);
+            lvSabahKahvaltiListe.Margin = new Padding(3, 4, 3, 4);
             lvSabahKahvaltiListe.Name = "lvSabahKahvaltiListe";
-            lvSabahKahvaltiListe.Size = new Size(314, 211);
+            lvSabahKahvaltiListe.Size = new Size(655, 247);
             lvSabahKahvaltiListe.TabIndex = 31;
             lvSabahKahvaltiListe.UseCompatibleStateImageBehavior = false;
             lvSabahKahvaltiListe.View = View.Details;
@@ -862,24 +903,29 @@
             // columnHeader1
             // 
             columnHeader1.Text = "Yiyecek";
+            columnHeader1.Width = 170;
             // 
             // columnHeader2
             // 
             columnHeader2.Text = "Kalori";
+            columnHeader2.Width = 170;
             // 
             // columnHeader3
             // 
             columnHeader3.Text = "Adet";
+            columnHeader3.Width = 150;
             // 
             // columnHeader4
             // 
             columnHeader4.Text = "Toplam Kalori";
+            columnHeader4.Width = 160;
             // 
             // btnKahvaltıEkle
             // 
-            btnKahvaltıEkle.Location = new Point(227, 146);
+            btnKahvaltıEkle.Location = new Point(331, 67);
+            btnKahvaltıEkle.Margin = new Padding(3, 4, 3, 4);
             btnKahvaltıEkle.Name = "btnKahvaltıEkle";
-            btnKahvaltıEkle.Size = new Size(75, 23);
+            btnKahvaltıEkle.Size = new Size(185, 36);
             btnKahvaltıEkle.TabIndex = 18;
             btnKahvaltıEkle.Text = "Ekle";
             btnKahvaltıEkle.UseVisualStyleBackColor = true;
@@ -888,9 +934,10 @@
             // btnBesinEkle
             // 
             btnBesinEkle.BackgroundImageLayout = ImageLayout.None;
-            btnBesinEkle.Location = new Point(13, 514);
+            btnBesinEkle.Location = new Point(7, 555);
+            btnBesinEkle.Margin = new Padding(3, 4, 3, 4);
             btnBesinEkle.Name = "btnBesinEkle";
-            btnBesinEkle.Size = new Size(75, 23);
+            btnBesinEkle.Size = new Size(115, 43);
             btnBesinEkle.TabIndex = 1;
             btnBesinEkle.Text = "Besin Ekle";
             btnBesinEkle.UseVisualStyleBackColor = true;
@@ -904,10 +951,11 @@
             tabControl2.Controls.Add(tabPage3);
             tabControl2.Controls.Add(tabPage4);
             tabControl2.Controls.Add(tabPage5);
-            tabControl2.Location = new Point(3, 3);
+            tabControl2.Location = new Point(3, 4);
+            tabControl2.Margin = new Padding(3, 4, 3, 4);
             tabControl2.Name = "tabControl2";
             tabControl2.SelectedIndex = 0;
-            tabControl2.Size = new Size(562, 508);
+            tabControl2.Size = new Size(669, 543);
             tabControl2.TabIndex = 0;
             // 
             // tabPage10
@@ -921,10 +969,11 @@
             tabPage10.Controls.Add(btnSabahAtistirmasiGuncelle);
             tabPage10.Controls.Add(btnSabahAtistirmasiSil);
             tabPage10.Controls.Add(btnSabahAtistirmasiEkle);
-            tabPage10.Location = new Point(4, 24);
+            tabPage10.Location = new Point(4, 29);
+            tabPage10.Margin = new Padding(3, 4, 3, 4);
             tabPage10.Name = "tabPage10";
-            tabPage10.Padding = new Padding(3);
-            tabPage10.Size = new Size(554, 480);
+            tabPage10.Padding = new Padding(3, 4, 3, 4);
+            tabPage10.Size = new Size(661, 510);
             tabPage10.TabIndex = 1;
             tabPage10.Text = "Sabah Atıştırması";
             tabPage10.UseVisualStyleBackColor = true;
@@ -934,9 +983,10 @@
             lviSabahAtistirmasiList.Columns.AddRange(new ColumnHeader[] { columnHeader5, columnHeader6, columnHeader7, columnHeader8 });
             lviSabahAtistirmasiList.FullRowSelect = true;
             lviSabahAtistirmasiList.GridLines = true;
-            lviSabahAtistirmasiList.Location = new Point(83, 247);
+            lviSabahAtistirmasiList.Location = new Point(95, 329);
+            lviSabahAtistirmasiList.Margin = new Padding(3, 4, 3, 4);
             lviSabahAtistirmasiList.Name = "lviSabahAtistirmasiList";
-            lviSabahAtistirmasiList.Size = new Size(314, 211);
+            lviSabahAtistirmasiList.Size = new Size(358, 280);
             lviSabahAtistirmasiList.TabIndex = 40;
             lviSabahAtistirmasiList.UseCompatibleStateImageBehavior = false;
             lviSabahAtistirmasiList.View = View.Details;
@@ -961,11 +1011,12 @@
             // 
             nudSabahAtistirmasiPorsiyon.DecimalPlaces = 1;
             nudSabahAtistirmasiPorsiyon.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
-            nudSabahAtistirmasiPorsiyon.Location = new Point(374, 138);
+            nudSabahAtistirmasiPorsiyon.Location = new Point(427, 184);
+            nudSabahAtistirmasiPorsiyon.Margin = new Padding(3, 4, 3, 4);
             nudSabahAtistirmasiPorsiyon.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             nudSabahAtistirmasiPorsiyon.Minimum = new decimal(new int[] { 5, 0, 0, 65536 });
             nudSabahAtistirmasiPorsiyon.Name = "nudSabahAtistirmasiPorsiyon";
-            nudSabahAtistirmasiPorsiyon.Size = new Size(73, 23);
+            nudSabahAtistirmasiPorsiyon.Size = new Size(83, 27);
             nudSabahAtistirmasiPorsiyon.TabIndex = 39;
             nudSabahAtistirmasiPorsiyon.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -974,16 +1025,18 @@
             cbxSabahAtistirmasi.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cbxSabahAtistirmasi.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbxSabahAtistirmasi.FormattingEnabled = true;
-            cbxSabahAtistirmasi.Location = new Point(93, 14);
+            cbxSabahAtistirmasi.Location = new Point(106, 19);
+            cbxSabahAtistirmasi.Margin = new Padding(3, 4, 3, 4);
             cbxSabahAtistirmasi.Name = "cbxSabahAtistirmasi";
-            cbxSabahAtistirmasi.Size = new Size(314, 23);
+            cbxSabahAtistirmasi.Size = new Size(358, 28);
             cbxSabahAtistirmasi.TabIndex = 38;
             // 
             // btnSabahAtistirmasiOgunSil
             // 
-            btnSabahAtistirmasiOgunSil.Location = new Point(439, 451);
+            btnSabahAtistirmasiOgunSil.Location = new Point(502, 601);
+            btnSabahAtistirmasiOgunSil.Margin = new Padding(3, 4, 3, 4);
             btnSabahAtistirmasiOgunSil.Name = "btnSabahAtistirmasiOgunSil";
-            btnSabahAtistirmasiOgunSil.Size = new Size(75, 23);
+            btnSabahAtistirmasiOgunSil.Size = new Size(86, 31);
             btnSabahAtistirmasiOgunSil.TabIndex = 35;
             btnSabahAtistirmasiOgunSil.Text = "Ögünü Sil";
             btnSabahAtistirmasiOgunSil.UseVisualStyleBackColor = true;
@@ -991,26 +1044,27 @@
             // lblSabahAtistirmasiKalori
             // 
             lblSabahAtistirmasiKalori.AutoSize = true;
-            lblSabahAtistirmasiKalori.Location = new Point(240, 210);
+            lblSabahAtistirmasiKalori.Location = new Point(274, 280);
             lblSabahAtistirmasiKalori.Name = "lblSabahAtistirmasiKalori";
-            lblSabahAtistirmasiKalori.Size = new Size(13, 15);
+            lblSabahAtistirmasiKalori.Size = new Size(17, 20);
             lblSabahAtistirmasiKalori.TabIndex = 33;
             lblSabahAtistirmasiKalori.Text = "0";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(96, 210);
+            label4.Location = new Point(110, 280);
             label4.Name = "label4";
-            label4.Size = new Size(73, 15);
+            label4.Size = new Size(92, 20);
             label4.TabIndex = 34;
             label4.Text = "Alınan kalori";
             // 
             // btnSabahAtistirmasiGuncelle
             // 
-            btnSabahAtistirmasiGuncelle.Location = new Point(6, 167);
+            btnSabahAtistirmasiGuncelle.Location = new Point(7, 223);
+            btnSabahAtistirmasiGuncelle.Margin = new Padding(3, 4, 3, 4);
             btnSabahAtistirmasiGuncelle.Name = "btnSabahAtistirmasiGuncelle";
-            btnSabahAtistirmasiGuncelle.Size = new Size(75, 23);
+            btnSabahAtistirmasiGuncelle.Size = new Size(86, 31);
             btnSabahAtistirmasiGuncelle.TabIndex = 30;
             btnSabahAtistirmasiGuncelle.Text = "Güncelle";
             btnSabahAtistirmasiGuncelle.UseVisualStyleBackColor = true;
@@ -1018,9 +1072,10 @@
             // 
             // btnSabahAtistirmasiSil
             // 
-            btnSabahAtistirmasiSil.Location = new Point(117, 167);
+            btnSabahAtistirmasiSil.Location = new Point(134, 223);
+            btnSabahAtistirmasiSil.Margin = new Padding(3, 4, 3, 4);
             btnSabahAtistirmasiSil.Name = "btnSabahAtistirmasiSil";
-            btnSabahAtistirmasiSil.Size = new Size(75, 23);
+            btnSabahAtistirmasiSil.Size = new Size(86, 31);
             btnSabahAtistirmasiSil.TabIndex = 31;
             btnSabahAtistirmasiSil.Text = "Sil";
             btnSabahAtistirmasiSil.UseVisualStyleBackColor = true;
@@ -1028,9 +1083,10 @@
             // 
             // btnSabahAtistirmasiEkle
             // 
-            btnSabahAtistirmasiEkle.Location = new Point(227, 138);
+            btnSabahAtistirmasiEkle.Location = new Point(259, 184);
+            btnSabahAtistirmasiEkle.Margin = new Padding(3, 4, 3, 4);
             btnSabahAtistirmasiEkle.Name = "btnSabahAtistirmasiEkle";
-            btnSabahAtistirmasiEkle.Size = new Size(75, 23);
+            btnSabahAtistirmasiEkle.Size = new Size(86, 31);
             btnSabahAtistirmasiEkle.TabIndex = 32;
             btnSabahAtistirmasiEkle.Text = "Ekle";
             btnSabahAtistirmasiEkle.UseVisualStyleBackColor = true;
@@ -1047,10 +1103,11 @@
             tabPage2.Controls.Add(btnOglenYemegiGuncelle);
             tabPage2.Controls.Add(btnOglenYemegiSil);
             tabPage2.Controls.Add(btnOglenYemegiEkle);
-            tabPage2.Location = new Point(4, 24);
+            tabPage2.Location = new Point(4, 29);
+            tabPage2.Margin = new Padding(3, 4, 3, 4);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(554, 480);
+            tabPage2.Padding = new Padding(3, 4, 3, 4);
+            tabPage2.Size = new Size(661, 510);
             tabPage2.TabIndex = 2;
             tabPage2.Text = "Öğlen Yemeği";
             tabPage2.UseVisualStyleBackColor = true;
@@ -1060,9 +1117,10 @@
             lviOglenYemegiList.Columns.AddRange(new ColumnHeader[] { columnHeader9, columnHeader10, columnHeader11, columnHeader12 });
             lviOglenYemegiList.FullRowSelect = true;
             lviOglenYemegiList.GridLines = true;
-            lviOglenYemegiList.Location = new Point(114, 251);
+            lviOglenYemegiList.Location = new Point(130, 335);
+            lviOglenYemegiList.Margin = new Padding(3, 4, 3, 4);
             lviOglenYemegiList.Name = "lviOglenYemegiList";
-            lviOglenYemegiList.Size = new Size(314, 211);
+            lviOglenYemegiList.Size = new Size(358, 280);
             lviOglenYemegiList.TabIndex = 40;
             lviOglenYemegiList.UseCompatibleStateImageBehavior = false;
             lviOglenYemegiList.View = View.Details;
@@ -1087,11 +1145,12 @@
             // 
             nudOglenYemegiPorsiyon.DecimalPlaces = 1;
             nudOglenYemegiPorsiyon.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
-            nudOglenYemegiPorsiyon.Location = new Point(392, 147);
+            nudOglenYemegiPorsiyon.Location = new Point(448, 196);
+            nudOglenYemegiPorsiyon.Margin = new Padding(3, 4, 3, 4);
             nudOglenYemegiPorsiyon.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             nudOglenYemegiPorsiyon.Minimum = new decimal(new int[] { 5, 0, 0, 65536 });
             nudOglenYemegiPorsiyon.Name = "nudOglenYemegiPorsiyon";
-            nudOglenYemegiPorsiyon.Size = new Size(73, 23);
+            nudOglenYemegiPorsiyon.Size = new Size(83, 27);
             nudOglenYemegiPorsiyon.TabIndex = 39;
             nudOglenYemegiPorsiyon.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -1100,16 +1159,18 @@
             cbxOglenYemegi.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cbxOglenYemegi.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbxOglenYemegi.FormattingEnabled = true;
-            cbxOglenYemegi.Location = new Point(111, 23);
+            cbxOglenYemegi.Location = new Point(127, 31);
+            cbxOglenYemegi.Margin = new Padding(3, 4, 3, 4);
             cbxOglenYemegi.Name = "cbxOglenYemegi";
-            cbxOglenYemegi.Size = new Size(314, 23);
+            cbxOglenYemegi.Size = new Size(358, 28);
             cbxOglenYemegi.TabIndex = 38;
             // 
             // btnOglenYemegiOgunSil
             // 
-            btnOglenYemegiOgunSil.Location = new Point(452, 460);
+            btnOglenYemegiOgunSil.Location = new Point(517, 613);
+            btnOglenYemegiOgunSil.Margin = new Padding(3, 4, 3, 4);
             btnOglenYemegiOgunSil.Name = "btnOglenYemegiOgunSil";
-            btnOglenYemegiOgunSil.Size = new Size(75, 23);
+            btnOglenYemegiOgunSil.Size = new Size(86, 31);
             btnOglenYemegiOgunSil.TabIndex = 35;
             btnOglenYemegiOgunSil.Text = "Ögünü Sil";
             btnOglenYemegiOgunSil.UseVisualStyleBackColor = true;
@@ -1117,31 +1178,33 @@
             // lblOglenYemegiKalori
             // 
             lblOglenYemegiKalori.AutoSize = true;
-            lblOglenYemegiKalori.Location = new Point(258, 219);
+            lblOglenYemegiKalori.Location = new Point(295, 292);
             lblOglenYemegiKalori.Name = "lblOglenYemegiKalori";
-            lblOglenYemegiKalori.Size = new Size(13, 15);
+            lblOglenYemegiKalori.Size = new Size(17, 20);
             lblOglenYemegiKalori.TabIndex = 33;
             lblOglenYemegiKalori.Text = "0";
             // 
             // tabPage8
             // 
+            tabPage8.BackColor = Color.Silver;
             tabPage8.Controls.Add(btnBesinEkle);
             tabPage8.Controls.Add(tabControl2);
-            tabPage8.Location = new Point(4, 24);
+            tabPage8.Location = new Point(4, 29);
+            tabPage8.Margin = new Padding(3, 4, 3, 4);
             tabPage8.Name = "tabPage8";
-            tabPage8.Padding = new Padding(3);
-            tabPage8.Size = new Size(563, 549);
+            tabPage8.Padding = new Padding(3, 4, 3, 4);
+            tabPage8.Size = new Size(672, 604);
             tabPage8.TabIndex = 7;
             tabPage8.Text = "Yemek mi yedin?";
-            tabPage8.UseVisualStyleBackColor = true;
             // 
             // tabPage6
             // 
             tabPage6.Controls.Add(lviEnCokYenenler);
-            tabPage6.Location = new Point(4, 24);
+            tabPage6.Location = new Point(4, 29);
+            tabPage6.Margin = new Padding(3, 4, 3, 4);
             tabPage6.Name = "tabPage6";
-            tabPage6.Padding = new Padding(3);
-            tabPage6.Size = new Size(560, 549);
+            tabPage6.Padding = new Padding(3, 4, 3, 4);
+            tabPage6.Size = new Size(680, 663);
             tabPage6.TabIndex = 8;
             tabPage6.Text = "En Çok Yenenler";
             tabPage6.UseVisualStyleBackColor = true;
@@ -1149,11 +1212,13 @@
             // lviEnCokYenenler
             // 
             lviEnCokYenenler.Columns.AddRange(new ColumnHeader[] { columnHeader25, columnHeader26, columnHeader27, columnHeader28 });
+            lviEnCokYenenler.Dock = DockStyle.Fill;
             lviEnCokYenenler.FullRowSelect = true;
             lviEnCokYenenler.GridLines = true;
-            lviEnCokYenenler.Location = new Point(8, 22);
+            lviEnCokYenenler.Location = new Point(3, 4);
+            lviEnCokYenenler.Margin = new Padding(3, 4, 3, 4);
             lviEnCokYenenler.Name = "lviEnCokYenenler";
-            lviEnCokYenenler.Size = new Size(531, 422);
+            lviEnCokYenenler.Size = new Size(674, 655);
             lviEnCokYenenler.TabIndex = 32;
             lviEnCokYenenler.UseCompatibleStateImageBehavior = false;
             lviEnCokYenenler.View = View.Details;
@@ -1180,12 +1245,15 @@
             // 
             // tabPage7
             // 
+            tabPage7.Controls.Add(label6);
+            tabPage7.Controls.Add(label2);
             tabPage7.Controls.Add(lviEnCokYediklerimAylik);
             tabPage7.Controls.Add(lviEnCokYediklerimHaftalik);
-            tabPage7.Location = new Point(4, 24);
+            tabPage7.Location = new Point(4, 29);
+            tabPage7.Margin = new Padding(3, 4, 3, 4);
             tabPage7.Name = "tabPage7";
-            tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(560, 549);
+            tabPage7.Padding = new Padding(3, 4, 3, 4);
+            tabPage7.Size = new Size(680, 663);
             tabPage7.TabIndex = 9;
             tabPage7.Text = "En Çok Yediklerim";
             tabPage7.UseVisualStyleBackColor = true;
@@ -1195,9 +1263,10 @@
             lviEnCokYediklerimAylik.Columns.AddRange(new ColumnHeader[] { columnHeader33, columnHeader34, columnHeader35, columnHeader36 });
             lviEnCokYediklerimAylik.FullRowSelect = true;
             lviEnCokYediklerimAylik.GridLines = true;
-            lviEnCokYediklerimAylik.Location = new Point(6, 295);
+            lviEnCokYediklerimAylik.Location = new Point(0, 393);
+            lviEnCokYediklerimAylik.Margin = new Padding(3, 4, 3, 4);
             lviEnCokYediklerimAylik.Name = "lviEnCokYediklerimAylik";
-            lviEnCokYediklerimAylik.Size = new Size(546, 179);
+            lviEnCokYediklerimAylik.Size = new Size(680, 274);
             lviEnCokYediklerimAylik.TabIndex = 34;
             lviEnCokYediklerimAylik.UseCompatibleStateImageBehavior = false;
             lviEnCokYediklerimAylik.View = View.Details;
@@ -1227,9 +1296,10 @@
             lviEnCokYediklerimHaftalik.Columns.AddRange(new ColumnHeader[] { columnHeader29, columnHeader30, columnHeader31, columnHeader32 });
             lviEnCokYediklerimHaftalik.FullRowSelect = true;
             lviEnCokYediklerimHaftalik.GridLines = true;
-            lviEnCokYediklerimHaftalik.Location = new Point(6, 35);
+            lviEnCokYediklerimHaftalik.Location = new Point(3, 37);
+            lviEnCokYediklerimHaftalik.Margin = new Padding(3, 4, 3, 4);
             lviEnCokYediklerimHaftalik.Name = "lviEnCokYediklerimHaftalik";
-            lviEnCokYediklerimHaftalik.Size = new Size(546, 179);
+            lviEnCokYediklerimHaftalik.Size = new Size(677, 300);
             lviEnCokYediklerimHaftalik.TabIndex = 33;
             lviEnCokYediklerimHaftalik.UseCompatibleStateImageBehavior = false;
             lviEnCokYediklerimHaftalik.View = View.Details;
@@ -1237,31 +1307,32 @@
             // columnHeader29
             // 
             columnHeader29.Text = "Yiyecek";
-            columnHeader29.Width = 125;
+            columnHeader29.Width = 140;
             // 
             // columnHeader30
             // 
             columnHeader30.Text = "Kalori";
-            columnHeader30.Width = 125;
+            columnHeader30.Width = 140;
             // 
             // columnHeader31
             // 
             columnHeader31.Text = "Toplam Adet";
-            columnHeader31.Width = 125;
+            columnHeader31.Width = 140;
             // 
             // columnHeader32
             // 
             columnHeader32.Text = "Ogun Adi";
-            columnHeader32.Width = 130;
+            columnHeader32.Width = 250;
             // 
             // tabPage11
             // 
             tabPage11.Controls.Add(lviDigerleriEnCokNeYemisAylik);
             tabPage11.Controls.Add(lviDigerleriEnCokNeYemisHaftalik);
-            tabPage11.Location = new Point(4, 24);
+            tabPage11.Location = new Point(4, 29);
+            tabPage11.Margin = new Padding(3, 4, 3, 4);
             tabPage11.Name = "tabPage11";
-            tabPage11.Padding = new Padding(3);
-            tabPage11.Size = new Size(560, 549);
+            tabPage11.Padding = new Padding(3, 4, 3, 4);
+            tabPage11.Size = new Size(680, 663);
             tabPage11.TabIndex = 10;
             tabPage11.Text = "Diğerleri ne Yemiş";
             tabPage11.UseVisualStyleBackColor = true;
@@ -1271,9 +1342,10 @@
             lviDigerleriEnCokNeYemisAylik.Columns.AddRange(new ColumnHeader[] { columnHeader41, columnHeader42, columnHeader43, columnHeader44 });
             lviDigerleriEnCokNeYemisAylik.FullRowSelect = true;
             lviDigerleriEnCokNeYemisAylik.GridLines = true;
-            lviDigerleriEnCokNeYemisAylik.Location = new Point(3, 294);
+            lviDigerleriEnCokNeYemisAylik.Location = new Point(3, 392);
+            lviDigerleriEnCokNeYemisAylik.Margin = new Padding(3, 4, 3, 4);
             lviDigerleriEnCokNeYemisAylik.Name = "lviDigerleriEnCokNeYemisAylik";
-            lviDigerleriEnCokNeYemisAylik.Size = new Size(546, 179);
+            lviDigerleriEnCokNeYemisAylik.Size = new Size(623, 237);
             lviDigerleriEnCokNeYemisAylik.TabIndex = 35;
             lviDigerleriEnCokNeYemisAylik.UseCompatibleStateImageBehavior = false;
             lviDigerleriEnCokNeYemisAylik.View = View.Details;
@@ -1303,9 +1375,10 @@
             lviDigerleriEnCokNeYemisHaftalik.Columns.AddRange(new ColumnHeader[] { columnHeader37, columnHeader38, columnHeader39, columnHeader40 });
             lviDigerleriEnCokNeYemisHaftalik.FullRowSelect = true;
             lviDigerleriEnCokNeYemisHaftalik.GridLines = true;
-            lviDigerleriEnCokNeYemisHaftalik.Location = new Point(6, 25);
+            lviDigerleriEnCokNeYemisHaftalik.Location = new Point(7, 33);
+            lviDigerleriEnCokNeYemisHaftalik.Margin = new Padding(3, 4, 3, 4);
             lviDigerleriEnCokNeYemisHaftalik.Name = "lviDigerleriEnCokNeYemisHaftalik";
-            lviDigerleriEnCokNeYemisHaftalik.Size = new Size(546, 179);
+            lviDigerleriEnCokNeYemisHaftalik.Size = new Size(623, 237);
             lviDigerleriEnCokNeYemisHaftalik.TabIndex = 34;
             lviDigerleriEnCokNeYemisHaftalik.UseCompatibleStateImageBehavior = false;
             lviDigerleriEnCokNeYemisHaftalik.View = View.Details;
@@ -1339,18 +1412,57 @@
             tabControl1.Controls.Add(tabPage11);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
+            tabControl1.Margin = new Padding(3, 4, 3, 4);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(571, 577);
+            tabControl1.Size = new Size(680, 637);
             tabControl1.TabIndex = 1;
             tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(251, 4);
+            label2.Name = "label2";
+            label2.Size = new Size(185, 20);
+            label2.TabIndex = 35;
+            label2.Text = "Yediklerimin Haftalık Özeti";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(251, 356);
+            label6.Name = "label6";
+            label6.Size = new Size(165, 20);
+            label6.TabIndex = 35;
+            label6.Text = "Yediklerimin Aylık Özeti";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(136, 25);
+            label10.Name = "label10";
+            label10.Size = new Size(75, 20);
+            label10.TabIndex = 32;
+            label10.Text = "Ne Yedin?";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(93, 75);
+            label14.Name = "label14";
+            label14.Size = new Size(118, 20);
+            label14.TabIndex = 33;
+            label14.Text = "Ne Kadar Yedin?";
+            // 
             // AnaEkran
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(568, 577);
+            BackColor = Color.White;
+            ClientSize = new Size(680, 637);
             Controls.Add(tabControl1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "AnaEkran";
             Text = "AnaEkran";
             Load += AnaEkran_Load;
@@ -1378,6 +1490,7 @@
             tabPage8.ResumeLayout(false);
             tabPage6.ResumeLayout(false);
             tabPage7.ResumeLayout(false);
+            tabPage7.PerformLayout();
             tabPage11.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
             ResumeLayout(false);
@@ -1433,8 +1546,6 @@
         private Label label8;
         private NumericUpDown nudKahvaltiPorsiyon;
         private ComboBox cbxSabahKahvaltısı;
-        private Label lblKahvaltiKalori;
-        private Label label21;
         private Button btnKahvaltiGuncelle;
         private Button btnKahvaltiSil;
         private TabPage tabPage9;
@@ -1515,5 +1626,9 @@
         private ColumnHeader columnHeader38;
         private ColumnHeader columnHeader39;
         private ColumnHeader columnHeader40;
+        private Label label14;
+        private Label label10;
+        private Label label6;
+        private Label label2;
     }
 }

@@ -63,6 +63,26 @@ namespace CaloCalc.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap anasayfa {
+            get {
+                object obj = ResourceManager.GetObject("anasayfa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap anasayfa2 {
+            get {
+                object obj = ResourceManager.GetObject("anasayfa2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap arka_plan {
             get {
                 object obj = ResourceManager.GetObject("arka plan", resourceCulture);
@@ -106,6 +126,16 @@ namespace CaloCalc.Properties {
         internal static System.Drawing.Bitmap son1 {
             get {
                 object obj = ResourceManager.GetObject("son1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap yemekyedinmi {
+            get {
+                object obj = ResourceManager.GetObject("yemekyedinmi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

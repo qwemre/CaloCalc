@@ -19,25 +19,17 @@ namespace CaloCalc
 {
     public partial class AnaEkran : Form
     {
+        Ogun ogun;
         int id;
         Yiyecek yiyecek;
-
-        DateTime lastUpdate = DateTime.Parse("2023-05-10"); // örnek bir tarih
         CaloCalc.Helper.Methods helper = new();
 
         public AnaEkran(int ıd)
         {
             InitializeComponent();
             this.id = ıd;
-
             bll = new CaloCalcBussinessLogic();
-
-
         }
-
-
-
-
         CaloCalcBussinessLogic bll;
         private void AnaEkran_Load(object sender, EventArgs e)
         {
@@ -89,12 +81,6 @@ namespace CaloCalc
             frm.ShowDialog();
 
         }
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        Ogun ogun;
         private void btnKahvaltıEkle_Click(object sender, EventArgs e)
         {
             ogun = new();
@@ -111,13 +97,10 @@ namespace CaloCalc
                 helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
                 MessageBox.Show("Eklendi");
                 bll = new CaloCalcBussinessLogic();
-
             }
-
         }
         private void btnSabahAtistirmasiEkle_Click(object sender, EventArgs e)
         {
-
             ogun = new();
             yiyecek = bll.Yiyecekler.Ara((int)cbxSabahAtistirmasi.SelectedValue);
             ogun.KullaniciID = id;
@@ -132,13 +115,11 @@ namespace CaloCalc
                 helper.ListViewYazdirma(id, Ogunler.SabahAtistirmasi, lviSabahAtistirmasiList);
                 MessageBox.Show("Eklendi");
                 bll = new CaloCalcBussinessLogic();
-
             }
         }
 
         private void btnOglenYemegiEkle_Click(object sender, EventArgs e)
         {
-
             ogun = new();
             yiyecek = bll.Yiyecekler.Ara((int)cbxOglenYemegi.SelectedValue);
             ogun.KullaniciID = id;
@@ -153,13 +134,11 @@ namespace CaloCalc
                 helper.ListViewYazdirma(id, Ogunler.OglenYemegi, lviOglenYemegiList);
                 MessageBox.Show("Eklendi");
                 bll = new CaloCalcBussinessLogic();
-
             }
         }
 
         private void btnOglenAtistirmasiEkle_Click(object sender, EventArgs e)
         {
-
             ogun = new();
             yiyecek = bll.Yiyecekler.Ara((int)cbxOglenAtistirmasi.SelectedValue);
             ogun.KullaniciID = id;
@@ -174,13 +153,11 @@ namespace CaloCalc
                 helper.ListViewYazdirma(id, Ogunler.OglenAtistirmasi, lviOglenAtistirmasiList);
                 MessageBox.Show("Eklendi");
                 bll = new CaloCalcBussinessLogic();
-
             }
         }
 
         private void btnAksamYemegiEkle_Click(object sender, EventArgs e)
         {
-
             ogun = new();
             yiyecek = bll.Yiyecekler.Ara((int)cbxAksamYemegi.SelectedValue);
             ogun.KullaniciID = id;
@@ -195,13 +172,11 @@ namespace CaloCalc
                 helper.ListViewYazdirma(id, Ogunler.AksamYemegi, lviAksamYemegiList);
                 MessageBox.Show("Eklendi");
                 bll = new CaloCalcBussinessLogic();
-
             }
         }
 
         private void btnAksamAtistirmasiEkle_Click(object sender, EventArgs e)
         {
-
             ogun = new();
             yiyecek = bll.Yiyecekler.Ara((int)cbxAksamAtistirmasi.SelectedValue);
             ogun.KullaniciID = id;
@@ -216,7 +191,6 @@ namespace CaloCalc
                 helper.ListViewYazdirma(id, Ogunler.AksamAtistirmasi, lviAksamAtistirmasiList);
                 MessageBox.Show("Eklendi");
                 bll = new CaloCalcBussinessLogic();
-
             }
         }
 
@@ -237,7 +211,6 @@ namespace CaloCalc
             {
                 bll = new CaloCalcBussinessLogic();
                 var liste = bll.Yiyecekler.EnCokYenenler();
-
                 if (liste != null)
                 {
                     lviEnCokYenenler.Items.Clear();
@@ -256,7 +229,6 @@ namespace CaloCalc
             {
                 bll = new CaloCalcBussinessLogic();
                 var liste = bll.Yiyecekler.EnCokYediklerim(id, 7);
-
                 if (liste != null)
                 {
                     lviEnCokYediklerimHaftalik.Items.Clear();
@@ -273,7 +245,6 @@ namespace CaloCalc
 
                 bll = new CaloCalcBussinessLogic();
                 var liste1 = bll.Yiyecekler.EnCokYediklerim(id, 30);
-
                 if (liste1 != null)
                 {
                     lviEnCokYediklerimAylik.Items.Clear();
@@ -334,11 +305,8 @@ namespace CaloCalc
                     MessageBox.Show("Silindi");
                     helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
                 }
-                else
-                {
+                else                
                     MessageBox.Show("Bir hata olustu silemedik.");
-                }
-
             }
         }
 
@@ -360,10 +328,7 @@ namespace CaloCalc
                     helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
                 }
                 else
-                {
-                    MessageBox.Show("Bir hata olustu güncellenemdi.");
-                }
-
+                    MessageBox.Show("Bir hata olustu güncellenemdi."); 
             }
 
         }
@@ -405,11 +370,7 @@ namespace CaloCalc
                     helper.ListViewYazdirma(id, Ogunler.SabahAtistirmasi, lviSabahAtistirmasiList);
                 }
                 else
-                {
-                    MessageBox.Show("Bir hata olustu güncellenemdi.");
-                }
-
-
+                    MessageBox.Show("Bir hata olustu güncellenemdi."); 
             }
         }
 
@@ -431,11 +392,7 @@ namespace CaloCalc
                     helper.ListViewYazdirma(id, Ogunler.OglenYemegi, lviOglenYemegiList);
                 }
                 else
-                {
-                    MessageBox.Show("Bir hata olustu güncellenemdi.");
-                }
-
-
+                    MessageBox.Show("Bir hata olustu güncellenemdi."); 
             }
         }
 
@@ -451,10 +408,7 @@ namespace CaloCalc
                     helper.ListViewYazdirma(id, Ogunler.OglenYemegi, lviOglenYemegiList);
                 }
                 else
-                {
                     MessageBox.Show("Bir hata olustu silemedik.");
-                }
-
             }
         }
 
@@ -470,10 +424,7 @@ namespace CaloCalc
                     helper.ListViewYazdirma(id, Ogunler.OglenAtistirmasi, lviOglenAtistirmasiList);
                 }
                 else
-                {
                     MessageBox.Show("Bir hata olustu silemedik.");
-                }
-
             }
 
         }
@@ -496,11 +447,7 @@ namespace CaloCalc
                     helper.ListViewYazdirma(id, Ogunler.OglenAtistirmasi, lviOglenAtistirmasiList);
                 }
                 else
-                {
                     MessageBox.Show("Bir hata olustu güncellenemdi.");
-                }
-
-
             }
         }
 
@@ -516,10 +463,7 @@ namespace CaloCalc
                     helper.ListViewYazdirma(id, Ogunler.AksamYemegi, lviAksamYemegiList);
                 }
                 else
-                {
                     MessageBox.Show("Bir hata olustu silemedik.");
-                }
-
             }
         }
 
@@ -541,11 +485,7 @@ namespace CaloCalc
                     helper.ListViewYazdirma(id, Ogunler.AksamYemegi, lviAksamYemegiList);
                 }
                 else
-                {
                     MessageBox.Show("Bir hata olustu güncellenemdi.");
-                }
-
-
             }
         }
 
@@ -561,10 +501,7 @@ namespace CaloCalc
                     helper.ListViewYazdirma(id, Ogunler.AksamAtistirmasi, lviAksamAtistirmasiList);
                 }
                 else
-                {
                     MessageBox.Show("Bir hata olustu silemedik.");
-                }
-
             }
         }
 
@@ -586,18 +523,8 @@ namespace CaloCalc
                     helper.ListViewYazdirma(id, Ogunler.AksamAtistirmasi, lviAksamAtistirmasiList);
                 }
                 else
-                {
                     MessageBox.Show("Bir hata olustu güncellenemdi.");
-                }
-
-
             }
         }
-
-
     }
-
-
-
-
 }

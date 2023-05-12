@@ -59,13 +59,7 @@ namespace BLL
             return ogunler;
         }
 
-        public List<Ogun> Fıfo(int kullaniciId,Ogunler ogunler)
-        {
-            var ogun = Db.Ogunler
-           .Include(o => o.Yiyecekler)
-           .Where(o => o.OgunAdi==ogunler && o.KullaniciID == kullaniciId&&o.YemekYemeZamani.Day==DateTime.Now.Day).ToList();
-            return ogun;
-        }
+        
         public List<Ogun> listeleme(int kullaniciID,Ogunler ogun)
         {
             using (var context = new CaloCalcDbContext())
@@ -78,14 +72,7 @@ namespace BLL
                 return yiyecekler;
             }
         }
-        public List<Ogun> Fıfo2(int kullaniciId, Ogunler ogunler)
-        {
-            var ogun = Db.Ogunler
-           .Include(o => o.Yiyecekler)
-           .Where(o => o.OgunAdi == ogunler && o.KullaniciID == kullaniciId).ToList();
-            
-            return ogun;
-        }
+       
         public int KisiOgunIDBul(int kullaniciID, Ogunler ogunler)
         {
             var SonOgun = Db.Ogunler
@@ -103,82 +90,7 @@ namespace BLL
        
 
 
-        //public List<Entities.Yiyecek> listeleme(int kullaniciID,int ogunID)
-        //{
-        //    using (var context = new CaloCalcDbContext())
-        //    {
-        //        var yiyecekler = context.Yiyecekler
-        //            .Join(context.Ogunler,
-        //                  y => y.YiyecekID,
-        //                  o => o.OgunID,
-        //                  (y, o) => new
-        //                  {
-        //                      o.OgunID,
-        //                      o.KullaniciID,
-        //                      y.YiyecekAdi,
-        //                      y.Kalori,                              
-        //                      o.OgunAdi,
-        //                      o.YemekYemeZamani,
-        //                      o.PorsiyonAdet,
-        //                      o.ToplamKalori
-        //                  }).Where(x=>x.KullaniciID==kullaniciID&&x.OgunID==ogunID)
-        //            .ToList();
-        //        return yiyecekler;
-        //    }
 
-        //}
-        //public List<Yiyecek> listeleme(int kullaniciID, Ogunler ogunler)
-        //{
-        //    using (var context = new CaloCalcDbContext())
-        //    {
-        //        var yiyecekler = context.Yiyecekler
-        //            .Join(context.Ogunler,
-        //                  y => y.OgunID,
-        //                  o => o.OgunID,
-        //                  (y, o) => new { Yiyecek = y, Ogun = o })
-        //            .Where(x => x.Ogun.KullaniciID == kullaniciID && x.Ogun.OgunAdi==ogunler && x.Ogun.YemekYemeZamani.Day == DateTime.Now.Day)
-        //            .Select(x => x.Yiyecek)
-        //            .ToList();
-        //        return yiyecekler;
-        //    }
-        //}
-        //public List<Yiyecek> listeleme(int kullaniciID)
-        //{
-        //    using (var context = new CaloCalcDbContext())
-        //    {
-        //        var yiyecekler = context.Yiyecekler
-        //            .Join(context.Ogunler,
-        //                  y => y.YiyecekID,
-        //                  o => o.YiyecekID,
-        //                  (y, o) => new { Yiyecek = y, Ogun = o })
-        //            .Where(x => x.Ogun.OgunAdi == Ogunler.Kahvaltı&&x.Ogun.Kullanici.KullaniciID==kullaniciID)
-        //            .Select(x => x.Yiyecek)
-        //            .ToList();
-        //        return yiyecekler;
-        //    }
-        //}
-
-
-
-
-
-        //public List<object> GetYemekRaporu(int kullaniciId, Ogunler ogunAdi)
-        //{
-
-        //        var rapor = Db.Ogunler
-        //            .Include(o => o.Yiyecekler)
-        //            .Where(o => o.OgunAdi == ogunAdi && o.KullaniciID == kullaniciId)
-        //            .Select(o => new
-        //            {
-        //                YemekAdi = o.Yiyecekler
-        //                KullaniciAdi = o.Kullanici.Adi,
-        //                OgunAdi = o.OgunAdi.ToString()
-        //            })
-        //            .ToList();
-
-        //        return rapor.Cast<object>().ToList();
-
-        //}
     }
 
 }

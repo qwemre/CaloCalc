@@ -51,7 +51,7 @@ namespace CaloCalc
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             var yiyecekKontrol = bll.Yiyecekler.AdaGoreAra(txtYemekAdi.Text);
-            if (string.IsNullOrEmpty(txtYemekAdi.Text) || string.IsNullOrWhiteSpace(cbxKategori.Text) || string.IsNullOrWhiteSpace(mtxtKalori.Text))
+            if (string.IsNullOrEmpty(txtYemekAdi.Text) || string.IsNullOrWhiteSpace(cbxKategori.Text) || string.IsNullOrWhiteSpace(mtxtKalori.Text)||yol==null)
             {
                 MessageBox.Show("Lütfen tüm alanları doldurunuz!", "Uyarı");
             }
@@ -64,7 +64,6 @@ namespace CaloCalc
                 Yiyecek yiyecek = new Yiyecek();
                 yiyecek.YiyecekAdi = txtYemekAdi.Text;
                 yiyecek.Kalori = double.Parse(mtxtKalori.Text);
-
                 yiyecek.KategoriID = (int)cbxKategori.SelectedValue;
                 yiyecek.FotografYolu = yol;
                 yiyecek.Fotograf = File.ReadAllBytes(yol);

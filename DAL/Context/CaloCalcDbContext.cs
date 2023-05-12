@@ -30,7 +30,7 @@ namespace DAL.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-JSFRVR1\\MSSQLKD15;Initial Catalog=Prj_KD15_CaloCalc;Integrated Security=True");
+            optionsBuilder.UseSqlServer("Data source=DESKTOP-HNK2G88\\MSSQLSERVER01;initial catalog=Prj_KD15_CaloCalc;integrated security=true");
 
         }
     }

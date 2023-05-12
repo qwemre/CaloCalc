@@ -261,7 +261,7 @@ namespace CaloCalc
             }
             else if (tabControl1.SelectedIndex == 4)
             {
-                bll= new CaloCalcBussinessLogic();
+                bll = new CaloCalcBussinessLogic();
                 var liste = bll.Yiyecekler.EnCokYedikleri(id, 7);
                 if (liste != null)
                 {
@@ -305,7 +305,7 @@ namespace CaloCalc
                     MessageBox.Show("Silindi");
                     helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
                 }
-                else                
+                else
                     MessageBox.Show("Bir hata olustu silemedik.");
             }
         }
@@ -328,7 +328,7 @@ namespace CaloCalc
                     helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
                 }
                 else
-                    MessageBox.Show("Bir hata olustu güncellenemdi."); 
+                    MessageBox.Show("Bir hata olustu güncellenemdi.");
             }
 
         }
@@ -370,7 +370,7 @@ namespace CaloCalc
                     helper.ListViewYazdirma(id, Ogunler.SabahAtistirmasi, lviSabahAtistirmasiList);
                 }
                 else
-                    MessageBox.Show("Bir hata olustu güncellenemdi."); 
+                    MessageBox.Show("Bir hata olustu güncellenemdi.");
             }
         }
 
@@ -392,7 +392,7 @@ namespace CaloCalc
                     helper.ListViewYazdirma(id, Ogunler.OglenYemegi, lviOglenYemegiList);
                 }
                 else
-                    MessageBox.Show("Bir hata olustu güncellenemdi."); 
+                    MessageBox.Show("Bir hata olustu güncellenemdi.");
             }
         }
 

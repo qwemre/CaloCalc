@@ -61,7 +61,7 @@
             txtSifre.Name = "txtSifre";
             txtSifre.PlaceholderText = "Şifre Giriniz";
             txtSifre.Size = new Size(179, 23);
-            txtSifre.TabIndex = 4;
+            txtSifre.TabIndex = 1;
             // 
             // txtMail
             // 
@@ -69,7 +69,7 @@
             txtMail.Name = "txtMail";
             txtMail.PlaceholderText = "E-Mail Giriniz";
             txtMail.Size = new Size(178, 23);
-            txtMail.TabIndex = 4;
+            txtMail.TabIndex = 0;
             // 
             // btnGiris
             // 
@@ -80,7 +80,7 @@
             btnGiris.Location = new Point(140, 236);
             btnGiris.Name = "btnGiris";
             btnGiris.Size = new Size(178, 42);
-            btnGiris.TabIndex = 3;
+            btnGiris.TabIndex = 2;
             btnGiris.Text = "Giriş";
             btnGiris.UseVisualStyleBackColor = false;
             btnGiris.Click += btnGiris_Click;

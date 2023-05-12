@@ -147,17 +147,17 @@
             columnHeader31 = new ColumnHeader();
             columnHeader32 = new ColumnHeader();
             tabPage11 = new TabPage();
-            tabControl1 = new TabControl();
-            lviDigerleriEnCokNeYemisHaftalik = new ListView();
-            columnHeader37 = new ColumnHeader();
-            columnHeader38 = new ColumnHeader();
-            columnHeader39 = new ColumnHeader();
-            columnHeader40 = new ColumnHeader();
             lviDigerleriEnCokNeYemisAylik = new ListView();
             columnHeader41 = new ColumnHeader();
             columnHeader42 = new ColumnHeader();
             columnHeader43 = new ColumnHeader();
             columnHeader44 = new ColumnHeader();
+            lviDigerleriEnCokNeYemisHaftalik = new ListView();
+            columnHeader37 = new ColumnHeader();
+            columnHeader38 = new ColumnHeader();
+            columnHeader39 = new ColumnHeader();
+            columnHeader40 = new ColumnHeader();
+            tabControl1 = new TabControl();
             ((System.ComponentModel.ISupportInitialize)nudAksamAtistirmasiPorsiyon).BeginInit();
             tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudAksamYemegiPorsiyon).BeginInit();
@@ -1266,20 +1266,37 @@
             tabPage11.Text = "Diğerleri ne Yemiş";
             tabPage11.UseVisualStyleBackColor = true;
             // 
-            // tabControl1
+            // lviDigerleriEnCokNeYemisAylik
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage8);
-            tabControl1.Controls.Add(tabPage6);
-            tabControl1.Controls.Add(tabPage7);
-            tabControl1.Controls.Add(tabPage11);
-            tabControl1.Dock = DockStyle.Fill;
-            tabControl1.Location = new Point(0, 0);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(568, 577);
-            tabControl1.TabIndex = 1;
-            tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
+            lviDigerleriEnCokNeYemisAylik.Columns.AddRange(new ColumnHeader[] { columnHeader41, columnHeader42, columnHeader43, columnHeader44 });
+            lviDigerleriEnCokNeYemisAylik.FullRowSelect = true;
+            lviDigerleriEnCokNeYemisAylik.GridLines = true;
+            lviDigerleriEnCokNeYemisAylik.Location = new Point(3, 294);
+            lviDigerleriEnCokNeYemisAylik.Name = "lviDigerleriEnCokNeYemisAylik";
+            lviDigerleriEnCokNeYemisAylik.Size = new Size(546, 179);
+            lviDigerleriEnCokNeYemisAylik.TabIndex = 35;
+            lviDigerleriEnCokNeYemisAylik.UseCompatibleStateImageBehavior = false;
+            lviDigerleriEnCokNeYemisAylik.View = View.Details;
+            // 
+            // columnHeader41
+            // 
+            columnHeader41.Text = "Yiyecek";
+            columnHeader41.Width = 125;
+            // 
+            // columnHeader42
+            // 
+            columnHeader42.Text = "Kalori";
+            columnHeader42.Width = 125;
+            // 
+            // columnHeader43
+            // 
+            columnHeader43.Text = "Toplam Adet";
+            columnHeader43.Width = 125;
+            // 
+            // columnHeader44
+            // 
+            columnHeader44.Text = "Ogun Adi";
+            columnHeader44.Width = 130;
             // 
             // lviDigerleriEnCokNeYemisHaftalik
             // 
@@ -1313,37 +1330,20 @@
             columnHeader40.Text = "Ogun Adi";
             columnHeader40.Width = 130;
             // 
-            // lviDigerleriEnCokNeYemisAylik
+            // tabControl1
             // 
-            lviDigerleriEnCokNeYemisAylik.Columns.AddRange(new ColumnHeader[] { columnHeader41, columnHeader42, columnHeader43, columnHeader44 });
-            lviDigerleriEnCokNeYemisAylik.FullRowSelect = true;
-            lviDigerleriEnCokNeYemisAylik.GridLines = true;
-            lviDigerleriEnCokNeYemisAylik.Location = new Point(3, 294);
-            lviDigerleriEnCokNeYemisAylik.Name = "lviDigerleriEnCokNeYemisAylik";
-            lviDigerleriEnCokNeYemisAylik.Size = new Size(546, 179);
-            lviDigerleriEnCokNeYemisAylik.TabIndex = 35;
-            lviDigerleriEnCokNeYemisAylik.UseCompatibleStateImageBehavior = false;
-            lviDigerleriEnCokNeYemisAylik.View = View.Details;
-            // 
-            // columnHeader41
-            // 
-            columnHeader41.Text = "Yiyecek";
-            columnHeader41.Width = 125;
-            // 
-            // columnHeader42
-            // 
-            columnHeader42.Text = "Kalori";
-            columnHeader42.Width = 125;
-            // 
-            // columnHeader43
-            // 
-            columnHeader43.Text = "Toplam Adet";
-            columnHeader43.Width = 125;
-            // 
-            // columnHeader44
-            // 
-            columnHeader44.Text = "Ogun Adi";
-            columnHeader44.Width = 130;
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage8);
+            tabControl1.Controls.Add(tabPage6);
+            tabControl1.Controls.Add(tabPage7);
+            tabControl1.Controls.Add(tabPage11);
+            tabControl1.Dock = DockStyle.Fill;
+            tabControl1.Location = new Point(0, 0);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(568, 577);
+            tabControl1.TabIndex = 1;
+            tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 
             // AnaEkran
             // 

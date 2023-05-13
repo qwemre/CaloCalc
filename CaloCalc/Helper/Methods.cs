@@ -40,19 +40,19 @@ namespace CaloCalc.Helper
 
             if (hesap < 18.5)
             {
-                lblBilgi.Text = ("Zayıfsınız");
+                lblBilgi.Text = "Zayıfsınız".ToString();
             }
             else if (hesap >= 18.5 && hesap <= 24.9)
             {
-                lblBilgi.Text = ("Normal kilolusunuz");
+                lblBilgi.Text = "Normal kilolusunuz".ToString();
             }
             else if (hesap >= 25 && hesap <= 29.9)
             {
-                lblBilgi.Text = ("Fazla kilolusunuz");
+                lblBilgi.Text = "Fazla kilolusunuz".ToString();
             }
-            else if (hesap >= 30 && hesap <= 34.9)
+            else if (hesap >= 30 )
             {
-                lblBilgi.Text = ("Şişmanlık (Obezite Sınıfı)");
+                lblBilgi.Text = "Şişmanlık (Obezite Sınıfı".ToString();
             }
         }
         public void ListViewYazdirma(int id, Ogunler ogun, ListView listView)

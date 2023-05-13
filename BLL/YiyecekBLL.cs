@@ -56,30 +56,6 @@ namespace BLL
             return Db.Yiyecekler.FirstOrDefault(x => x.YiyecekAdi == yiyecekAdi);
         }
 
-        //public List<Yiyecek> EnCokYenenler()
-        //{
-        //    string connectionString = "Data Source=DESKTOP-JSFRVR1\\MSSQLKD15;Initial Catalog=PRJ_CaloCalc_KD15;Integrated Security=True";
-        //    string query = "SELECT TOP 10 y.YiyecekAdi, COUNT(*) AS 'Toplam' FROM Ogunler o JOIN Yiyecekler y ON o.YiyecekID=y.YiyecekID GROUP BY y.YiyecekAdi ORDER BY Toplam DESC";
-
-        //    List<Yiyecek> results = new List<Yiyecek>();
-
-        //    using (SqlConnection connection = new SqlConnection(connectionString))
-        //    {
-        //        SqlCommand command = new SqlCommand(query, connection);
-        //        connection.Open();
-
-        //        SqlDataReader reader = command.ExecuteReader();
-
-        //        while (reader.Read())
-        //        {
-        //            string yiyecekAdi = reader["YiyecekAdi"].ToString();
-        //            int toplam = Convert.ToInt32(reader["Toplam"]);
-        //            results.Add(new Yiyecek(yiyecekAdi, toplam));
-        //        }
-        //    }
-
-        //    return results;
-        //}
         public List<Yiyecek> EnCokYenenler()
         {
             string connectionString = "Data source=DESKTOP-HNK2G88\\MSSQLSERVER01;initial catalog=Prj_KD15_CaloCalc;integrated security=true";

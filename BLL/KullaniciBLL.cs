@@ -66,30 +66,6 @@ namespace BLL
             return Db.SaveChanges() > 0;
 
         }
-
-        public void HaftalikOgunKiyasRaporu(int kullaniciId)
-        {
-            var oneWeekAgo = DateTime.Today.AddDays(-7);
-            var userMeals = Db.Ogunler
-                .Include(o => o.Yiyecekler)
-                .Where(o => o.KullaniciID == kullaniciId && o.YemekYemeZamani >= oneWeekAgo)
-                .ToList();
-
-            var weeklyComparison = Db.Ogunler
-                .Include(o => o.Yiyecekler)
-                .Where(o => o.KullaniciID != kullaniciId && o.YemekYemeZamani >= oneWeekAgo)
-                .GroupBy(o => o.YemekYemeZamani.Date.AddDays(-(int)o.YemekYemeZamani.DayOfWeek))
-                .Select(g => new
-                {
-                    Week = g.Key,
-                    UserCalories = userMeals.Where(um => um.YemekYemeZamani.Date.AddDays(-(int)um.YemekYemeZamani.DayOfWeek) == g.Key).Sum(um => um.ToplamKalori),
-                    OtherUsersCalories = g.Sum(o => o.ToplamKalori)
-                })
-                .OrderByDescending(c => c.Week)
-                .ToList();
-        }
-
-
         public double GunSonuRaporu(int kullaniciId)
         {
             var tarih = DateTime.Now.Date;
@@ -100,7 +76,6 @@ namespace BLL
             var toplamKalori = ogunler.Sum(o => o.ToplamKalori);
             return toplamKalori;
         }
-
         public double OguneGoreKaloriRaporu(int kullaniciId, Ogunler ogunAdi)
         {
             var tarih = DateTime.Now.Date;
@@ -111,7 +86,11 @@ namespace BLL
             var toplamKalori = ogunler.Sum(o => o.ToplamKalori);
             return toplamKalori;
         }
-
+        public List<Kullanici> BoyKilo(int kullaniciId) 
+        {
+            var kisi=Db.Kullanicilar.Where(x=>x.KullaniciID==kullaniciId).ToList();
+            return kisi;
+        }
         public int KullaniciGiris(string kullaniciMail, string sifre)
         {
             Kullanici kullanici = Db.Kullanicilar.Where(x => x.KullaniciMail == kullaniciMail && x.Sifre == sifre).SingleOrDefault();
@@ -130,16 +109,7 @@ namespace BLL
             return Db.Kullanicilar.FirstOrDefault(x => x.KullaniciMail == Mail);
         }
 
-        public List<Ogun> OguneGoreYenenYemekRaporu(int kullaniciId, Ogunler ogunAdi)
-        {
-            var tarih = DateTime.Now.Date;
-            var ogunler = Db.Ogunler
-                .Where(o => o.KullaniciID == kullaniciId && o.YemekYemeZamani.Date == tarih && o.OgunAdi == ogunAdi)
-                .Include(o => o.Yiyecekler).ThenInclude(k => k.YiyecekAdi)
-                .ToList();
-            return ogunler;
-        }
-        
+       
     }
 }
 

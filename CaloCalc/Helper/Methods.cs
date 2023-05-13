@@ -4,6 +4,7 @@ using Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,8 +19,45 @@ namespace CaloCalc.Helper
         Yiyecek yiyecek;
         Ogun ogun;
         CaloCalcBussinessLogic bll;
+        Kullanici kullanici;
+
+       
+     public void BoyKiloDoldurma(int id, MaskedTextBox boy, MaskedTextBox kilo)
+        {
+            var kullanici = bll.Kullanicilar.Ara(id);
+            boy.Text = kullanici.Boy.ToString();
+            kilo.Text = kullanici.Kilo.ToString();
+
+        }
+
+        public void index(int id, Label indexhesap,Label lblBilgi)
+        {
+            kullanici = bll.Kullanicilar.Ara(id);
+            double boy = kullanici.Boy / 100.0;
+            double kilo = kullanici.Kilo;
+            double hesap = kilo / (boy * boy);
+            indexhesap.Text = (hesap.ToString("f1"));
+
+            if (hesap < 18.5)
+            {
+                lblBilgi.Text = ("Zayıfsınız");
+            }
+            else if (hesap >= 18.5 && hesap <= 24.9)
+            {
+                lblBilgi.Text = ("Normal kilolusunuz");
+            }
+            else if (hesap >= 25 && hesap <= 29.9)
+            {
+                lblBilgi.Text = ("Fazla kilolusunuz");
+            }
+            else if (hesap >= 30 && hesap <= 34.9)
+            {
+                lblBilgi.Text = ("Şişmanlık (Obezite Sınıfı)");
+            }
+        }
         public void ListViewYazdirma(int id, Ogunler ogun, ListView listView)
         {
+            
             listView.Items.Clear();
             var liste = bll.Ogunler.listeleme(id, ogun);
             if (liste != null)

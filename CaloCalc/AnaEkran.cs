@@ -375,11 +375,6 @@ namespace CaloCalc
                     MessageBox.Show("bilgileriniz güncellenirken hata oluştu");
                 }
             }
-
-
-
-
-
         }
     }
 }

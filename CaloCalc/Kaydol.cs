@@ -54,6 +54,15 @@ namespace CaloCalc
                 {
                     MessageBox.Show("Şifreler farklı", "Uyarı");
                 }
+
+                else if (int.Parse(mtxtBoy.Text) < 50 || int.Parse(mtxtBoy.Text) > 290)
+                {
+                    MessageBox.Show("Boy değeri geçerli aralıkta olmalıdır (50cm - 290cm)");
+                }
+                else if (int.Parse(mtxtKilo.Text) < 30 || int.Parse(mtxtBoy.Text) > 597)
+                {
+                    MessageBox.Show("Kilo değeri geçerli aralıkta olmalıdır (30kg - 597kg)");
+                }
                 else
                 {
                     kullanici.Adi = txtAd.Text;

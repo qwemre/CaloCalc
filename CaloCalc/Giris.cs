@@ -58,5 +58,17 @@ namespace CaloCalc
                 }
             }
         }
+
+        private void cbxSifreGozuksunMu_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxSifreGozuksunMu.Checked == true)
+            {
+                txtSifre.PasswordChar = '\0';
+            }
+            else if (cbxSifreGozuksunMu.Checked == false)
+            {
+                txtSifre.PasswordChar = '*';
+            }
+        }
     }
 }

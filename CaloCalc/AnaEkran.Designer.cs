@@ -274,6 +274,7 @@
             lviAksamAtistirmasiList.TabIndex = 40;
             lviAksamAtistirmasiList.UseCompatibleStateImageBehavior = false;
             lviAksamAtistirmasiList.View = View.Details;
+            lviAksamAtistirmasiList.SelectedIndexChanged += lviAksamAtistirmasiList_SelectedIndexChanged;
             // 
             // columnHeader21
             // 
@@ -455,6 +456,7 @@
             lviOglenAtistirmasiList.TabIndex = 40;
             lviOglenAtistirmasiList.UseCompatibleStateImageBehavior = false;
             lviOglenAtistirmasiList.View = View.Details;
+            lviOglenAtistirmasiList.SelectedIndexChanged += lviOglenAtistirmasiList_SelectedIndexChanged;
             // 
             // columnHeader13
             // 
@@ -595,6 +597,7 @@
             lviAksamYemegiList.TabIndex = 40;
             lviAksamYemegiList.UseCompatibleStateImageBehavior = false;
             lviAksamYemegiList.View = View.Details;
+            lviAksamYemegiList.SelectedIndexChanged += lviAksamYemegiList_SelectedIndexChanged;
             // 
             // columnHeader17
             // 
@@ -950,6 +953,7 @@
             lvSabahKahvaltiListe.TabIndex = 31;
             lvSabahKahvaltiListe.UseCompatibleStateImageBehavior = false;
             lvSabahKahvaltiListe.View = View.Details;
+            lvSabahKahvaltiListe.SelectedIndexChanged += lvSabahKahvaltiListe_SelectedIndexChanged;
             // 
             // columnHeader1
             // 
@@ -1048,12 +1052,13 @@
             lviSabahAtistirmasiList.Columns.AddRange(new ColumnHeader[] { columnHeader5, columnHeader6, columnHeader7, columnHeader8 });
             lviSabahAtistirmasiList.FullRowSelect = true;
             lviSabahAtistirmasiList.GridLines = true;
-            lviSabahAtistirmasiList.Location = new Point(1,100);
+            lviSabahAtistirmasiList.Location = new Point(1, 100);
             lviSabahAtistirmasiList.Name = "lviSabahAtistirmasiList";
             lviSabahAtistirmasiList.Size = new Size(574, 186);
             lviSabahAtistirmasiList.TabIndex = 40;
             lviSabahAtistirmasiList.UseCompatibleStateImageBehavior = false;
             lviSabahAtistirmasiList.View = View.Details;
+            lviSabahAtistirmasiList.SelectedIndexChanged += lviSabahAtistirmasiList_SelectedIndexChanged;
             // 
             // columnHeader5
             // 
@@ -1184,6 +1189,7 @@
             lviOglenYemegiList.TabIndex = 40;
             lviOglenYemegiList.UseCompatibleStateImageBehavior = false;
             lviOglenYemegiList.View = View.Details;
+            lviOglenYemegiList.SelectedIndexChanged += lviOglenYemegiList_SelectedIndexChanged;
             // 
             // columnHeader9
             // 

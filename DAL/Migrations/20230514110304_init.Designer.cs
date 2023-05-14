@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(CaloCalcDbContext))]
-    [Migration("20230512105305_init")]
+    [Migration("20230514110304_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

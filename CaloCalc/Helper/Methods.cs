@@ -14,15 +14,15 @@ namespace CaloCalc.Helper
     {
         public Methods()
         {
-            bll=new CaloCalcBussinessLogic();
+            bll = new CaloCalcBussinessLogic();
         }
         Yiyecek yiyecek;
         Ogun ogun;
         CaloCalcBussinessLogic bll;
         Kullanici kullanici;
 
-       
-     public void BoyKiloDoldurma(int id, MaskedTextBox boy, MaskedTextBox kilo)
+
+        public void BoyKiloDoldurma(int id, MaskedTextBox boy, MaskedTextBox kilo)
         {
             var kullanici = bll.Kullanicilar.Ara(id);
             boy.Text = kullanici.Boy.ToString();
@@ -30,8 +30,9 @@ namespace CaloCalc.Helper
 
         }
 
-        public void index(int id, Label indexhesap,Label lblBilgi)
+        public void index(int id, Label indexhesap, Label lblBilgi)
         {
+            bll = new CaloCalcBussinessLogic();
             kullanici = bll.Kullanicilar.Ara(id);
             double boy = kullanici.Boy / 100.0;
             double kilo = kullanici.Kilo;
@@ -50,14 +51,14 @@ namespace CaloCalc.Helper
             {
                 lblBilgi.Text = "Fazla kilolusunuz";
             }
-            else if (hesap >= 30 )
+            else if (hesap >= 30)
             {
                 lblBilgi.Text = "Şişmanlık (Obezite Sınıfı)";
             }
         }
         public void ListViewYazdirma(int id, Ogunler ogun, ListView listView)
         {
-            
+
             listView.Items.Clear();
             var liste = bll.Ogunler.listeleme(id, ogun);
             if (liste != null)
@@ -74,7 +75,7 @@ namespace CaloCalc.Helper
                 }
             }
         }
-        public void SorguListViewYazdirma(ListView listView,List<Yiyecek>liste)
+        public void SorguListViewYazdirma(ListView listView, List<Yiyecek> liste)
         {
             listView.Items.Clear();
             foreach (var yemek in liste)
@@ -87,13 +88,13 @@ namespace CaloCalc.Helper
                 listView.Items.Add(lvi);
             }
         }
-         public void comboboxDoldurma(ComboBox cmb)
+        public void comboboxDoldurma(ComboBox cmb)
         {
             cmb.DataSource = bll.Yiyecekler.Liste();
             cmb.DisplayMember = "YiyecekAdi";
             cmb.ValueMember = "YiyecekID";
         }
-        public bool BtnEkleGorevi(int id, int YiyecekID,Ogunler ogunad,double porsiyon)
+        public bool BtnEkleGorevi(int id, int YiyecekID, Ogunler ogunad, double porsiyon)
         {
             ogun = new();
             yiyecek = bll.Yiyecekler.Ara(YiyecekID);
@@ -103,9 +104,9 @@ namespace CaloCalc.Helper
             ogun.PorsiyonAdet = porsiyon;
             ogun.YemekYemeZamani = DateTime.Now;
             ogun.ToplamKalori = (yiyecek.Kalori * ogun.PorsiyonAdet);
-           return   bll.Ogunler.Ekle(ogun);
+            return bll.Ogunler.Ekle(ogun);
         }
-        public bool BtnGuncelleGorevi(int ogunID,int yiyecekID,double porsiyon)
+        public bool BtnGuncelleGorevi(int ogunID, int yiyecekID, double porsiyon)
         {
             Ogun guncellenecekOgun = bll.Ogunler.Ara(ogunID);
             yiyecek = bll.Yiyecekler.Ara(yiyecekID);
@@ -113,7 +114,19 @@ namespace CaloCalc.Helper
             guncellenecekOgun.PorsiyonAdet = porsiyon;
             guncellenecekOgun.YemekYemeZamani = DateTime.Now;
             guncellenecekOgun.ToplamKalori = (yiyecek.Kalori * guncellenecekOgun.PorsiyonAdet);
-           return bll.Ogunler.Guncelle(guncellenecekOgun);
+            return bll.Ogunler.Guncelle(guncellenecekOgun);
+        }
+        public void EkleAktif(Button ekle,Button sil,Button güncelle)
+        {
+            ekle.Enabled=true;
+            sil.Enabled = false;
+            güncelle.Enabled = false;
+        }
+        public void EklePasif(Button ekle, Button sil, Button güncelle)
+        {
+            ekle.Enabled = false;
+            sil.Enabled = true;
+            güncelle .Enabled = true;
         }
     }
 }

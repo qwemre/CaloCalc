@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Giris));
             panel1 = new Panel();
+            cbxSifreGozuksunMu = new CheckBox();
             txtSifre = new TextBox();
             txtMail = new TextBox();
             btnGiris = new Button();
@@ -43,6 +44,7 @@
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.Controls.Add(cbxSifreGozuksunMu);
             panel1.Controls.Add(txtSifre);
             panel1.Controls.Add(txtMail);
             panel1.Controls.Add(btnGiris);
@@ -55,10 +57,22 @@
             panel1.Size = new Size(449, 414);
             panel1.TabIndex = 10;
             // 
+            // cbxSifreGozuksunMu
+            // 
+            cbxSifreGozuksunMu.AutoSize = true;
+            cbxSifreGozuksunMu.Location = new Point(140, 224);
+            cbxSifreGozuksunMu.Name = "cbxSifreGozuksunMu";
+            cbxSifreGozuksunMu.Size = new Size(95, 19);
+            cbxSifreGozuksunMu.TabIndex = 4;
+            cbxSifreGozuksunMu.Text = "Şifreyi Göster";
+            cbxSifreGozuksunMu.UseVisualStyleBackColor = true;
+            cbxSifreGozuksunMu.CheckedChanged += cbxSifreGozuksunMu_CheckedChanged;
+            // 
             // txtSifre
             // 
             txtSifre.Location = new Point(139, 189);
             txtSifre.Name = "txtSifre";
+            txtSifre.PasswordChar = '*';
             txtSifre.PlaceholderText = "Şifre Giriniz";
             txtSifre.Size = new Size(179, 23);
             txtSifre.TabIndex = 1;
@@ -77,7 +91,7 @@
             btnGiris.FlatStyle = FlatStyle.Flat;
             btnGiris.Font = new Font("Consolas", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnGiris.ForeColor = SystemColors.ButtonHighlight;
-            btnGiris.Location = new Point(140, 236);
+            btnGiris.Location = new Point(140, 249);
             btnGiris.Name = "btnGiris";
             btnGiris.Size = new Size(178, 42);
             btnGiris.TabIndex = 2;
@@ -144,5 +158,6 @@
         private Label label6;
         private TextBox txtSifre;
         private TextBox txtMail;
+        private CheckBox cbxSifreGozuksunMu;
     }
 }

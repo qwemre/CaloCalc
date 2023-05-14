@@ -89,6 +89,7 @@
             label1 = new Label();
             tabPage1 = new TabPage();
             lblBilgi = new Label();
+            label27 = new Label();
             label24 = new Label();
             lblBoyKiloİndex = new Label();
             nudKahvaltiPorsiyon = new NumericUpDown();
@@ -787,6 +788,7 @@
             tabPage1.BackgroundImage = Properties.Resources.anasayfa2;
             tabPage1.BackgroundImageLayout = ImageLayout.Stretch;
             tabPage1.Controls.Add(lblBilgi);
+            tabPage1.Controls.Add(label27);
             tabPage1.Controls.Add(label24);
             tabPage1.Controls.Add(label13);
             tabPage1.Controls.Add(lblBoyKiloİndex);
@@ -807,7 +809,7 @@
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(591, 454);
+            tabPage1.Size = new Size(591, 468);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Ana Sayfa";
             // 
@@ -821,6 +823,18 @@
             lblBilgi.Name = "lblBilgi";
             lblBilgi.Size = new Size(0, 40);
             lblBilgi.TabIndex = 13;
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.BackColor = Color.Transparent;
+            label27.Font = new Font("Gabriola", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label27.ForeColor = Color.Black;
+            label27.Location = new Point(258, 408);
+            label27.Name = "label27";
+            label27.Size = new Size(325, 35);
+            label27.TabIndex = 13;
+            label27.Text = "En Sağlıklı Kitle İndeksi 18.5 ila 24.9 Arasıdır";
             // 
             // label24
             // 
@@ -1230,7 +1244,7 @@
             tabPage8.Location = new Point(4, 24);
             tabPage8.Name = "tabPage8";
             tabPage8.Padding = new Padding(3);
-            tabPage8.Size = new Size(581, 454);
+            tabPage8.Size = new Size(591, 468);
             tabPage8.TabIndex = 7;
             tabPage8.Text = "Yemek mi yedin?";
             // 
@@ -1240,7 +1254,7 @@
             tabPage6.Location = new Point(4, 24);
             tabPage6.Name = "tabPage6";
             tabPage6.Padding = new Padding(3);
-            tabPage6.Size = new Size(581, 454);
+            tabPage6.Size = new Size(591, 468);
             tabPage6.TabIndex = 8;
             tabPage6.Text = "En Çok Yenenler";
             tabPage6.UseVisualStyleBackColor = true;
@@ -1253,7 +1267,7 @@
             lviEnCokYenenler.GridLines = true;
             lviEnCokYenenler.Location = new Point(3, 3);
             lviEnCokYenenler.Name = "lviEnCokYenenler";
-            lviEnCokYenenler.Size = new Size(575, 448);
+            lviEnCokYenenler.Size = new Size(585, 462);
             lviEnCokYenenler.TabIndex = 32;
             lviEnCokYenenler.UseCompatibleStateImageBehavior = false;
             lviEnCokYenenler.View = View.Details;
@@ -1288,7 +1302,7 @@
             tabPage7.Location = new Point(4, 24);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(581, 454);
+            tabPage7.Size = new Size(591, 468);
             tabPage7.TabIndex = 9;
             tabPage7.Text = "En Çok Yediklerim";
             // 
@@ -1316,9 +1330,9 @@
             lviEnCokYediklerimAylik.Dock = DockStyle.Bottom;
             lviEnCokYediklerimAylik.FullRowSelect = true;
             lviEnCokYediklerimAylik.GridLines = true;
-            lviEnCokYediklerimAylik.Location = new Point(3, 252);
+            lviEnCokYediklerimAylik.Location = new Point(3, 266);
             lviEnCokYediklerimAylik.Name = "lviEnCokYediklerimAylik";
-            lviEnCokYediklerimAylik.Size = new Size(575, 199);
+            lviEnCokYediklerimAylik.Size = new Size(585, 199);
             lviEnCokYediklerimAylik.TabIndex = 34;
             lviEnCokYediklerimAylik.UseCompatibleStateImageBehavior = false;
             lviEnCokYediklerimAylik.View = View.Details;
@@ -1351,7 +1365,7 @@
             lviEnCokYediklerimHaftalik.GridLines = true;
             lviEnCokYediklerimHaftalik.Location = new Point(3, 3);
             lviEnCokYediklerimHaftalik.Name = "lviEnCokYediklerimHaftalik";
-            lviEnCokYediklerimHaftalik.Size = new Size(575, 188);
+            lviEnCokYediklerimHaftalik.Size = new Size(585, 188);
             lviEnCokYediklerimHaftalik.TabIndex = 33;
             lviEnCokYediklerimHaftalik.UseCompatibleStateImageBehavior = false;
             lviEnCokYediklerimHaftalik.View = View.Details;
@@ -1386,7 +1400,7 @@
             tabPage11.Location = new Point(4, 24);
             tabPage11.Name = "tabPage11";
             tabPage11.Padding = new Padding(3);
-            tabPage11.Size = new Size(581, 454);
+            tabPage11.Size = new Size(591, 468);
             tabPage11.TabIndex = 10;
             tabPage11.Text = "Diğerleri ne Yemiş";
             // 
@@ -1414,9 +1428,9 @@
             lviDigerleriEnCokNeYemisAylik.Dock = DockStyle.Bottom;
             lviDigerleriEnCokNeYemisAylik.FullRowSelect = true;
             lviDigerleriEnCokNeYemisAylik.GridLines = true;
-            lviDigerleriEnCokNeYemisAylik.Location = new Point(3, 265);
+            lviDigerleriEnCokNeYemisAylik.Location = new Point(3, 279);
             lviDigerleriEnCokNeYemisAylik.Name = "lviDigerleriEnCokNeYemisAylik";
-            lviDigerleriEnCokNeYemisAylik.Size = new Size(575, 186);
+            lviDigerleriEnCokNeYemisAylik.Size = new Size(585, 186);
             lviDigerleriEnCokNeYemisAylik.TabIndex = 35;
             lviDigerleriEnCokNeYemisAylik.UseCompatibleStateImageBehavior = false;
             lviDigerleriEnCokNeYemisAylik.View = View.Details;
@@ -1449,7 +1463,7 @@
             lviDigerleriEnCokNeYemisHaftalik.GridLines = true;
             lviDigerleriEnCokNeYemisHaftalik.Location = new Point(3, 3);
             lviDigerleriEnCokNeYemisHaftalik.Name = "lviDigerleriEnCokNeYemisHaftalik";
-            lviDigerleriEnCokNeYemisHaftalik.Size = new Size(575, 190);
+            lviDigerleriEnCokNeYemisHaftalik.Size = new Size(585, 190);
             lviDigerleriEnCokNeYemisHaftalik.TabIndex = 34;
             lviDigerleriEnCokNeYemisHaftalik.UseCompatibleStateImageBehavior = false;
             lviDigerleriEnCokNeYemisHaftalik.View = View.Details;
@@ -1486,7 +1500,7 @@
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(599, 482);
+            tabControl1.Size = new Size(599, 496);
             tabControl1.TabIndex = 1;
             tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 
@@ -1502,7 +1516,7 @@
             tabPage12.Location = new Point(4, 24);
             tabPage12.Name = "tabPage12";
             tabPage12.Padding = new Padding(3);
-            tabPage12.Size = new Size(591, 454);
+            tabPage12.Size = new Size(591, 468);
             tabPage12.TabIndex = 11;
             tabPage12.Text = "Kilo Boy Değiştirme";
             tabPage12.UseVisualStyleBackColor = true;
@@ -1563,7 +1577,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(599, 482);
+            ClientSize = new Size(599, 496);
             Controls.Add(tabControl1);
             Name = "AnaEkran";
             Text = "AnaEkran";
@@ -1746,5 +1760,6 @@
         private MaskedTextBox mtxtKiloDegis;
         private MaskedTextBox mtxtBoyDegis;
         private Label label26;
+        private Label label27;
     }
 }

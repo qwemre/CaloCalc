@@ -133,6 +133,7 @@
             cbxOglenYemegi = new ComboBox();
             btnOglenYemegiOgunSil = new Button();
             tabPage8 = new TabPage();
+            label28 = new Label();
             tabPage6 = new TabPage();
             lviEnCokYenenler = new ListView();
             columnHeader25 = new ColumnHeader();
@@ -172,7 +173,6 @@
             mtxtBoyDegis = new MaskedTextBox();
             label26 = new Label();
             BtnBoyKiloGüncelle = new Button();
-            label28 = new Label();
             ((System.ComponentModel.ISupportInitialize)nudAksamAtistirmasiPorsiyon).BeginInit();
             tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudAksamYemegiPorsiyon).BeginInit();
@@ -1256,6 +1256,15 @@
             tabPage8.TabIndex = 7;
             tabPage8.Text = "Yemek mi yedin?";
             // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Location = new Point(8, 415);
+            label28.Name = "label28";
+            label28.Size = new Size(171, 15);
+            label28.TabIndex = 33;
+            label28.Text = "Aradığın Besini Bulamadın mı? ";
+            // 
             // tabPage6
             // 
             tabPage6.Controls.Add(lviEnCokYenenler);
@@ -1572,22 +1581,13 @@
             // BtnBoyKiloGüncelle
             // 
             BtnBoyKiloGüncelle.Image = Properties.Resources.yemekyedinmi;
-            BtnBoyKiloGüncelle.Location = new Point(190, 317);
+            BtnBoyKiloGüncelle.Location = new Point(189, 225);
             BtnBoyKiloGüncelle.Name = "BtnBoyKiloGüncelle";
             BtnBoyKiloGüncelle.Size = new Size(209, 23);
             BtnBoyKiloGüncelle.TabIndex = 1;
             BtnBoyKiloGüncelle.Text = "Güncelle";
             BtnBoyKiloGüncelle.UseVisualStyleBackColor = true;
             BtnBoyKiloGüncelle.Click += BtnBoyKiloGüncelle_Click;
-            // 
-            // label28
-            // 
-            label28.AutoSize = true;
-            label28.Location = new Point(8, 415);
-            label28.Name = "label28";
-            label28.Size = new Size(171, 15);
-            label28.TabIndex = 33;
-            label28.Text = "Aradığın Besini Bulamadın mı? ";
             // 
             // AnaEkran
             // 

@@ -127,7 +127,7 @@ namespace CaloCalc
 
         private void btnAksamAtistirmasiEkle_Click(object sender, EventArgs e)
         {
-            bool kontrol = helper.BtnEkleGorevi(id, (int)cbxOglenAtistirmasi.SelectedValue, Ogunler.AksamAtistirmasi, (double)nudAksamAtistirmasiPorsiyon.Value);
+            bool kontrol = helper.BtnEkleGorevi(id, (int)cbxAksamAtistirmasi.SelectedValue, Ogunler.AksamAtistirmasi, (double)nudAksamAtistirmasiPorsiyon.Value);
             if (kontrol)
             {
                 helper.ListViewYazdirma(id, Ogunler.AksamAtistirmasi, lviAksamAtistirmasiList);

@@ -58,7 +58,7 @@ namespace BLL
 
         public List<Yiyecek> EnCokYenenler()
         {
-            string connectionString = "Data Source=DESKTOP-JSFRVR1\\MSSQLKD15;Initial Catalog=Northwind;Integrated Security=True";
+            string connectionString = "Data source=DESKTOP-HNK2G88\\MSSQLSERVER01;initial catalog=Prj_KD15_CaloCalc;integrated security=true";
             string query = "SELECT TOP 10 y.YiyecekAdi,y.Kalori,o.OgunAdi, COUNT(*) AS 'Toplam' FROM Ogunler o JOIN Yiyecekler y ON o.YiyecekID=y.YiyecekID GROUP BY y.YiyecekAdi,y.Kalori,o.OgunAdi ORDER BY Toplam DESC"; ;
 
             List<Yiyecek> results = new List<Yiyecek>();
@@ -84,7 +84,7 @@ namespace BLL
         }
         public List<Yiyecek> EnCokYediklerim(int id,int gün)
         {
-            string connectionString = "Data Source=DESKTOP-JSFRVR1\\MSSQLKD15;Initial Catalog=Northwind;Integrated Security=True";
+            string connectionString = "Data source=DESKTOP-HNK2G88\\MSSQLSERVER01;initial catalog=Prj_KD15_CaloCalc;integrated security=true";
             string query = $"SELECT TOP 10 y.YiyecekAdi,y.Kalori,o.OgunAdi, COUNT(*) AS 'Toplam'FROM Ogunler o JOIN Yiyecekler y ON o.YiyecekID=y.YiyecekID where o.YemekYemeZamani >= DATEADD(day, -{gün}, GETDATE()) and o.KullaniciID={id} GROUP BY y.YiyecekAdi,y.Kalori,o.OgunAdi,o.KullaniciID ORDER BY Toplam DESC";
             List<Yiyecek> results = new List<Yiyecek>();
 
@@ -111,7 +111,7 @@ namespace BLL
 
         public List<Yiyecek> EnCokYedikleri(int id, int gün)
         {
-            string connectionString = "Data Source=DESKTOP-JSFRVR1\\MSSQLKD15;Initial Catalog=Northwind;Integrated Security=True";
+            string connectionString = "Data source=DESKTOP-HNK2G88\\MSSQLSERVER01;initial catalog=Prj_KD15_CaloCalc;integrated security=true";
             string query = $"SELECT TOP 10 y.YiyecekAdi,y.Kalori,o.OgunAdi, COUNT(*) AS 'Toplam'FROM Ogunler o JOIN Yiyecekler y ON o.YiyecekID=y.YiyecekID where o.YemekYemeZamani >= DATEADD(day, -{gün}, GETDATE()) and o.KullaniciID!={id} GROUP BY y.YiyecekAdi,y.Kalori,o.OgunAdi,o.KullaniciID ORDER BY Toplam DESC";
             List<Yiyecek> results = new List<Yiyecek>();
 

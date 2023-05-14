@@ -133,6 +133,7 @@
             cbxOglenYemegi = new ComboBox();
             btnOglenYemegiOgunSil = new Button();
             tabPage8 = new TabPage();
+            label28 = new Label();
             tabPage6 = new TabPage();
             lviEnCokYenenler = new ListView();
             columnHeader25 = new ColumnHeader();
@@ -988,7 +989,7 @@
             // btnBesinEkle
             // 
             btnBesinEkle.BackgroundImageLayout = ImageLayout.None;
-            btnBesinEkle.Location = new Point(6, 416);
+            btnBesinEkle.Location = new Point(0, 433);
             btnBesinEkle.Name = "btnBesinEkle";
             btnBesinEkle.Size = new Size(101, 32);
             btnBesinEkle.TabIndex = 1;
@@ -1245,6 +1246,7 @@
             // tabPage8
             // 
             tabPage8.BackColor = Color.LightSteelBlue;
+            tabPage8.Controls.Add(label28);
             tabPage8.Controls.Add(btnBesinEkle);
             tabPage8.Controls.Add(tabControl2);
             tabPage8.Location = new Point(4, 24);
@@ -1253,6 +1255,15 @@
             tabPage8.Size = new Size(591, 468);
             tabPage8.TabIndex = 7;
             tabPage8.Text = "Yemek mi yedin?";
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Location = new Point(8, 415);
+            label28.Name = "label28";
+            label28.Size = new Size(171, 15);
+            label28.TabIndex = 33;
+            label28.Text = "Aradığın Besini Bulamadın mı? ";
             // 
             // tabPage6
             // 
@@ -1570,7 +1581,7 @@
             // BtnBoyKiloGüncelle
             // 
             BtnBoyKiloGüncelle.Image = Properties.Resources.yemekyedinmi;
-            BtnBoyKiloGüncelle.Location = new Point(190, 317);
+            BtnBoyKiloGüncelle.Location = new Point(189, 225);
             BtnBoyKiloGüncelle.Name = "BtnBoyKiloGüncelle";
             BtnBoyKiloGüncelle.Size = new Size(209, 23);
             BtnBoyKiloGüncelle.TabIndex = 1;
@@ -1610,6 +1621,7 @@
             tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nudOglenYemegiPorsiyon).EndInit();
             tabPage8.ResumeLayout(false);
+            tabPage8.PerformLayout();
             tabPage6.ResumeLayout(false);
             tabPage7.ResumeLayout(false);
             tabPage7.PerformLayout();
@@ -1767,5 +1779,6 @@
         private MaskedTextBox mtxtBoyDegis;
         private Label label26;
         private Label label27;
+        private Label label28;
     }
 }

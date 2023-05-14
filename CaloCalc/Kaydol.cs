@@ -54,7 +54,19 @@ namespace CaloCalc
                 {
                     MessageBox.Show("Şifreler farklı", "Uyarı");
                 }
+                else if (txtAd.Text.Length < 2 || Regex.IsMatch(txtAd.Text, @"[\d\W]"))
+                {
+                    MessageBox.Show("Adınızı kontrol edin, 2 harften büyük olmalıdır ve özel karakter veya rakam içermemelidir.");
+                }
+                else if (txtSoyad.Text.Length < 2 || Regex.IsMatch(txtSoyad.Text, @"[\d\W]"))
+                {
+                    MessageBox.Show("Soyadınızı kontrol edin, 2 harften büyük olmalıdır ve özel karakter veya rakam içermemelidir.");
+                }
+                else if (int.Parse(mtxtYas.Text)<10 || int.Parse(mtxtYas.Text) > 120)
+                {
+                    MessageBox.Show("Yaş değeri geçerli aralıkta olmalıdır (10 - 120)");
 
+                }
                 else if (int.Parse(mtxtBoy.Text) < 50 || int.Parse(mtxtBoy.Text) > 290)
                 {
                     MessageBox.Show("Boy değeri geçerli aralıkta olmalıdır (50cm - 290cm)");

@@ -43,7 +43,7 @@ namespace CaloCalc
             helper.comboboxDoldurma(cbxSabahAtistirmasi);
             helper.comboboxDoldurma(cbxOglenYemegi);
             helper.comboboxDoldurma(cbxOglenAtistirmasi);
-            helper.comboboxDoldurma(cbxAksamAtistirmasi);
+            helper.comboboxDoldurma(cbxAksamYemegi);
             helper.comboboxDoldurma(cbxAksamAtistirmasi);
 
             helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);

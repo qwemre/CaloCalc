@@ -92,7 +92,7 @@ namespace CaloCalc.Helper
         public void comboboxDoldurma(ComboBox cmb)
         {
             cmb.DataSource = bll.Yiyecekler.Liste();
-            cmb.DisplayMember = "YiyecekAdi";
+            cmb.DisplayMember = "YiyeceKalori";
             cmb.ValueMember = "YiyecekID";
         }
         public bool BtnEkleGorevi(int id, int YiyecekID, Ogunler ogunad, double porsiyon)

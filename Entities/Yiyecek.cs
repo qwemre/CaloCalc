@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,8 @@ namespace Entities
         public int? Toplam { get; set; }
         public byte[]? Fotograf { get; set; }
         public string? FotografYolu { get; set; }
+        [NotMapped]
+        public string YiyeceKalori { get => YiyecekAdi + " " + Kalori +" Kalori" ; }
         public int? OgunID { get; set; }
         public virtual Ogun Ogun { get; set; }
         public int KategoriID { get; set; }

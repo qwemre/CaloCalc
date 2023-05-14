@@ -55,6 +55,10 @@ namespace CaloCalc
             {
                 MessageBox.Show("Lütfen tüm alanları doldurunuz!", "Uyarı");
             }
+            else if (int.Parse(mtxtKalori.Text)>50)
+            {
+                MessageBox.Show("Kalori değeri en az 50 olabilir");
+            }
             else if (yiyecekKontrol is not null)
             {
                 MessageBox.Show("Eklemeye çalıştığınız yiyecek zaten mevcut", "Uyarı");

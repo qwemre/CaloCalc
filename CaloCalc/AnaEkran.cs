@@ -55,6 +55,14 @@ namespace CaloCalc
             helper.BoyKiloDoldurma(id, mtxtBoyDegis, mtxtKiloDegis);
 
             helper.index(id, lblBoyKiloİndex, lblBilgi);
+
+            helper.EkleAktif(btnKahvaltıEkle, btnKahvaltiGuncelle, btnKahvaltiSil);
+            helper.EkleAktif(btnSabahAtistirmasiEkle, btnSabahAtistirmasiGuncelle, btnSabahAtistirmasiSil);
+            helper.EkleAktif(btnOglenYemegiEkle, btnOglenYemegiGuncelle, btnOglenYemegiSil);
+            helper.EkleAktif(btnOglenAtistirmasiEkle, btnOglenAtistirmasiGuncelle, btnOglenAtistirmasiSil);
+            helper.EkleAktif(btnAksamYemegiEkle, btnAksamYemegiGuncelle, btnAksamYemegiSil);
+            helper.EkleAktif(btnAksamAtistirmasiEkle, btnAksamAtistirmasiGuncelle, btnAksamAtistirmasiSil);
+
         }
         private void btnBesinEkle_Click(object sender, EventArgs e)
         {
@@ -140,6 +148,8 @@ namespace CaloCalc
                 lblAksam.Text = bll.Kullanicilar.OguneGoreKaloriRaporu(id, Ogunler.AksamYemegi).ToString();
                 lblAksamAtistirma.Text = bll.Kullanicilar.OguneGoreKaloriRaporu(id, Ogunler.AksamAtistirmasi).ToString();
                 lblToplam.Text = bll.Kullanicilar.GunSonuRaporu(id).ToString();
+                helper.index(id, lblBoyKiloİndex, lblBilgi);
+
             }
             else if (tabControl1.SelectedIndex == 2)
             {
@@ -192,6 +202,7 @@ namespace CaloCalc
                 {
                     MessageBox.Show("Silindi");
                     helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
+                    helper.EkleAktif(btnKahvaltıEkle, btnKahvaltiGuncelle, btnKahvaltiSil);
                 }
                 else MessageBox.Show("Bir hata olustu silemedik.");
             }
@@ -206,6 +217,7 @@ namespace CaloCalc
                 {
                     MessageBox.Show("Güncellendi");
                     helper.ListViewYazdirma(id, Ogunler.Kahvaltı, lvSabahKahvaltiListe);
+                    helper.EkleAktif(btnKahvaltıEkle, btnKahvaltiGuncelle, btnKahvaltiSil);
                 }
                 else MessageBox.Show("Bir hata olustu güncellenemdi.");
             }
@@ -218,6 +230,8 @@ namespace CaloCalc
                 {
                     MessageBox.Show("Silindi");
                     helper.ListViewYazdirma(id, Ogunler.SabahAtistirmasi, lviSabahAtistirmasiList);
+                    helper.EkleAktif(btnSabahAtistirmasiEkle, btnSabahAtistirmasiGuncelle, btnSabahAtistirmasiSil);
+
                 }
 
                 else MessageBox.Show("Bir hata olustu silemedik.");
@@ -232,6 +246,7 @@ namespace CaloCalc
                 {
                     MessageBox.Show("Güncellendi");
                     helper.ListViewYazdirma(id, Ogunler.SabahAtistirmasi, lviSabahAtistirmasiList);
+                    helper.EkleAktif(btnSabahAtistirmasiEkle, btnSabahAtistirmasiGuncelle, btnSabahAtistirmasiSil);
                 }
                 else MessageBox.Show("Bir hata olustu güncellenemdi.");
             }
@@ -245,6 +260,7 @@ namespace CaloCalc
                 {
                     MessageBox.Show("Güncellendi");
                     helper.ListViewYazdirma(id, Ogunler.OglenYemegi, lviOglenYemegiList);
+                    helper.EkleAktif(btnOglenYemegiEkle, btnOglenYemegiGuncelle, btnOglenYemegiSil);
                 }
                 else
                     MessageBox.Show("Bir hata olustu güncellenemdi.");
@@ -259,6 +275,7 @@ namespace CaloCalc
                 {
                     MessageBox.Show("Silindi");
                     helper.ListViewYazdirma(id, Ogunler.OglenYemegi, lviOglenYemegiList);
+                    helper.EkleAktif(btnOglenYemegiEkle, btnOglenYemegiGuncelle, btnOglenYemegiSil);
                 }
                 else
                     MessageBox.Show("Bir hata olustu silemedik.");
@@ -273,6 +290,7 @@ namespace CaloCalc
                 {
                     MessageBox.Show("Silindi");
                     helper.ListViewYazdirma(id, Ogunler.OglenAtistirmasi, lviOglenAtistirmasiList);
+                    helper.EkleAktif(btnOglenAtistirmasiEkle, btnOglenAtistirmasiGuncelle, btnOglenAtistirmasiSil);
                 }
                 else
                     MessageBox.Show("Bir hata olustu silemedik.");
@@ -287,6 +305,7 @@ namespace CaloCalc
                 {
                     MessageBox.Show("Güncellendi");
                     helper.ListViewYazdirma(id, Ogunler.OglenAtistirmasi, lviOglenAtistirmasiList);
+                    helper.EkleAktif(btnOglenAtistirmasiEkle, btnOglenAtistirmasiGuncelle, btnOglenAtistirmasiSil);
                 }
                 else
                     MessageBox.Show("Bir hata olustu güncellenemdi.");
@@ -300,6 +319,7 @@ namespace CaloCalc
                 {
                     MessageBox.Show("Silindi");
                     helper.ListViewYazdirma(id, Ogunler.AksamYemegi, lviAksamYemegiList);
+                    helper.EkleAktif(btnAksamYemegiEkle, btnAksamYemegiGuncelle, btnAksamYemegiSil);
                 }
                 else
                     MessageBox.Show("Bir hata olustu silemedik.");
@@ -314,6 +334,7 @@ namespace CaloCalc
                 {
                     MessageBox.Show("Güncellendi");
                     helper.ListViewYazdirma(id, Ogunler.AksamYemegi, lviAksamYemegiList);
+                    helper.EkleAktif(btnAksamYemegiEkle, btnAksamYemegiGuncelle, btnAksamYemegiSil);
                 }
                 else
                     MessageBox.Show("Bir hata olustu güncellenemdi.");
@@ -327,6 +348,7 @@ namespace CaloCalc
                 {
                     MessageBox.Show("Silindi");
                     helper.ListViewYazdirma(id, Ogunler.AksamAtistirmasi, lviAksamAtistirmasiList);
+                    helper.EkleAktif(btnAksamAtistirmasiEkle, btnAksamAtistirmasiGuncelle, btnAksamAtistirmasiSil);
                 }
                 else
                     MessageBox.Show("Bir hata olustu silemedik.");
@@ -341,6 +363,7 @@ namespace CaloCalc
                 {
                     MessageBox.Show("Güncellendi");
                     helper.ListViewYazdirma(id, Ogunler.AksamAtistirmasi, lviAksamAtistirmasiList);
+                    helper.EkleAktif(btnAksamAtistirmasiEkle, btnAksamAtistirmasiGuncelle, btnAksamAtistirmasiSil);
                 }
                 else
                     MessageBox.Show("Bir hata olustu güncellenemdi.");
@@ -352,10 +375,6 @@ namespace CaloCalc
             if (int.Parse(mtxtBoyDegis.Text) < 50 || int.Parse(mtxtBoyDegis.Text) > 290)
             {
                 MessageBox.Show("Boy değeri geçerli aralıkta olmalıdır (50cm - 290cm)");
-            }
-            else if (int.Parse(mtxtBoyDegis.Text) < kullanici.Boy)
-            {
-                MessageBox.Show("boyunuz kısalamaz");
             }
             else if (int.Parse(mtxtKiloDegis.Text) < 30 || int.Parse(mtxtKiloDegis.Text) > 597)
             {
@@ -369,6 +388,8 @@ namespace CaloCalc
                 if (kontrol)
                 {
                     MessageBox.Show("bilgileriniz güncellendi");
+
+
                 }
                 else
                 {
@@ -376,5 +397,78 @@ namespace CaloCalc
                 }
             }
         }
+
+        private void lvSabahKahvaltiListe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvSabahKahvaltiListe.SelectedItems.Count == 0)
+            {
+                helper.EkleAktif(btnKahvaltıEkle, btnKahvaltiGuncelle, btnKahvaltiSil);
+            }
+            else
+            {
+                helper.EklePasif(btnKahvaltıEkle, btnKahvaltiGuncelle, btnKahvaltiSil);
+            }
+        }
+
+        private void lviSabahAtistirmasiList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lviSabahAtistirmasiList.SelectedItems.Count == 0)
+            {
+                helper.EkleAktif(btnSabahAtistirmasiEkle, btnSabahAtistirmasiGuncelle, btnSabahAtistirmasiSil);
+            }
+            else
+            {
+                helper.EklePasif(btnSabahAtistirmasiEkle, btnSabahAtistirmasiGuncelle, btnSabahAtistirmasiSil);
+            }
+        }
+
+        private void lviOglenYemegiList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lviOglenYemegiList.SelectedItems.Count == 0)
+            {
+                helper.EkleAktif(btnOglenYemegiEkle, btnOglenYemegiGuncelle, btnOglenYemegiSil);
+            }
+            else
+            {
+                helper.EklePasif(btnOglenYemegiEkle, btnOglenYemegiGuncelle, btnOglenYemegiSil);
+            }
+        }
+
+        private void lviOglenAtistirmasiList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lviOglenAtistirmasiList.SelectedItems.Count == 0)
+            {
+                helper.EkleAktif(btnOglenAtistirmasiEkle, btnOglenAtistirmasiGuncelle, btnOglenAtistirmasiSil);
+            }
+            else
+            {
+                helper.EklePasif(btnOglenAtistirmasiEkle, btnOglenAtistirmasiGuncelle, btnOglenAtistirmasiSil);
+            }
+        }
+
+        private void lviAksamYemegiList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lviAksamYemegiList.SelectedItems.Count == 0)
+            {
+                helper.EkleAktif(btnAksamYemegiEkle, btnAksamYemegiGuncelle, btnAksamYemegiSil);
+            }
+            else
+            {
+                helper.EklePasif(btnAksamYemegiEkle, btnAksamYemegiGuncelle, btnAksamYemegiSil);
+            }
+        }
+
+        private void lviAksamAtistirmasiList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lviAksamAtistirmasiList.SelectedItems.Count == 0)
+            {
+                helper.EkleAktif(btnAksamAtistirmasiEkle, btnAksamAtistirmasiGuncelle, btnAksamAtistirmasiSil);
+            }
+            else
+            {
+                helper.EklePasif(btnAksamAtistirmasiEkle, btnAksamAtistirmasiGuncelle, btnAksamAtistirmasiSil);
+            }
+        }
+
     }
 }

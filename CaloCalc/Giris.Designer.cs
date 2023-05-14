@@ -59,6 +59,7 @@
             // 
             txtSifre.Location = new Point(139, 189);
             txtSifre.Name = "txtSifre";
+            txtSifre.PasswordChar = '*';
             txtSifre.PlaceholderText = "Şifre Giriniz";
             txtSifre.Size = new Size(179, 23);
             txtSifre.TabIndex = 1;

@@ -66,6 +66,7 @@ namespace CaloCalc
         }
         private void btnBesinEkle_Click(object sender, EventArgs e)
         {
+            this.Hide();
             this.Close();
             BesinOlusturma frm = new BesinOlusturma(id);
             frm.ShowDialog();

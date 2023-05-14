@@ -172,6 +172,7 @@
             mtxtBoyDegis = new MaskedTextBox();
             label26 = new Label();
             BtnBoyKiloGüncelle = new Button();
+            label28 = new Label();
             ((System.ComponentModel.ISupportInitialize)nudAksamAtistirmasiPorsiyon).BeginInit();
             tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudAksamYemegiPorsiyon).BeginInit();
@@ -988,7 +989,7 @@
             // btnBesinEkle
             // 
             btnBesinEkle.BackgroundImageLayout = ImageLayout.None;
-            btnBesinEkle.Location = new Point(6, 416);
+            btnBesinEkle.Location = new Point(0, 433);
             btnBesinEkle.Name = "btnBesinEkle";
             btnBesinEkle.Size = new Size(101, 32);
             btnBesinEkle.TabIndex = 1;
@@ -1245,6 +1246,7 @@
             // tabPage8
             // 
             tabPage8.BackColor = Color.LightSteelBlue;
+            tabPage8.Controls.Add(label28);
             tabPage8.Controls.Add(btnBesinEkle);
             tabPage8.Controls.Add(tabControl2);
             tabPage8.Location = new Point(4, 24);
@@ -1578,6 +1580,15 @@
             BtnBoyKiloGüncelle.UseVisualStyleBackColor = true;
             BtnBoyKiloGüncelle.Click += BtnBoyKiloGüncelle_Click;
             // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Location = new Point(8, 415);
+            label28.Name = "label28";
+            label28.Size = new Size(171, 15);
+            label28.TabIndex = 33;
+            label28.Text = "Aradığın Besini Bulamadın mı? ";
+            // 
             // AnaEkran
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1610,6 +1621,7 @@
             tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nudOglenYemegiPorsiyon).EndInit();
             tabPage8.ResumeLayout(false);
+            tabPage8.PerformLayout();
             tabPage6.ResumeLayout(false);
             tabPage7.ResumeLayout(false);
             tabPage7.PerformLayout();
@@ -1767,5 +1779,6 @@
         private MaskedTextBox mtxtBoyDegis;
         private Label label26;
         private Label label27;
+        private Label label28;
     }
 }

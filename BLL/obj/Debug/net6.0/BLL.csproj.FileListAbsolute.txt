@@ -1,0 +1,36 @@
+C:\Users\EmreK\Desktop\c#\CaloCalc\BLL\obj\Debug\net6.0\BLL.csproj.AssemblyReference.cache
+C:\Users\EmreK\Desktop\c#\CaloCalc\BLL\obj\Debug\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\EmreK\Desktop\c#\CaloCalc\BLL\obj\Debug\net6.0\BLL.AssemblyInfoInputs.cache
+C:\Users\EmreK\Desktop\c#\CaloCalc\BLL\obj\Debug\net6.0\BLL.AssemblyInfo.cs
+C:\Users\EmreK\Desktop\c#\CaloCalc\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\EmreK\Desktop\c#\CaloCalc\BLL\bin\Debug\net6.0\BLL.deps.json
+C:\Users\EmreK\Desktop\c#\CaloCalc\BLL\bin\Debug\net6.0\BLL.dll
+C:\Users\EmreK\Desktop\c#\CaloCalc\BLL\bin\Debug\net6.0\BLL.pdb
+C:\Users\EmreK\Desktop\c#\CaloCalc\BLL\bin\Debug\net6.0\DAL.dll
+C:\Users\EmreK\Desktop\c#\CaloCalc\BLL\bin\Debug\net6.0\Entities.dll
+C:\Users\EmreK\Desktop\c#\CaloCalc\BLL\bin\Debug\net6.0\DAL.pdb
+C:\Users\EmreK\Desktop\c#\CaloCalc\BLL\bin\Debug\net6.0\Entities.pdb
+C:\Users\EmreK\Desktop\c#\CaloCalc\BLL\obj\Debug\net6.0\BLL.csproj.CopyComplete
+C:\Users\EmreK\Desktop\c#\CaloCalc\BLL\obj\Debug\net6.0\BLL.dll
+C:\Users\EmreK\Desktop\c#\CaloCalc\BLL\obj\Debug\net6.0\refint\BLL.dll
+C:\Users\EmreK\Desktop\c#\CaloCalc\BLL\obj\Debug\net6.0\BLL.pdb
+C:\Users\EmreK\Desktop\c#\CaloCalc\BLL\obj\Debug\net6.0\ref\BLL.dll
+C:\Users\EmreK\Desktop\c#\CaloCalc\BLL\bin\Debug\net6.0\DAL.dll.config
+C:\Users\user\Downloads\CaloCalc (1)\CaloCalc\BLL\bin\Debug\net6.0\BLL.deps.json
+C:\Users\user\Downloads\CaloCalc (1)\CaloCalc\BLL\bin\Debug\net6.0\BLL.dll
+C:\Users\user\Downloads\CaloCalc (1)\CaloCalc\BLL\bin\Debug\net6.0\BLL.pdb
+C:\Users\user\Downloads\CaloCalc (1)\CaloCalc\BLL\bin\Debug\net6.0\DAL.dll
+C:\Users\user\Downloads\CaloCalc (1)\CaloCalc\BLL\bin\Debug\net6.0\Entities.dll
+C:\Users\user\Downloads\CaloCalc (1)\CaloCalc\BLL\bin\Debug\net6.0\DAL.pdb
+C:\Users\user\Downloads\CaloCalc (1)\CaloCalc\BLL\bin\Debug\net6.0\DAL.dll.config
+C:\Users\user\Downloads\CaloCalc (1)\CaloCalc\BLL\bin\Debug\net6.0\Entities.pdb
+C:\Users\user\Downloads\CaloCalc (1)\CaloCalc\BLL\obj\Debug\net6.0\BLL.csproj.AssemblyReference.cache
+C:\Users\user\Downloads\CaloCalc (1)\CaloCalc\BLL\obj\Debug\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Downloads\CaloCalc (1)\CaloCalc\BLL\obj\Debug\net6.0\BLL.AssemblyInfoInputs.cache
+C:\Users\user\Downloads\CaloCalc (1)\CaloCalc\BLL\obj\Debug\net6.0\BLL.AssemblyInfo.cs
+C:\Users\user\Downloads\CaloCalc (1)\CaloCalc\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\user\Downloads\CaloCalc (1)\CaloCalc\BLL\obj\Debug\net6.0\BLL.csproj.CopyComplete
+C:\Users\user\Downloads\CaloCalc (1)\CaloCalc\BLL\obj\Debug\net6.0\BLL.dll
+C:\Users\user\Downloads\CaloCalc (1)\CaloCalc\BLL\obj\Debug\net6.0\refint\BLL.dll
+C:\Users\user\Downloads\CaloCalc (1)\CaloCalc\BLL\obj\Debug\net6.0\BLL.pdb
+C:\Users\user\Downloads\CaloCalc (1)\CaloCalc\BLL\obj\Debug\net6.0\ref\BLL.dll

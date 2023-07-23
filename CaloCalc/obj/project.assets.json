@@ -7038,9 +7038,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\CaloCalc\\CaloCalc.csproj",
+      "projectUniqueName": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\CaloCalc\\CaloCalc.csproj",
       "projectName": "CaloCalc",
-      "projectPath": "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\CaloCalc\\CaloCalc.csproj",
+      "projectPath": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\CaloCalc\\CaloCalc.csproj",
       "packagesPath": "C:\\Users\\EmreK\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\CaloCalc\\obj\\",
       "projectStyle": "PackageReference",
@@ -7064,11 +7064,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\BLL\\BLL.csproj": {
-              "projectPath": "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\BLL\\BLL.csproj"
+            "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\BLL\\BLL.csproj": {
+              "projectPath": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\BLL\\BLL.csproj"
             },
-            "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\Entities\\Entities.csproj"
+            "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\Entities\\Entities.csproj"
             }
           }
         }

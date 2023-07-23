@@ -7019,9 +7019,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\BLL\\BLL.csproj",
+      "projectUniqueName": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\BLL\\BLL.csproj",
       "projectName": "BLL",
-      "projectPath": "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\BLL\\BLL.csproj",
+      "projectPath": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\BLL\\BLL.csproj",
       "packagesPath": "C:\\Users\\EmreK\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\BLL\\obj\\",
       "projectStyle": "PackageReference",
@@ -7045,11 +7045,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\DAL\\DAL.csproj"
+            "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\DAL\\DAL.csproj"
             },
-            "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\Entities\\Entities.csproj"
+            "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\Entities\\Entities.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d44p3/lU+c/2DDK2/dDIOJD7A9IL+JuG6oOsnf10SZeGX+furpEiurAPW3mSwFVCyLILW33MlKUwpyH2NrJfXA==",
+  "dgSpecHash": "kHKWsBIH0UpPcvvsSd6qW+HtcFCH4rTgnJgZkvlgxhqI5ra0/n5xpZOmtsRY+cpyzvQa5CZd1FxDEqms04R+5A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\CaloCalc\\CaloCalc.csproj",
+  "projectFilePath": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\CaloCalc\\CaloCalc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\EmreK\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\EmreK\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

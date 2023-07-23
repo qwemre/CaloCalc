@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+elvSszJc1f8VEPIjzQmGMKYNQa0ITLJXEVbk9XOJ74SGUjMxP5M9SBL47LXZbdpStNtvgOTtKRrNupwk+U6pw==",
+  "dgSpecHash": "Kx1FupvnmdqWHW/azD6rDFib1xlzJMv4yPvIJpGUSG9iqSwvMuLl7hMLBj4HOOgWXcm5V/+2aFQkQhWzKLulLw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\DAL\\DAL.csproj",
+  "projectFilePath": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\EmreK\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\EmreK\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

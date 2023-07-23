@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\Entities\\Entities.csproj": {}
+    "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\Entities\\Entities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\Entities\\Entities.csproj": {
+    "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\EmreK\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\Entities\\obj\\",
         "projectStyle": "PackageReference",

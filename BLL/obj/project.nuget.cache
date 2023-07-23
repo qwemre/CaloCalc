@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "H0xY9zRTl4QrTSCZmpUzAG7CKfB6LnYzyE8Kn4r4KPh2e4YwDPY3IJ14ARHCz1ADsThBfYGh1VLZd7lOzXcFiw==",
+  "dgSpecHash": "femUOt5OKa7OdXIj1ZGazGniVGHVccf63yvo3f/Wirw3qfm+zrTKS/Y28mHLSM2SHejn3LEr9JlgZsJP9P+vxg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\BLL\\BLL.csproj",
+  "projectFilePath": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\BLL\\BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\EmreK\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\EmreK\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

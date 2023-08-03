@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\BLL\\BLL.csproj": {}
+    "C:\\Users\\user\\Desktop\\CaloCalc\\CaloCalc\\BLL\\BLL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\BLL\\BLL.csproj": {
+    "C:\\Users\\user\\Desktop\\CaloCalc\\CaloCalc\\BLL\\BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\BLL\\BLL.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\CaloCalc\\CaloCalc\\BLL\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\BLL\\BLL.csproj",
-        "packagesPath": "C:\\Users\\EmreK\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\BLL\\obj\\",
+        "projectPath": "C:\\Users\\user\\Desktop\\CaloCalc\\CaloCalc\\BLL\\BLL.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\CaloCalc\\CaloCalc\\BLL\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\EmreK\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,18 +22,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\DAL\\DAL.csproj"
+              "C:\\Users\\user\\Desktop\\CaloCalc\\CaloCalc\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\CaloCalc\\CaloCalc\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\Entities\\Entities.csproj"
+              "C:\\Users\\user\\Desktop\\CaloCalc\\CaloCalc\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\CaloCalc\\CaloCalc\\Entities\\Entities.csproj"
               }
             }
           }
@@ -67,25 +62,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\DAL\\DAL.csproj": {
+    "C:\\Users\\user\\Desktop\\CaloCalc\\CaloCalc\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\CaloCalc\\CaloCalc\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\EmreK\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\DAL\\obj\\",
+        "projectPath": "C:\\Users\\user\\Desktop\\CaloCalc\\CaloCalc\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\CaloCalc\\CaloCalc\\DAL\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\EmreK\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -93,15 +84,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\Entities\\Entities.csproj"
+              "C:\\Users\\user\\Desktop\\CaloCalc\\CaloCalc\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\CaloCalc\\CaloCalc\\Entities\\Entities.csproj"
               }
             }
           }
@@ -151,25 +141,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\Entities\\Entities.csproj": {
+    "C:\\Users\\user\\Desktop\\CaloCalc\\CaloCalc\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\CaloCalc\\CaloCalc\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\EmreK\\source\\repos\\CaloCalc\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\EmreK\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\EmreK\\Source\\Repos\\CaloCalc\\Entities\\obj\\",
+        "projectPath": "C:\\Users\\user\\Desktop\\CaloCalc\\CaloCalc\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\CaloCalc\\CaloCalc\\Entities\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\EmreK\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -177,7 +163,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -211,7 +196,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
